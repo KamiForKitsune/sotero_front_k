@@ -102,19 +102,39 @@ export default {
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        },
-        {
-          icon:'mdi-egg-easter',
-          title:'Soy sensacional <3',
+          icon:'mdi-face-woman',
+          title:'Ficha A',
           to:'/fichaA'
         },
         {
-          icon:'mdi-palette-advanced',
-          title:'La cristina es bacan',
-          to:'/'
+          icon:'mdi-ambulance',
+          title:'Ficha B',
+          to:'/fichaB'
+        },
+        {
+          icon:'mdi-human-pregnant',
+          title:'Ficha C',
+          to:'/fichaC'
+        },
+        {
+          icon:'mdi-baby',
+          title:'Ficha D',
+          to:'/fichaD'
+        },
+        {
+          icon:'mdi-human-baby-changing-table',
+          title:'Ficha E',
+          to:'/fichaE'
+        },
+        {
+          icon:'mdi-doctor',
+          title:'Ficha F',
+          to:'/fichaF'
+        },
+        {
+          icon:'mdi-hospital-box',
+          title:'Ficha G',
+          to:'/fichaG'
         }
       ],
       miniVariant: false,
