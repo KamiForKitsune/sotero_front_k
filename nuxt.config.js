@@ -38,32 +38,32 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/auth-next'
+    // '@nuxtjs/axios',
+    // '@nuxtjs/auth-next'
   ],
-  auth:{
-    redirect:{
-      login:'/login',
-      logout:'/login',
-      home: '/'
-    },
-    strategies: {
-      local: {
-        endpoints: {
-          login: { url: '/api/auth/login', method: 'post' },
-          logout: { url: '/api/auth/logout', method: 'post' },
-          user: { url: '/api/auth/user', method: 'get' }
-        }
-      },
-      tokeType: 'Bearer',
-      tokenRequired: true
-    },
-    resetOnError: true
+  // auth:{
+  //   redirect:{
+  //     login:'/login',
+  //     logout:'/login',
+  //     home: '/'
+  //   },
+  //   strategies: {
+  //     local: {
+  //       endpoints: {
+  //         login: { url: '/api/auth/login', method: 'post' },
+  //         logout: { url: '/api/auth/logout', method: 'post' },
+  //         user: { url: '/api/auth/user', method: 'get' }
+  //       }
+  //     },
+  //     tokeType: 'Bearer',
+  //     tokenRequired: true
+  //   },
+  //   resetOnError: true
 
-  },
-  router:{
-    middleware:['auth']
-  },
+  // },
+  // router:{
+  //   middleware:['auth']
+  // },
   axios:{
     baseURL: 'http:/localhost:4000/api/',
   },

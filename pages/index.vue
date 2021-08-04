@@ -75,7 +75,15 @@
         </v-card-actions>
       </v-card>
     </v-col>
-    <NuxtLink to="/fichaA"> Ficha A</NuxtLink>
   </v-row>
   
 </template>
+<script>
+export default {
+  // middleware: 'redirectToRoute',
+  //   middleware ({ store, redirect }) {
+  //   // If the user is not authenticated
+  //   return redirect('/login')
+  // }
+}
+</script>
