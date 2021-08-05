@@ -1,7 +1,6 @@
 <template>
 
   <v-app>    
-  <body class="container">
         <!-- Formulario info personal-->
         <!--Hola :´3-->
         <v-card>
@@ -624,7 +623,7 @@
             </div>
         </div>
       </v-card>
-      </body>
+      
      </v-app>
 </template>
 
@@ -1216,6 +1215,13 @@ select{
     border-radius: 4px;
 }
 
+textarea{
+    border: 1px solid var(--font-color-grey);
+    border-radius: 4px;
+}
+
 </style>
+
 <script>
+
 </script>
