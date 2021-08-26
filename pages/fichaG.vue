@@ -236,41 +236,250 @@
 
          <v-card>
             <div class="ficha-a">
-                <h2 class="ficha-a__title">Hospitalización</h2>
+                <h2 class="ficha-a__title">Nutrición y terapias</h2>
                 <div class="info-personal">                    
-                    <form class="info-personal__form">                        
-                        <span class="info-personal__form__item">
-                            <label for="fechingre">N° de ficha Clinica Neonatal</label>
-                            <input type="number" name="fechingre" id="fechingre">
-                        </span>
-                        <span class="info-personal__form__item">
-                            <label for="fechingre">Fecha de hospitalización</label>
-                            <input type="date" name="fechingre" id="fechingre">
-                        </span>
-                        <span class="info-personal__form__item">
-                            <label for="fechingre">Edad ingreso</label>
-                            <input type="number" name="fechingre" id="fechingre">
-                        </span>
-                        <span class="info-personal__form__item">
-                            <label for="fechingre">Peso de ingreso (grs.)</label>
-                            <input type="number" name="fechingre" id="fechingre">
-                        </span>
-                        
-                        <span class="info-personal__form__item">   
-                        <label for="fechingre">Indice de riesgo</label>                     
-                        <div class="lista-interactiva__select">                        
-                            <select name="drogasUsadasTParto">
-                                <option value="alto">Alto</option>
-                                <option value="medio">Medio</option>    
-                                <option value="bajo">Bajo</option>  
-                            </select>
-                        </div>
-                        </span>
-                    </form>                    
-                </div>
+                    <form class="info-personal__form"> 
+                        <div class="ficha-a__medDrogas__form__item">
+                            <label class="lista-interactiva__title">Nutrición</label>
+                            <div class="ficha-a__medDrogas__form__item__input">
+                                <label for="fechingre">% de leche materna recibida</label>
+                                <input type="number" name="sino" id=""> 
+                            </div>                            
+                            <div class="ficha-a__medDrogas__form__item__input">
+                                <label for="fechingre">Días de Alimento parenteral</label>
+                                <input type="number" name="sino" id="">
+                            </div> 
+
+                           <div class="ficha-a__medDrogas__form__item">
+                                <label class="lista-interactiva__title">Edad de:</label>
+                                <div class="ficha-a__medDrogas__form__item__input">
+                                    <label for="fechingre">Alimentación enteral exclusiva</label>
+                                    <input type="number" name="sino" id="">
+                                </div> 
+                                <div class="ficha-a__medDrogas__form__item__input">
+                                    <label for="fechingre">Recuperación peso alimento</label>
+                                    <input type="number" name="sino" id="">
+                                </div> 
+                                <div class="ficha-a__medDrogas__form__item__input">
+                                    <label for="sala">No recupera peso</label>
+                                    <input type="checkbox" name="sino" id=""> 
+                                </div>  
+                            </div>
+                        </div> 
+
+                        <div class="ficha-a__medDrogas__form__item">
+                            <label class="lista-interactiva__title">Terapias</label>
+                            <div class="ficha-a__medDrogas__form__item">
+                                <label class="lista-interactiva__title">Días de:</label>                                
+                                <div class="ficha-a__medDrogas__form__item__input">
+                                    <label for="fechingre">Fototerapia</label>
+                                    <input type="number" name="sino" id=""> 
+                                </div> 
+
+                                <div class="ficha-a__medDrogas__form__item__input">
+                                    <label for="fechingre">Bili máxima</label>
+                                    <input type="number" name="sino" id=""> 
+                                </div> 
+
+                                <div class="ficha-a__medDrogas__form__item__input">
+                                    <label for="fechingre">Oxígeno</label>
+                                    <input type="number" name="sino" id=""> 
+                                </div> 
+
+                                <label for="fechingre">Oxígeno a las 36 semanas:</label>
+                                <div class="ficha-a__medDrogas__form__item__input">                                    
+                                    <label for="fechingre">Si</label>
+                                    <input type="radio" name="sino" id="">
+                                    <label for="fechingre">No</label> 
+                                    <input type="radio" name="sino" id="">
+                                </div> 
+
+                                <div class="ficha-a__medDrogas__form__item__input">
+                                    <label for="fechingre">C.P.A.P</label>
+                                    <input type="number" name="sino" id=""> 
+                                </div>   
+
+                                <div class="ficha-a__medDrogas__form__item__input">
+                                    <label for="fechingre">Vent. mec.</label>
+                                    <input type="number" name="sino" id=""> 
+                                </div>                                 
+                            </div> 
+                        </div> 
+                    </form>         
+                </div>                
+            </div>
+
+            <h2 class="ficha-a__title oculEH">Otros examenes:</h2>
+            <div class="ficha-a__antecedentes">
+                <div class="lista-interactiva__select">                    
+                    <textarea name="comentPreparto" rows="15" cols="90" id="cpreparto" data="elementos"></textarea>
+                </div>         
             </div>
 
         </v-card>
+
+        <v-card>
+            <div class="ficha-a">
+                <h2 class="ficha-a__title">Examenes</h2>
+                <div class="info-personal">
+
+                <form class="info-personal__form">
+                    
+                    <span class="info-personal__form__item">
+                        <label for="fechingre">No se efectuaron exámenes</label>
+                        <input type="checkbox" name="fechingre" id="fechingre">
+                    </span>
+                    <span class="info-personal__form__item">
+                        <label for="fechingre">Fondo de ojo</label>
+                        <div class="lista-interactiva__select">                        
+                            <select name="drogasUsadasTParto">
+                                <option value="Normal">Alto</option>
+                                <option value="Anormal">Medio</option>    
+                                <option value="No realizado">Bajo</option>  
+                            </select>
+                        </div>
+                    </span>
+                    <span class="info-personal__form__item">
+                        <label for="fechingre">E.E.G.</label>
+                        <div class="lista-interactiva__select">                        
+                            <select name="drogasUsadasTParto">
+                                <option value="Normal">Alto</option>
+                                <option value="Anormal">Medio</option>    
+                                <option value="No realizado">Bajo</option>  
+                            </select>
+                        </div>
+                    </span>
+                     <span class="info-personal__form__item">
+                        <label for="fechingre">Examen neurológico</label>
+                        <div class="lista-interactiva__select">                        
+                            <select name="drogasUsadasTParto">
+                                <option value="Normal">Alto</option>
+                                <option value="Anormal">Medio</option>    
+                                <option value="No realizado">Bajo</option>  
+                            </select>
+                        </div>
+                    </span>
+                     <span class="info-personal__form__item">
+                        <label for="fechingre">Ecocardiografía</label>
+                        <div class="lista-interactiva__select">                        
+                            <select name="drogasUsadasTParto">
+                                <option value="Normal">Alto</option>
+                                <option value="Anormal">Medio</option>    
+                                <option value="No realizado">Bajo</option>  
+                            </select>
+                        </div>
+                    </span>
+                     <span class="info-personal__form__item">
+                        <label for="fechingre">Neurosonografía</label>
+                        <div class="lista-interactiva__select">                        
+                            <select name="drogasUsadasTParto">
+                                <option value="Normal">Alto</option>
+                                <option value="Anormal">Medio</option>    
+                                <option value="No realizado">Bajo</option>  
+                            </select>
+                        </div>
+                    </span>
+                     <span class="info-personal__form__item">
+                        <label for="fechingre">Hemocultivos</label>
+                        <div class="lista-interactiva__select">                        
+                            <select name="drogasUsadasTParto">
+                                <option value="Normal">Alto</option>
+                                <option value="Anormal">Medio</option>    
+                                <option value="No realizado">Bajo</option>  
+                            </select>
+                        </div>
+                    </span>
+                    <span class="info-personal__form__item">
+                        <label for="fechingre">Otros cultivos</label>
+                        <div class="lista-interactiva__select">                        
+                            <select name="drogasUsadasTParto">
+                                <option value="Normal">Alto</option>
+                                <option value="Anormal">Medio</option>    
+                                <option value="No realizado">Bajo</option>  
+                            </select>
+                        </div>
+                    </span>
+
+                </form>  
+                </div>
+            </div>
+        </v-card>
+
+        <v-card>          
+            <div class="ficha-a">
+                <h2 class="ficha-a__title">Procedimientos, farmacos y cirugias</h2>
+                <div class="info-personal">                    
+                    <form class="info-personal__form"> 
+                        <div class="ficha-a__medDrogas__form__item">
+                            <label class="lista-interactiva__title">Procedimientos</label>
+                            <div class="ficha-a__medDrogas__form__item__input">
+                                <label for="fechingre">Ninguno</label>
+                                <input type="checkbox" name="sino" id=""> 
+                            </div>     
+                            <div class="lista-interactiva__select">                        
+                                <select name="drogasUsadasTParto">
+                                    <option value="Sue">Sueroféresis</option>
+                                    <option value="Pleu">Pleurotomía</option>    
+                                    <option value="Cater u">Cateter umbilical</option>  
+                                    <option value="Cater p">Cateter percutáneo</option>
+                                    <option value="Dial">Diálisis</option>    
+                                    <option value="Otro">Otro</option>  
+                                     
+                                </select>
+                            </div> 
+                            <div class="ficha-a__medDrogas__form__item__input">
+                                <label for="fechingre">N° examen sanguineo de transfusión</label>
+                                <input type="number" name="sino" id=""> 
+                            </div> 
+                             <div class="ficha-a__medDrogas__form__item__input">
+                                <label for="fechingre">N° transfusiones</label>
+                                <input type="number" name="sino" id=""> 
+                            </div>    
+                        </div>
+
+                        <div class="ficha-a__medDrogas__form__item">
+                            <label class="lista-interactiva__title">Farmacos administrados</label>
+                            <div class="ficha-a__medDrogas__form__item__input">
+                                <label for="fechingre">Ninguno</label>
+                                <input type="checkbox" name="sino" id=""> 
+                            </div>     
+                            <div class="lista-interactiva__select">                        
+                                <select name="drogasUsadasTParto">
+                                    <option value="Sue">Sueroféresis</option>
+                                    <option value="Pleu">Pleurotomía</option>    
+                                    <option value="Cater u">Cateter umbilical</option>  
+                                    <option value="Cater p">Cateter percutáneo</option>
+                                    <option value="Dial">Diálisis</option>    
+                                    <option value="Otro">Otro</option>  
+                                     
+                                </select>
+                            </div> 
+                              
+                        </div>
+
+                        <div class="ficha-a__medDrogas__form__item">
+                            <label class="lista-interactiva__title">Tipo de cirugía realizada</label>
+                            <div class="ficha-a__medDrogas__form__item__input">
+                                <label for="fechingre">Ninguno</label>
+                                <input type="checkbox" name="sino" id=""> 
+                            </div>     
+                            <div class="lista-interactiva__select">                        
+                                <select name="drogasUsadasTParto">
+                                    <option value="Sue">Sueroféresis</option>
+                                    <option value="Pleu">Pleurotomía</option>    
+                                    <option value="Cater u">Cateter umbilical</option>  
+                                    <option value="Cater p">Cateter percutáneo</option>
+                                    <option value="Dial">Diálisis</option>    
+                                    <option value="Otro">Otro</option>  
+                                     
+                                </select>
+                            </div>                              
+                        </div>
+                    </form>
+                </div>
+            </div>                    
+        </v-card>
+
     </v-app>
 </template>
 
