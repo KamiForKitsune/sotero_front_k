@@ -39,15 +39,15 @@
                 <!-- DomicilioNumeroDeptoOCasa-->
 
                 <span class="info-personal__form__item">
-                    <label for="direccion">Direccion</label>
+                    <label for="direccion">Dirección</label>
                     <input type="text" name="direccion" id="direccion">
                 </span>
                 <span class="info-personal__form__item">
-                    <label for="numeroDomicilio">Numero</label>
+                    <label for="numeroDomicilio">Número</label>
                     <input type="number" name="numeroDomicilio" id="numeroDomicilio">
                 </span>
                 <span class="info-personal__form__item">
-                    <label for="numDeptoCasa">Numero depto o casa</label>
+                    <label for="numDeptoCasa">Número depto o casa</label>
                     <input type="text" name="numDeptoCasa" id="numDeptoCasa">
                 </span>
 
@@ -73,7 +73,7 @@
         <!-- Ficha A -->
       <v-card>
         <div class="ficha-a">
-            <h2 class="ficha-a__title">Ficha A</h2>
+            <h2 class="ficha-a__title">Consultorio de origen y antecedentes socio economicos</h2>
 
             <!-- Antecedentes -->
             <div class="ficha-a__antecedentes">
@@ -258,7 +258,7 @@
                 <form class="ficha-a__medDrogas__form">
                     <!--Medicamentos cronicos-->
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="ficha-a__medDrogas__form__item__title">Medicamentos cronicos</label>
+                        <label class="ficha-a__medDrogas__form__item__title">Medicamentos crónicos</label>
                         <div class="ficha-a__medDrogas__form__item__input">
                             <label for="rMedCronico">No</label>
                             <input type="radio" name="rMedCronico" id="">
@@ -268,7 +268,7 @@
                             <input type="radio" name="rMedCronico" id="">
                         </div>
                         <div class="ficha-a__medDrogas__form__item__input">
-                            <label class="contRadioButtn">Si, Despues del 1er Trimestre </label>
+                            <label class="contRadioButtn">Si, Después del 1er Trimestre </label>
                             <input type="radio" name="rMedCronico" id="">
                         </div>
                         <div class="ficha-a__medDrogas__form__item__input">
@@ -285,7 +285,7 @@
 
                     <!-- Cigarrilos / Alcohol -->
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="ficha-a__medDrogas__form__item__title">Cigarrilos por dia</label>
+                        <label class="ficha-a__medDrogas__form__item__title">Cigarrilos por día</label>
                         <div class="ficha-a__medDrogas__form__item__input">
                             <label class="contRadioButtn">No </label>
                             <input type="radio" name="rCigarrillo" id=""></span>
@@ -299,7 +299,7 @@
                             <input type="text" name="cantCigarrillos" id="cantCigarrillos">
                         </div>
 
-                        <label class="ficha-a__medDrogas__form__item__title">Alcohol/dia(Copa vino)</label>
+                        <label class="ficha-a__medDrogas__form__item__title">Alcohol/día(Copa vino)</label>
                         <div class="ficha-a__medDrogas__form__item__input">
                             <label class="contRadioButtn">No</label>
                             <input type="radio" name="rAlcohol" id="">
@@ -322,7 +322,7 @@
                         <div class="lista-interactiva__select">
                             <select id="drogas">
                                 <option value="Ninguna">Ninguna</option>
-                                <option value="Cocaina">Cocaina</option>
+                                <option value="Cocaina">Cocaína</option>
                                 <option value="Marihuana">Marihuana</option>
                                 <option value="Pasta Base">Pasta Base</option>
                                 <option value="Anfetamina">Anfetamina</option>
@@ -343,12 +343,12 @@
 
             <!--Antecedentes Obstetricos-->
             <div class="ficha-a__antecedentes-obstetricos">
-                <span class="ficha-a__antecedentes-obstetricos__title">Antecedentes Obstetricos</span>
+                <span class="ficha-a__antecedentes-obstetricos__title">Antecedentes Obstétricos</span>
 
                 <form class="ficha-a__antecedentes-obstetricos__form">
                     <!-- Anticoncepcion -->
                     <div class="ficha-a__antecedentes-obstetricos__form__item">
-                        <span class="ficha-a__antecedentes-obstetricos__form__item__title">Anticoncepcion</span>
+                        <span class="ficha-a__antecedentes-obstetricos__form__item__title">Anticoncepción</span>
 
                         <div class="ficha-a__antecedentes-obstetricos__form__item__input">
                             <label for="natural">Natural</label>
@@ -429,7 +429,7 @@
                     <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico"
                         id="embarazo-ectopico">
                         <span class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__title">Embarazo
-                            Ectopico</span>
+                            Ectópico</span>
 
                         <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__seccion-input">
                             <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__input">
@@ -612,16 +612,15 @@
                             <input type="date" id="" name="fur">
                         </div>
                     </div>
-
-
                 </form>
-
-
             </div>
-            <div class="ficha-a__seccion-btn-global">
-                <div class="btn-ingresar-datos">Ingresar Datos</div>
-            </div>
+          
         </div>
+        
+        <div class="ficha-a__seccion-btn-global">
+            <div class="btn-ingresar-datos">Ingresar Datos</div>
+        </div>
+      
       </v-card>
       
      </v-app>
@@ -1125,7 +1124,7 @@ html {
     text-decoration: none;
     position: relative;
     color: white;
-    padding: 5px 10px;
+    padding: 5px 5px;
     transition: all .2s ease-out;
     font-weight: 700;
     font-size: 1rem;
@@ -1137,8 +1136,9 @@ html {
 
 .btn-azul {
     background-color: var(--color-primary);
-    font-size: 1.5rem;
-    padding: 4px 8px;
+    font-size: 1.2rem;
+    padding: 4px 12px;
+    border-radius: 5px;
 }
 
 .btn-rojo {
@@ -1222,6 +1222,3 @@ textarea{
 
 </style>
 
-<script>
-
-</script>

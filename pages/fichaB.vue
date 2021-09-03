@@ -8,39 +8,24 @@
             <form class="info-personal__form">                
                 <div class="ficha-a__medDrogas__form__item">
 
-                    <label class="lista-interactiva__title">Derivada Desde</label>
-                    <div class="ficha-a__medDrogas__form__item__input">
-                        <label for="rMedCronico">Paro</label>
-                        <input type="radio" name="rMedCronico" id="">
-                    </div>
-                    <div class="ficha-a__medDrogas__form__item__input">
-                        <label class="contRadioButtn">CRS</label>
-                        <input type="radio" name="rMedCronico" id="">
-                    </div>
-                    <div class="ficha-a__medDrogas__form__item__input">
-                        <label class="contRadioButtn">Consultorio </label>
-                        <input type="radio" name="rMedCronico" id="">
-                    </div>
-                    <div class="ficha-a__medDrogas__form__item__input">
-                        <label class="contRadioButtn">Cons. Particular</label>
-                        <input type="radio" name="rMedCronico" id="">
-                    </div>
-                    <div class="ficha-a__medDrogas__form__item__input">
-                        <label class="contRadioButtn">Padre Hurtado</label>
-                        <input type="radio" name="rMedCronico" id="">
-                    </div>
-                    <div class="ficha-a__medDrogas__form__item__input">
-                        <label class="contRadioButtn">Poli Adolecencia</label>
-                        <input type="radio" name="rMedCronico" id="">
-                    </div>
-                    <div class="ficha-a__medDrogas__form__item__input">
-                        <label class="contRadioButtn">Cons. Espontanea</label>
-                        <input type="radio" name="rMedCronico" id="">
-                    </div>
-                    <div class="ficha-a__medDrogas__form__item__input">
-                        <label for="">Otro</label>
-                        <input type="text" name="" id="Mejorar">
-                    </div>
+                   
+                    <label class="lista-interactiva__title">Derivada desde</label>                        
+                    <div class="lista-interactiva__select">
+                        <select id="patoFam">
+                            <option value="Paro">Paro</option>
+                            <option value="CRS">CRS</option>
+                            <option value="Consultorio">Consultorio</option>
+                            <option value="Cons. Particular">Cons. Particular</option>
+                            <option value="Padre Hurtado">Padre Hurtado</option>
+                            <option value="Poli Adolecencia">Poli Adolecencia</option>
+                            <option value="Cons. Espontanea">Cons. Espontanea</option>
+                        </select>
+                        <button class="btn btn-azul btn-añadir-a-lista">+</button>
+                            
+                        <ul class="lista-interactiva__lista">                           
+                        </ul>
+                    </div>  
+                    
                 </div>
 
                 <div class="ficha-a__medDrogas__form__item">
@@ -78,8 +63,6 @@
             </form>
         </div>
         <div class="ficha-a">
-            <h2 class="ficha-a__title">Ficha B</h2>
-        
             <h2 class="ficha-a__title">Motivo del ingreso</h2>
             <div class="ficha-a__antecedentes">                        
                 <form class="ficha-a__antecedentes__form"> 
