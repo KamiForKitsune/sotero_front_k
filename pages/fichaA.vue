@@ -539,13 +539,9 @@
                                     <input type="checkbox" name="otra" value="otra">
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
-
                 </form>
-
 
             </div>
 
@@ -1219,6 +1215,41 @@ textarea{
     border: 1px solid var(--font-color-grey);
     border-radius: 4px;
 }
+
+
+*[data-tooltip] {
+    position: relative;
+}
+
+*[data-tooltip]::after {
+    content: attr(data-tooltip);
+
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 150px;
+
+    pointer-events: none;
+    opacity: 0;
+    -webkit-transition: opacity .15s ease-in-out;
+    -moz-transition: opacity .15s ease-in-out;
+    -ms-transition: opacity .15s ease-in-out;
+    -o-transition: opacity .15s ease-in-out;
+    transition: opacity .15s ease-in-out;
+
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+    background: #f6f6f6;
+    padding: 2px 2px;
+    border: 1px solid #c0c0c0;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.4);
+}
+
+*[data-tooltip]:hover::after {
+    opacity: 1;
+}
+
 
 </style>
 
