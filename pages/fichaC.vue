@@ -40,9 +40,7 @@
             </form>
         </div>
 
-        <div class="ficha-a">
-            <h2 class="ficha-a__title">Ficha C</h2>
-            
+        <div class="ficha-a">  
             <h2 class="ficha-a__title">Procedimiento</h2>
             <div class="ficha-a__antecedentes">
                 <form class="ficha-a__antecedentes__form">
@@ -56,10 +54,8 @@
                         <label for="">Ed. Gest (sem/dias) </label>
                         <input type="text" name="" id="Mejorar">
                     </div>    
-
                 </form>
-
-
+                
                 <form class="ficha-a__antecedentes__form">
 
                     <div class="ficha-a__medDrogas__form__item">
@@ -301,11 +297,8 @@
 
                 
                 <form class="ficha-a__antecedentes__form">
-
                     <div class="ficha-a__medDrogas__form__item">
-
-                        <label class="lista-interactiva__title">Medicamentos DURANTE el procedimiento</label>
-                                                
+                        <label class="lista-interactiva__title">Medicamentos DURANTE el procedimiento</label>                                                
                         <div class="ficha-a__medDrogas__form__item__input">
                             <label for="ninguna">Ninguno</label>
                             <input type="checkbox" name="grupo" id="signosning">                                    

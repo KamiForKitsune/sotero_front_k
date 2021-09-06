@@ -171,8 +171,7 @@
 
             <h2 class="ficha-a__title">Examen físico y hallazgos positivos</h2>
             <div class="ficha-a__antecedentes">
-                <form class="ficha-a__antecedentes__form">
-
+                <form class="info-personal__form">
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Cabeza y cuello</label>
                         <div class="lista-interactiva__select">                         
@@ -194,9 +193,7 @@
                             </select> 
                         </div>
                     </div>                    
-                </form>
-
-                <form class="ficha-a__antecedentes__form">
+               
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Abdomen</label>
                         <div class="lista-interactiva__select">                                 
@@ -206,8 +203,10 @@
                                 <option value="+">No Realiz.</option>
                             </select> 
                         </div>
-                    </div>
+                    </div>            
+                 </form>
 
+                <form class="info-personal__form">
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Extremidades</label>
                         <div class="lista-interactiva__select">                                
@@ -218,9 +217,7 @@
                             </select> 
                         </div>
                     </div>
-                </form>
-
-                <form class="ficha-a__antecedentes__form">
+               
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Genitales exter.</label>
                         <div class="lista-interactiva__select">
@@ -454,60 +451,98 @@
 
                 <form class="ficha-a__antecedentes__form">
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Pérdida vaginal de:</label>
-                        <div class="ficha-a__medDrogas__form__item__input">                            
-                            <label for="embarazoPrevNormales">Sin flujo</label>
-                            <input type="checkbox" name="rMedCronico" id="">                            
-                        </div> 
-                        
+                     	<label class="lista-interactiva__title">Pérdida vaginal de:</label>
                         <div class="ficha-a__medDrogas__form__item__input">
-                            <div class="lista-interactiva__select">
-                                <select id="patoFam">
-                                    <option value="Líquido Amniótico">Líquido Amniótico</option>
-                                    <option value="Tapón mucoso">Tapón mucoso</option>    
-                                    <option value="Leucorrea">Leucorrea</option>  
-                                    <option value="Sangre escasa">Sangre escasa</option>
-                                    <option value="Sangre moderada">Sangre moderada</option> 
-                                    <option value="Sangre abundante">Sangre abundante</option>
-                                    <option value="Flujo turbio/purulento">Flujo turbio/purulento</option>
-                                    <option value="Otro">Otro</option>
-                                </select> 
-                                <button class="btn btn-azul btn-añadir-a-lista">+</button> 
-                                <ul class="lista-interactiva__lista"></ul> 
-                            </div>
-                        </div>                                     
+                            <label for="rMedCronico">Sin flujo</label>
+                            <input type="checkbox" name="rMedCronico" id="">
+                        </div>
+                        <div class="lista-interactiva__select"> 
+                            <select id="patoFam">                                
+                                <option value="Líquido Amniótico">Líquido Amniótico</option>
+                                <option value="Tapón mucoso">Tapón mucoso</option>    
+                                <option value="Leucorrea">Leucorrea</option>  
+                                <option value="Sangre escasa">Sangre escasa</option>
+                                <option value="Sangre moderada">Sangre moderada</option> 
+                                <option value="Sangre abundante">Sangre abundante</option>
+                                <option value="Flujo turbio/purulento">Flujo turbio/purulento</option>
+                                <option value="Otro">Otro</option>                                
+                            </select> 
+                            <button class="btn btn-azul btn-añadir-a-lista">+</button> 
+                            <ul class="lista-interactiva__lista"></ul> 
+                        </div>
+                    </div>  
+
+                    <div class="ficha-a__medDrogas__form__item">
+                     	<label class="lista-interactiva__title">Aspecto L. Amn. R.P.O.</label>
+                        <div class="ficha-a__medDrogas__form__item__input">
+                            <label for="rMedCronico">Ausente</label>
+                            <input type="checkbox" name="rMedCronico" id="">
+                        </div>
+                        <div class="lista-interactiva__select"> 
+                            <select id="patoFam">                                
+                                <option value="Líquido Amniótico">Claro</option>
+                                <option value="Tapón mucoso">Meconio fluído</option>    
+                                <option value="Meconio espeso">Meconio espeso</option>  
+                                <option value="Sangre fresca">Sangre fresca</option>
+                                <option value="Sangre antigua">Sangre antigua</option> 
+                                <option value="Turbio">Turbio</option>
+                                <option value="Purulento">Purulento</option>
+                                <option value="Otro">Otro</option>                             
+                            </select> 
+                            <button class="btn btn-azul btn-añadir-a-lista">+</button> 
+                            <ul class="lista-interactiva__lista"></ul> 
+                        </div>
+                    </div>                    
+                </form> 
+
+                <form class="ficha-a__antecedentes__form">
+                    <div class="ficha-a__medDrogas__form__item">
+                        <label class="lista-interactiva__title">Tipo de leucorrea</label>
+                        <div class="lista-interactiva__select">
+                            <select id="patoFam">
+                                <option value="">Vaginosis bacteriana</option>
+                                <option value="">Tricornoniasis</option>
+                                <option value="">Micosis vaginal</option>
+                            </select> 
+                        </div>                    
                     </div>
 
-                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Aspecto L. Amn. R.P.O.</label>
-                        <div class="ficha-a__medDrogas__form__item__input">                            
-                            <label for="embarazoPrevNormales">Ausente</label>
-                            <input type="checkbox" name="rMedCronico" id="">                            
-                        </div> 
-                        
-                        <div class="ficha-a__medDrogas__form__item__input">
-                            <div class="lista-interactiva__select">
-                                <select id="patoFam">
-                                    <option value="Líquido Amniótico">Claro</option>
-                                    <option value="Tapón mucoso">Meconio fluído</option>    
-                                    <option value="Meconio espeso">Meconio espeso</option>  
-                                    <option value="Sangre fresca">Sangre fresca</option>
-                                    <option value="Sangre antigua">Sangre antigua</option> 
-                                    <option value="Turbio">Turbio</option>
-                                    <option value="Purulento">Purulento</option>
-                                    <option value="Otro">Otro</option>
-                                </select> 
-                                <button class="btn btn-azul btn-añadir-a-lista">+</button> 
-                                <ul class="lista-interactiva__lista"></ul> 
-                            </div>
-                        </div>                                     
+                    <div class="ficha-a__medDrogas__form__item">
+                        <label class="lista-interactiva__title">Cristalización</label>
+                        <div class="lista-interactiva__select">
+                            <select id="patoFam">
+                                <option value="">Negativa</option>
+                                <option value="">Positiva</option>
+                                <option value="">No realizada</option>                               
+                            </select> 
+                        </div>                    
                     </div>
-                </form> 
+                </form>  
+
+                <form class="ficha-a__antecedentes__form">
+                    <div class="ficha-a__medDrogas__form__item">
+                        <label class="lista-interactiva__title">pH vahinal</label>
+                         <div class="lista-interactiva__select"> 
+                            <input type="number" name="number" id="number"> 
+                        </div>                    
+                    </div>
+
+                    <div class="ficha-a__medDrogas__form__item">
+                        <label class="lista-interactiva__title">KOH vaginal</label>
+                        <div class="lista-interactiva__select">
+                            <select id="patoFam">
+                                <option value="">Negativa</option>
+                                <option value="">Positiva</option>
+                                <option value="">No realizado</option>                               
+                            </select> 
+                        </div>                    
+                    </div>
+                </form>  
             </div>
 
             <h2 class="ficha-a__title">Ecografia al ingreso</h2>
-            <div class="ficha-a__antecedentes">  
-                <form class="ficha-a__antecedentes__form"> 
+            <div class="ficha-a__antecedentes"> 
+                <form class="info-personal__form">
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Presentación:</label>
                         <div class="lista-interactiva__select">
@@ -553,7 +588,8 @@
                         </div>                    
                     </div>
                 </form>
-                <form class="ficha-a__antecedentes__form">
+
+                <form class="info-personal__form">
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Indice Líquido Amniotico (cms.)</label>
                         <div class="lista-interactiva__select">
@@ -566,9 +602,7 @@
                         <div class="lista-interactiva__select">
                             <input type="number" name="embarazoPrevNormales" id="">
                         </div>                    
-                    </div>
-
-                    
+                    </div>                    
 
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Funnel</label>
@@ -577,51 +611,30 @@
                             <input type="radio" name="embarazoPrevNormales" id="">
                         </div>
                         <div class="ficha-a__medDrogas__form__item__input" id="No">
-                            <label for="embarazoPrevNormales">Si &#60 1cm.</label>
-                            <input type="radio" name="embarazoPrevNormales" id="">
-                        </div>
-                        <div class="ficha-a__medDrogas__form__item__input" id="Dudoso">
-                            <label for="embarazoPrevNormales">Si > 1cm.</label>
-                            <input type="radio" name="embarazoPrevNormales" id="">
-                        </div>
+                            <label for="embarazoPrevNormales">Tamaño</label>
+                            <input type="number" name="embarazoPrevNormales" id="" step="0.01">
+                        </div>                        
                     </div>
                 </form>
-                <form class="ficha-a__antecedentes__form">
+                
+                <form class="info-personal__form">
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Est. Peso fetal (grs.)</label>
+                        <label class="lista-interactiva__title">Estado de Peso fetal (grs.)</label>
                         <div class="lista-interactiva__select">
                             <input type="number" name="embarazoPrevNormales" id="">
-                        </div>                    
-                    </div>
-
-                    <div class="ficha-a__medDrogas__form__item">
+                        </div>                
                         <label class="lista-interactiva__title">PBF</label>
                         <div class="lista-interactiva__select">
                             <input type="number" name="embarazoPrevNormales" id=""><p>/8</p>
-                        </div>                    
-                    </div>
-                </form>
-
-                <form class="ficha-a__antecedentes__form">
-                    <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Est. Peso fetal (grs.)</label>
-                        <div class="lista-interactiva__select">
-                            <input type="number" name="embarazoPrevNormales" id="">
-                        </div>                    
-                    </div>
-
-                    <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">PBF</label>
-                        <div class="lista-interactiva__select">
-                            <input type="number" name="embarazoPrevNormales" id=""><p>/8</p>
-                        </div>                    
-                    </div>
-                </form>
+                        </div>                          
+                    </div>   
+                </form>                  
             </div>
 
-            <h2 class="ficha-a__title">Edad gestacional</h2>
-            <div class="ficha-a__antecedentes">
-                <form class="ficha-a__antecedentes__form">
+            
+            <h2 class="info-personal__title">Edad gestacional</h2>
+            <div class="info-personal">
+                <form class="info-personal__form">          
                     <div class="lista-interactiva__select">                    
                         <p>Semanas</p>
                         <input type="number" name="embarazoPrevNormales" id="">
@@ -638,25 +651,24 @@
             </div>
 
             <h2 class="ficha-a__title">Diagnosticos al ingreso</h2>
-            <div class="ficha-a__antecedentes">
-                <form class="ficha-a__antecedentes__form">
+            <div class="info-personales">            
+                <form class="info-personal__form">
                     <div class="lista-interactiva__select"> 
-                        <input type="text" name="embarazoPrevNormales" id="">
-                    </div>
-                    <div class="lista-interactiva__select">                       
-                        <input type="text" name="embarazoPrevNormales" id="">
-                    </div>
-                    <div class="lista-interactiva__select">                        
-                        <input type="text" name="embarazoPrevNormales" id="">
+                        <select id="patoFam">                                
+                            <option value="Líquido Amniótico">Diagnosticos</option>
+                            <option value="Líquido Amniótico">Diagnosticos</option>                    
+                        </select> 
+                        <button class="btn btn-azul btn-añadir-a-lista">+</button> 
+                        <ul class="lista-interactiva__lista"></ul> 
                     </div>
                 </form>
             </div>
 
             <h2 class="ficha-a__title">Indicaciones y comentarios</h2>
             <div class="ficha-a__antecedentes">                        
-                <form class="ficha-a__antecedentes__form"> 
+                <form class="info-personal"> 
                     <div class="lista-interactiva__select">                    
-                        <textarea name="comentPreparto" rows="15" cols="90"></textarea>
+                        <textarea name="comentPreparto" rows="8" cols="100"></textarea>
                     </div>
                 </form>
             </div>  
