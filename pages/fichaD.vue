@@ -270,7 +270,9 @@
 
                         <span class="info-personal__form__itemD">
                             <label for="edGest">Resumen Evolución</label>
-                            <textarea type="text" name="edGest" id="edGest" rows="10"></textarea>
+                            <v-card class="b" elevation="0">
+                            <textarea type="text" name="edGest" id="edGest" rows="7" cols="45"></textarea>
+                            </v-card>
                         </span>
 
                     </div>
@@ -496,17 +498,14 @@
             </div>
 
             <!-- indicaciones -->
-            <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico D" id="embarazo-ectopico">
-                <span class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__title">Indicaciones</span>
-
-                <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__seccion-input D">
-
-                    <div class="ficha-a__antecedentes-obstetricos__form__item__textarea">
-                        <textarea name="indicaciones" id="" rows="5" cols="50"></textarea>
+            <h2 class="ficha-a__title">Indicaciones</h2>
+            <div class="ficha-a__antecedentes">                        
+                <form class="info-personal"> 
+                    <div class="lista-interactiva__select">                    
+                        <textarea name="comentPreparto" rows="8" cols="100"></textarea>
                     </div>
-
-                </div>
-            </div>
+                </form>
+            </div>  
 
             <!--Diagnostico-->
             <div class="ficha-a__antecedentes-embarazo-actual">
@@ -551,10 +550,3 @@
     </v-app>
 </template>
 
-<style>
-
-</style>
-
-<script>
-
-</script>

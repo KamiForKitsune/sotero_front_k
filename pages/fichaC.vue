@@ -26,7 +26,7 @@
                 <!--PrimerNombreApellidoPaternoMaterno-->
 
                 <span class="info-personal__form__item">
-                    <label for="pNombre">Primer nombre</label>
+                    <label for="pNombre">Nombres</label>
                     <input type="text" name="pNombre" id="pNombre">
                 </span>
                 <span class="info-personal__form__item">
@@ -44,19 +44,16 @@
             <h2 class="ficha-a__title">Procedimiento</h2>
             <div class="ficha-a__antecedentes">
                 <form class="ficha-a__antecedentes__form">
-                   
-                    <div class="ficha-a__medDrogas__form__item__input">
-                        <label for="">Gemelar (A, B, etc)</label>
-                        <input type="text" name="" id="Mejorar">
-                    </div>
-
-                    <div class="ficha-a__medDrogas__form__item__input">
-                        <label for="">Ed. Gest (sem/dias) </label>
-                        <input type="text" name="" id="Mejorar">
+                    <div class="ficha-a__medDrogas__form__item">
+                        <label class="lista-interactiva__title">Gemelar (A, B, etc)</label>
+                        <div class="lista-interactiva__select">                            
+                             <input type="text" name="rTrans" id="sitransplac">
+                        </div>
+                        <label class="lista-interactiva__title">Ed. Gest (semanas/días)</label>
+                        <div class="lista-interactiva__select">                       
+                             <input type="text" name="rTrans" id="sitransplac">
+                        </div>                        
                     </div>    
-                </form>
-                
-                <form class="ficha-a__antecedentes__form">
 
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Procedimiento</label>                        
@@ -74,8 +71,11 @@
                             <ul class="lista-interactiva__lista">                           
                             </ul>
                         </div>  
-                    </div>     
+                    </div>
+                </form>
 
+                
+                <form class="ficha-a__antecedentes__form">
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Transplac.</label>
                         <div class="ficha-a__medDrogas__form__item__input">
@@ -91,17 +91,14 @@
                         <div class="lista-interactiva__select">
                             <input type="number" name="" id="sitransplac">
                         </div>
-                    </div>                                               
-                </form>
+                    </div>   
 
-                <form class="ficha-a__antecedentes__form">
-                    
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Aspecto del L. amniótico</label>
                         <div class="lista-interactiva__select">
                             <div class="ficha-a__medDrogas__form__item__input">
                                 <label for="rMedCronico">No se obtiene</label>
-                                <input type="radio" name="No" id="">
+                                <input type="checkbox" name="No" id="">
                             </div>
                         </div>
 
@@ -121,138 +118,93 @@
                             <button class="btn btn-azul btn-añadir-a-lista">+</button>
                             <ul class="lista-interactiva__lista"></ul>
                         </div>
-                    </div>
-
-                    <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Membranas</label>
-                        <div class="lista-interactiva__select">
-                            <div class="ficha-a__medDrogas__form__item__input">
-                                <label for="rMembrana">Intactas</label>
-                                <input type="radio" name="eMembrana" id="">
-
-                                <label for="rMembrana">Prominentes</label>
-                                <input type="radio" name="eMembrana" id="">
-
-                                <label for="rMembrana">Rotas</label>
-                                <input type="radio" name="eMembrana" id="">
-
-                                <label for="rMembrana">Dudoso</label>
-                                <input type="radio" name="eMembrana" id="">
-                            </div>
-                        </div>
-                    </div>
-
+                    </div>                                            
                 </form>
 
                 <form class="ficha-a__antecedentes__form">
-
-                    <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico" id="embarazo-ectopico">
-                        <span class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__title">Trabajo de parto</span>
-
-                        <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__seccion-input">
-
-                            <div class="ficha-a__medDrogas__form__item">
-                              
-                                <div class="ficha-a__medDrogas__form__item__input" id="embP">
-                                    <label for="embarazoPrevNormales">Si</label>
-                                    <input type="radio" name="embarazoPrevNormales" value="Si" id="ePrevC">
-                                </div>
-                                <div class="ficha-a__medDrogas__form__item__input" id="embP">
-                                    <label for="embarazoPrevNormales">No</label>
-                                    <input type="radio" name="embarazoPrevNormales" value="No" id="ePrevC">
-                                </div>
-                                <div class="ficha-a__medDrogas__form__item__input" id="embP">
-                                    <label for="embarazoPrevNormales">Dudoso</label>
-                                    <input type="radio" name="embarazoPrevNormales" value="Dudoso" id="ePrevC">
-                                </div>
-
-                            </div>                          
-                        </div>
-                       
-                        <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico--seccion-opcional" id="proocultosEE">
-                            
-                            <div class="ficha-a__medDrogas__form__item">
-
-                                <span class="info-personal__form__item">
-                                    <label for="fechingre">Contrac. en 10 min.</label>
-                                    <input type="number" name="fechingre" id="fechingre">
-                                </span>
-                                  
-                                <span class="info-personal__form__item">
-                                    <label for="fechingre">Borrado (%)</label>
-                                    <input type="number" name="fechingre" id="fechingre">
-                                </span>
-                               
-                                <span class="info-personal__form__item">
-                                    <label for="fechingre">Dilat. cerv. (cms)</label>
-                                    <input type="number" name="fechingre" id="fechingre">
-                                </span>                            
+                    <div class="ficha-a__medDrogas__form__item">
+                        <label class="lista-interactiva__title">Membranas</label>
+                        <div class="lista-interactiva__select">
+                            <div class="lista-interactiva__select">
+                                <select id="patoFam">
+                                    <option value="">Intactas</option>
+                                    <option value="">Prominentes</option>
+                                    <option value="">Rotas</option>  
+                                    <option value="">Dudoso</option>                                
+                                </select>                            
                             </div>
                         </div>
+                    </div>
 
-                    </div> 
+                    <div class="ficha-a__medDrogas__form__item">
+                        <label class="lista-interactiva__title">Trabajo de parto</label>
+                        <div class="lista-interactiva__select">
+                            <div class="lista-interactiva__select">
+                            <select id="patoFam">
+                                <option value="">Si</option>
+                                <option value="">No</option>
+                                <option value="">Dudoso</option>                                
+                            </select>                            
+                        </div>
+                    </div>
 
+                        <span class="info-personal__form__item">
+                            <label for="fechingre">Contrac. en 10 min.</label>
+                            <input type="number" name="fechingre" id="fechingre">
+                        </span>
+                                  
+                        <span class="info-personal__form__item">
+                            <label for="fechingre">Borrado (%)</label>
+                            <input type="number" name="fechingre" id="fechingre">
+                        </span>
+                               
+                        <span class="info-personal__form__item">
+                            <label for="fechingre">Dilat. cerv. (cms)</label>
+                            <input type="number" name="fechingre" id="fechingre">
+                        </span>     
+                    </div>
                 </form> 
             </div>
 
-            <h2 class="ficha-a__title ha">Condiciones durante el procedimiento</h2>            
-            <div class="ficha-a__antecedentes">
-               
-             
-                <p class="ficha-a__title hi">Ingrese el valor más cercano al momento del procedimiento</p>
-
+            <h2 class="ficha-a__title ha" data-tooltip="Ingrese el valor más cercano al momento del procedimiento">Condiciones durante el procedimiento</h2>            
+            <div class="ficha-a__antecedentes" >
+                           
                 <form class="ficha-a__antecedentes__form">
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Perfil biofísico</label>
 
-                        <div class="texto">
-                            <label class="movr">No realizado</label>
-                            <input type="radio" name="pcorres" id="norealizado"> 
-                        </div> 
+                         <div class="ficha-a__medDrogas__form__item__input">
+                            <label for="ninguna">No realizado</label>
+                            <input type="checkbox" name="grupo" id="signosning">                                    
+                        </div>
 
                         <label class="lista-interactiva__title"></label>
-
                         <div class="texto">
-                            <label class="movr">Mov. resp</label>
-                            <input type="radio" name="movresp" id="psala" class=""> 
-                            <label class="radioperf">0</label>
-                            <input type="radio" name="movresp" id="ppensionado">
-                            <label class="">2</label>                            
+                            <label class="movr">Mov. resp</label>                            
+                            <input type="number" name="movresp" id="psala" class="a" min="0" max="2" step="1">
                         </div> 
 
                         <div class="texto">
-                            <label class="movf">Mov. fetal</label>
-                            <input type="radio" name="movfetal" id="psala" class="">                        
-                            <label class="radioperf">0</label>
-                            <input type="radio" name="movfetal" id="ppensionado">
-                            <label>2</label>
+                            <label class="movf">Mov. fetal</label>                                                
+                            <input type="number" name="movresp" id="psala" class="a" min="0" max="2" step="1">
                         </div>
 
                         <div class="texto">
                             <label class="tono">Tono</label>
-                            <input type="radio" name="tono" id="psala">                        
-                            <label class="radioperf">0</label>
-                            <input type="radio" name="tono" id="ppensionado">
-                            <label>2</label>
+                            <input type="number" name="movresp" id="psala" class="a" min="0" max="2" step="1"> 
                         </div>
 
                         <div class="texto">
                             <label class="lamn">L. Amniót</label>
-                            <input type="radio" name="lamn" id="psala">                        
-                            <label class="radioperf">0</label>
-                            <input type="radio" name="lamn" id="ppensionado">
-                            <label>2</label>
+                            <input type="number" name="movresp" id="psala" class="a" min="0" max="2" step="1">
                         </div>
 
                         <div class="texto">
                             <label class="rbne">R.B.N.E</label>
-                            <input type="radio" name="rbne" id="psala">                        
-                            <label class="radioperf">0</label>
-                            <input type="radio" name="rbne" id="ppensionado">
-                            <label>2</label>
+                            <input type="number" name="movresp" id="psala" class="a" min="0" max="2" step="1">
                         </div>        
 
-                        <label class="lista-interactiva__title">Indice L. Amniót</label>
+                        <label class="lista-interactiva__title">Indice líquido Amniótico</label>
                         <div class="lista-interactiva__select">
                             <input type="number" name="indlamn" id="edadgest" step="00.1">
                         </div>                
@@ -276,22 +228,17 @@
                                 <option value="Otro">Otro</option>                                 
                             </select>        
                             <button class="btn btn-azul btn-añadir-a-lista">+</button>   
-                            
-                            <ul class="lista-interactiva__lista">
-                           
-                            </ul>   
+                        </div>                      
 
-                            <label class="lista-interactiva__title">Temp. ax.</label>
-                            <div class="lista-interactiva__select">
-                                <input type="number" name="indlamn" id="edadgest" step="00.1">
-                            </div>
-
-                            <label class="lista-interactiva__title">Leucocitos maternos</label>
-                            <div class="lista-interactiva__select">
-                                <input type="number" name="indlamn" id="edadgest" step="00.01">
-                            </div>
-
+                        <label class="lista-interactiva__title">Temp. ax.</label>
+                        <div class="lista-interactiva__select">
+                            <input type="number" name="indlamn" id="edadgest" step="00.1">
                         </div>
+
+                        <label class="lista-interactiva__title">Leucocitos maternos</label>
+                        <div class="lista-interactiva__select">
+                            <input type="number" name="indlamn" id="edadgest" step="00.01">
+                        </div>                       
                     </div>
                 </form>
 
@@ -416,7 +363,12 @@
                                 <input type="number" name="indlamn" id="edadgest" step="00.001">
                             </div>
                         </div>
+                    </div>                   
+                </form>
 
+                <form class="ficha-a__antecedentes__form">
+
+                    <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Glucosa en L.A.</label>                                                
                         <div class="lista-interactiva__select">
                             <div class="lista-interactiva__select">
@@ -424,9 +376,6 @@
                             </div>
                         </div>
                     </div>
-                </form>
-
-                <form class="ficha-a__antecedentes__form">
 
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Cultivo aerob./anaerob.</label>
@@ -438,7 +387,9 @@
                             </select>      
                         </div>
                     </div>
+                </form>
 
+                <form class="ficha-a__antecedentes__form">
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Micopias /Uroplasma</label>
                         <div class="lista-interactiva__select">                            
@@ -460,36 +411,27 @@
                             </select>      
                         </div>
                     </div>
-                </form>
+                </form>              
 
-                <form class="ficha-a__antecedentes__form">
-                    <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Comentarios:</label>
-                        <div class="lista-interactiva__select">                                       
-                            <textarea name="comentPreparto" rows="10" cols="80" id="cexpanre" data="elementos"></textarea>
-                        </div>
+                <form class="info-personal">                     
+                    <div class="lista-interactiva__select"> 
+                        <textarea name="comentPreparto" rows="8" cols="100"></textarea>
                     </div>
-                </form>            
+                </form>          
             </div>
         
         
             <h2 class="ficha-a__title ha">Germenes</h2>            
-            <div class="ficha-a__antecedentes">
-                <form class="ficha-a__antecedentes__form">                    
-                    <div class="lista-interactiva__select">
-                        <label for="diagnostico">Germen 1</label>
-                        <input type="text" name="peridural" id="diagCesarea" data="elementos">                                
-                    </div>  
-
-                    <div class="lista-interactiva__select">
-                        <label for="diagnostico">Germen 2</label>
-                        <input type="text" name="peridural" id="diagCesarea" data="elementos">                                
-                    </div>   
-
-                    <div class="lista-interactiva__select">
-                        <label for="diagnostico">Otro germen</label>
-                        <input type="text" name="peridural" id="diagCesarea" data="elementos">                                
-                    </div>   
+            <div class="ficha-a__antecedentes">                                  
+                <form class="info-personal__form">
+                    <div class="lista-interactiva__select"> 
+                        <select id="patoFam">                                
+                            <option value="Líquido Amniótico">Germen</option>
+                            <option value="Líquido Amniótico">Germen</option>                    
+                        </select> 
+                        <button class="btn btn-azul btn-añadir-a-lista">+</button> 
+                        <ul class="lista-interactiva__lista"></ul> 
+                    </div>                
                 </form>
             </div>
 
@@ -497,80 +439,84 @@
             <div class="ficha-a__antecedentes" id="proocultosF">
                 <h2 class="ficha-a__title ha">Resultados en sangre fetal</h2>
 
-                <form class="ficha-a__antecedentes__form">                    
+                <form class="info-personal__form">                    
                     <div class="ficha-a__medDrogas__form__item">                        
                         <label class="lista-interactiva__title">pH</label>                       
-                        <div class="ficha-a__medDrogas__form__item__input">                        
+                        <div class="lista-interactiva__select">                        
                             <input type="number" step="0.01" class="form-control" />
                         </div>
                     </div>
 
                     <div class="ficha-a__medDrogas__form__item">                        
                         <label class="lista-interactiva__title">pO2</label>                       
-                        <div class="ficha-a__medDrogas__form__item__input">                        
+                        <div class="lista-interactiva__select">                        
                             <input type="number" class="form-control" />
                         </div>
                     </div>
 
                     <div class="ficha-a__medDrogas__form__item">                        
                         <label class="lista-interactiva__title">pCO2</label>                       
-                        <div class="ficha-a__medDrogas__form__item__input">                        
+                        <div class="lista-interactiva__select">                        
                             <input type="number" class="form-control" />
                         </div>
-                    </div>
-                
+                    </div>     
                 </form>
 
-                <form class="ficha-a__antecedentes__form">                    
+                <form class="info-personal__form">       
+
+                    <div class="ficha-a__medDrogas__form__item">
+                        <label class="lista-interactiva__title">Base Excess</label> 
+                        <div class="lista-interactiva__select">                                                    
+                           <input type="number" class="form-control" />
+                        </div>
+                    </div>              
+
                     <div class="ficha-a__medDrogas__form__item">                        
                         <label class="lista-interactiva__title">Hemoglobina</label>                       
-                        <div class="ficha-a__medDrogas__form__item__input">                        
+                        <div class="lista-interactiva__select">                        
                             <input type="number" step="0.01" class="form-control" />
                         </div>
                     </div>
 
                     <div class="ficha-a__medDrogas__form__item">                        
-                        <label class="lista-interactiva__title">Hcto. Pre</label>                       
-                        <div class="ficha-a__medDrogas__form__item__input">                        
-                            <input type="number" class="form-control" />
-                            <p class="porcentaje">%</p>
+                        <label class="lista-interactiva__title">Hcto. Pre (%)</label>                       
+                        <div class="lista-interactiva__select">                        
+                            <input type="number" class="form-control" />                            
                         </div>
-                    </div>
-
-                    <div class="ficha-a__medDrogas__form__item"> 
-                        <label class="lista-interactiva__title">Hcto. Post</label>                       
-                        <div class="ficha-a__medDrogas__form__item__input">                        
-                            <input type="number" class="form-control" />
-                            <p class="porcentaje">%</p>
-                        </div>
-                    </div>            
+                    </div>                           
                 </form>
 
-                <form class="ficha-a__antecedentes__form">                    
+                <form class="info-personal__form"> 
+                    <div class="ficha-a__medDrogas__form__item">                     
+                        <label class="lista-interactiva__title">Hcto. Post (%)</label>                       
+                        <div class="lista-interactiva__select">                        
+                            <input type="number" class="form-control" />
+                        </div>
+                    </div>    
+
                     <div class="ficha-a__medDrogas__form__item">                        
                         <label class="lista-interactiva__title">Eritrocitos</label>                       
-                        <div class="ficha-a__medDrogas__form__item__input">                        
+                        <div class="lista-interactiva__select">                        
                             <input type="number" step="1000" class="form-control" />
                         </div>
                     </div>
 
                     <div class="ficha-a__medDrogas__form__item">                        
                         <label class="lista-interactiva__title">Leucocitos</label>                       
-                        <div class="ficha-a__medDrogas__form__item__input">                        
+                        <div class="lista-interactiva__select">                        
                             <input type="number" step="100" class="form-control" />
                         </div>
-                    </div>
-
-                    <div class="ficha-a__medDrogas__form__item"> 
-                        <label class="lista-interactiva__title">Plaquetas</label>                       
-                        <div class="ficha-a__medDrogas__form__item__input">                        
-                            <input type="number" step="1000" class="form-control" />
-                        </div>
-                    </div>
+                    </div>                    
                 </form>    
 
          
-                <form class="ficha-a__antecedentes__form color">
+                <form class="info-personal__form">
+                    <div class="ficha-a__medDrogas__form__item"> 
+                        <label class="lista-interactiva__title">Plaquetas</label>                       
+                        <div class="lista-interactiva__select">                        
+                            <input type="number" step="1000" class="form-control" />
+                        </div>
+                    </div>
 
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Grupo</label> 
@@ -596,43 +542,39 @@
                                 <option value="No realizado">Desconoce</option>                                  
                             </select>     
                         </div>
-                    </div> 
-
-                    <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Vol. transf.</label>
-                        <div class="lista-interactiva__select">                        
-                            <input type="number" name="volTransf" id="volTransf">
-                        </div>
-                    </div>
-
+                    </div>     
                 </form>
 
+                <form class="info-personal__form"> 
+                    <div class="ficha-a__medDrogas__form__item">                     
+                        <label class="lista-interactiva__title">Volumen de trasnferencia</label>                       
+                        <div class="lista-interactiva__select">                        
+                            <input type="number" class="form-control" />
+                        </div>
+                    </div>    
+
+                    <div class="ficha-a__medDrogas__form__item">                        
+                        <label class="lista-interactiva__title">Hcto. bolsa (%)</label>                       
+                        <div class="lista-interactiva__select">                        
+                            <input type="number" step="1000" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="ficha-a__medDrogas__form__item">                        
+                        <label class="lista-interactiva__title">KB</label>                       
+                        <div class="lista-interactiva__select">                        
+                            <input type="number" step="100" class="form-control" />
+                        </div>
+                    </div>                    
+                </form> 
+
                 <form class="ficha-a__antecedentes__form">
-
-                    <div class="ficha-a__medDrogas__form__item">
-                    <label class="lista-interactiva__title">Hcto. Bolsa (%)</label>
-                        <div class="lista-interactiva__select">                                        
-                            <input type="number" name="hctoBolsa" id="hctoBolsa"> 
-                        </div>
-                    </div>
-
-                    <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">KB</label>
-                        <div class="lista-interactiva__select">
-                            <input type="number" name="kb" id="kb">
-                        </div>
-                    </div>
-
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Cariotipo</label>
                         <div class="lista-interactiva__select">
                             <input type="text" name="cariotipo" id="cariotipo">   
                         </div> 
                     </div>
-
-                </form>
-
-                <form class="ficha-a__antecedentes__form">
                     
                     <div class="ficha-a__medDrogas__form__item">
                                 
@@ -643,12 +585,11 @@
                                 <option value="Positivo">Positivo</option>  
                                 <option value="No realizado">No realizado</option>                                
                             </select>                           
-                        </div>                    
-
+                        </div>  
                     </div>  
                 </form>
-            </div>
-       
+
+            </div>       
         </div>
 
         <div class="ficha-a__seccion-btn-global">

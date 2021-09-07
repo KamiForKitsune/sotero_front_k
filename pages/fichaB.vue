@@ -676,8 +676,7 @@
             <h2 class="ficha-a__title">Destino al ingreso</h2>
             <div class="ficha-a__antecedentes">                        
                 <form class="ficha-a__antecedentes__form"> 
-                    <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Destino al ingreso</label>
+                    
                         <div class="lista-interactiva__select">
                             <select id="patoFam">
                                 <option value="Embarazo Patológico">Embarazo Patológico</option>
@@ -690,7 +689,7 @@
                             <button class="btn btn-azul btn-añadir-a-lista">+</button> 
                             <ul class="lista-interactiva__lista"></ul> 
                         </div>
-                    </div> 
+                   
                 </form>
             </div> 
 

@@ -1250,6 +1250,13 @@ textarea{
     opacity: 1;
 }
 
+.a{
+    float: right;
+}
+
+.b{
+    padding: 10px 10px 10px 10px;
+}
 
 </style>
 
