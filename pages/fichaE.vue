@@ -9,15 +9,13 @@
                 <form class="info-personal__form">            
                 
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Paciente correspondiente a:</label>
-                        <div class="ficha-a__medDrogas__form__item__input">
-                            <label>Sala</label>
-                            <input type="radio" name="pcorres" id="psala"> 
-                        </div>                            
-                        <div class="ficha-a__medDrogas__form__item__input">
-                            <label>Pensionado</label>
-                            <input type="radio" name="pcorres" id="ppensionado">
-                        </div> 
+                        <label class="lista-interactiva__title">Paciente correspondiente a:</label>                        
+                        <div class="lista-interactiva__select"> 
+                            <select name="lugarparto" id="lugarparto">
+                                <option value="Sótero del Río">Sala</option>
+                                <option value="Padre Hurtado">Pensionado</option>           
+                            </select>                           
+                        </div>  
                     </div> 
 
                     <div class="ficha-a__medDrogas__form__item">
@@ -38,61 +36,62 @@
                 <form class="info-personal__form">
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Ingresa desde:</label>
-                        <div class="ficha-a__medDrogas__form__item__input">
-                            <label>Urgencia</label>
-                            <input type="radio" name="ingresa" id="iurgencia"> 
-                        </div>                            
-                        <div class="ficha-a__medDrogas__form__item__input">
-                            <label>Emb. Patológico</label>
-                            <input type="radio" name="ingresa" id="iembpatolog">
-                        </div> 
-                        <div class="ficha-a__medDrogas__form__item__input">
-                            <label>Aislamiento</label>
-                            <input type="radio" name="ingresa" id="iaislamiento">
+                        <div class="lista-interactiva__select"> 
+                            <select name="lugarparto" id="lugarparto">
+                                <option value="Sótero del Río">Urgencia</option>
+                                <option value="Padre Hurtado">Emb. Patológico</option>   
+                                <option value="Padre Hurtado">Aislamiento</option>          
+                            </select>                           
                         </div>
-                    </div>                            
+                    </div>        
+
+                    <div class="ficha-a__medDrogas__form__item">
+                        
+                    <span class="ficha-a__medDrogas__form__item__input">
+                    	<label for="rut-madre">Fecha Proceso</label>
+                    	<input type="date" name="rut-madre" id="rut">
+                	</span>
+
+                	<span class="ficha-a__medDrogas__form__item__input">
+                    	<label for="rut-madre">Rut de la madre</label>
+                    	<input type="text" name="rut-madre" id="rut">
+                	</span>
+
+                	<span class="ficha-a__medDrogas__form__item__input">
+                    	<label for="rut-madre">Primer nombre</label>
+                    	<input type="text" name="rut-madre" id="rut">
+                	</span>
+
+                	<span class="ficha-a__medDrogas__form__item__input">
+                    	<label for="rut-madre">Segundo nombre</label>
+                    	<input type="text" name="rut-madre" id="rut">
+                	</span>
+
+                	<span class="ficha-a__medDrogas__form__item__input">
+                    	<label for="rut-madre">Apellido paterno</label>
+                    	<input type="text" name="rut-madre" id="rut">
+                	</span>
+
+                	<span class="ficha-a__medDrogas__form__item__input">
+                    	<label for="rut-madre">Apellido Materno</label>
+                    	<input type="text" name="rut-madre" id="rut">
+                	</span>
+            	    </div>                    
                 </form>
 
-                <form class="info-personal__form">
-                        
-                <!--  FechaProcesoRutDeLaMadre-->
-                    <span class="info-personal__form__item">
-                        <label>Fecha proceso</label>
-                        <input type="date" name="fechingre" id="fechingre">
-                    </span>
-                    <span class="info-personal__form__item">
-                        <label>Rut de la Madre</label>
-                        <input type="text" name="rut-madre" id="rut">
-                    </span>    
-
-                <!--PrimerNombreApellidoPaternoMaterno-->
-                    <span class="info-personal__form__item">
-                        <label>Primer nombre</label>
-                        <input type="text" name="pNombre" id="pNombre">
-                    </span>
-                    <span class="info-personal__form__item">
-                        <label>Apellido Paterno</label>
-                        <input type="text" name="aPaterno" id="aPaterno">
-                    </span>
-                    <span class="info-personal__form__item">
-                        <label>Apellido Materno</label>
-                        <input type="text" name="aMaterno" id="aMaterno">
-                    </span>
-                </form>            
-            </div> 
+            </div>  
 
 
             <div class="ficha-a"> 
 
                 <h2 class="ficha-a__title">Trabajo de parto</h2>
                 <div class="ficha-a__antecedentes">
-                    <form class="ficha-a__antecedentes__form">
-                    
+                    <form class="info-personal__form">                    
                         <!--NumeroDeFetos-->
                         <div class="ficha-a__medDrogas__form__item">   
                             <label class="lista-interactiva__title">N° de fetos</label>
                             <div class="lista-interactiva__select">
-                                <input type="number" name="nro-fetos" id="nfetos">
+                                <input type="number" name="nro-fetos" id="nfetos" min="0" step="1">
                             </div>                        
                         </div>
 
@@ -100,20 +99,16 @@
                         <div class="ficha-a__medDrogas__form__item">
                             <label class="lista-interactiva__title">Edad Gestacional obtétrica al parto</label>
                             <div class="lista-interactiva__select">
-                                <input type="number" name="edadgestacionalObstretica" id="edadgest">
+                                <input type="number" name="edadgestacionalObstretica" id="edadgest" min="0" step="1">
                             </div>
-                        </div>                                       
-                        
-                        
-                    </form>
-                
-                    <form class="ficha-a__antecedentes__form">
+                        </div>       
+
                         <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Trabajo de parto</label>
 
                             <!--EdadGestacionalObtetricaAlParto-->  
-                            <div class="ficha-a__medDrogas__form__item__input">
-                                <label>Sin t. de parto</label>  
+                            <div class="ficha-a__medDrogas__form__item__input" >
+                                <label data-tooltip="Si la paciente regresa a su unidad sin parto, no llene el resto.Solo ingrese Destino de la paciente">Sin trabajo de parto</label>  
                                 <input type="checkbox" name="sinTDeParto" id="rb-sintparto" class="rb-sintparto">                                    
                             </div>
 
@@ -126,10 +121,16 @@
                                     <option value="Acelerado">Acelerado</option>                                                                           
                                 </select>                            
                             </div>                 
-                        </div>
+                        </div>                                
+                        
+                        
+                    </form>
+                
+                    <form class="ficha-a__antecedentes__form">
+                        
 
                         <div class="ficha-a__medDrogas__form__item oculED">
-                            <label class="lista-interactiva__title">Complicaciones del T. de parto</label>
+                            <label class="lista-interactiva__title">Complicaciones del trabajo de parto</label>
                             
                             <!--NingunaComplicacionTrabajoDeParto--> 
                             <div class="ficha-a__medDrogas__form__item__input">
@@ -153,26 +154,21 @@
                                 </select>        
                                 <button class="btn btn-azul btn-añadir-a-lista">+</button>     
                                 <ul class="lista-interactiva__lista"></ul>                                                   
-                            </div>
-                            
+                            </div>                            
                         </div>
-                    </form>
 
-                    <form class="ficha-a__antecedentes__form oculEF">
-                    
                         <div class="ficha-a__medDrogas__form__item">   
                             <label class="lista-interactiva__title">Número de Tactos</label>
                             <div class="lista-interactiva__select">                                
                                 <input type="number" name="nrotactos" id="ntactos" data="elementos">
                             </div>                        
                         </div> 
-                        
-                    </form>
+                    </form>                  
 
                     <form class="ficha-a__antecedentes__form oculEF">
 
                         <div class="ficha-a__medDrogas__form__item">
-                            <label class="lista-interactiva__title">Complicaciones del T. de parto</label>
+                            <label class="lista-interactiva__title">Complicaciones del trabajo de parto</label>
                             <label for="DCalMdeRealizarlo">Dilatación cervical (cms.) al momento de realizar</label>
                             <div class="ficha-a__medDrogas__form__item__input">
                                 <label>R.A.M</label>
@@ -253,30 +249,26 @@
 
                     <form class="ficha-a__antecedentes__form">
                         <div class="ficha-a__medDrogas__form__item">
-                            <label class="lista-interactiva__title">Códigos diagnóstico</label>
                             <p>Diagnóstico de interrupción, señale el más importante en primer lugar (ver hoja de Códigos)</p>
-                            <div class="lista-interactiva__select">
-                                <label>Diagnóstico:</label>
-                                <input type="text" name="diagnostico1" id="diag1" data="elementos">                                
-                            </div>
-                            <div class="lista-interactiva__select">                                
-                                <label>Diagnóstico:</label>
-                                <input type="text" name="diagnostico2" id="diag2" data="elementos">                                 
-                            </div>  
-                            <div class="lista-interactiva__select">                                
-                                <label>Diagnóstico:</label>
-                                <input type="text" name="diagnostico3" id="diag3" data="elementos">                                 
-                            </div>                     
+                            <div class="lista-interactiva__select"> 
+                                <select name="pEnTrabajoDeParto" id="prtparto" data="elementos">
+                                    <option value="negativoIndicios">Diagnosticos</option>
+                                    <option value="mas">Diagnosticos</option>    
+                                    <option value="dosMas">Diagnosticos</option>                                     
+                                </select>
+                            </div>                    
                         </div>  
                     </form>
                     <form class="ficha-a__antecedentes__form">
                         <div class="ficha-a__medDrogas__form__item">
-                            <label class="lista-interactiva__title">Códigos diagnóstico</label>
                             <p>Causa de la cesárea (Razón, última que motivo la operación-ver códigos de cesáreas) </p>
-                            <div class="lista-interactiva__select">
-                                <label for="diagnostico">Diagnóstico:</label>
-                                <input type="text" name="peridural" id="diagCesarea" data="elementos">                                
-                            </div>               
+                            <div class="lista-interactiva__select"> 
+                                <select name="pEnTrabajoDeParto" id="prtparto" data="elementos">
+                                    <option value="negativoIndicios">Diagnosticos</option>
+                                    <option value="mas">Diagnosticos</option>    
+                                    <option value="dosMas">Diagnosticos</option>                                     
+                                </select>
+                            </div>                  
                         </div> 
                     </form>
 
@@ -288,7 +280,7 @@
                     <form class="ficha-a__antecedentes__form">
                     
                         <div class="ficha-a__medDrogas__form__item">
-                            <label class="lista-interactiva__title">Drogas usadas T. de Parto</label>
+                            <label class="lista-interactiva__title">Drogas usadas trabajo de Parto</label>
                             <div class="ficha-a__medDrogas__form__item__input"> 
                                 <label>Ninguna</label>
                                 <input type="checkbox" name="ninguna" id="ningundroga" data="elementos">  
@@ -333,10 +325,12 @@
             
                         
                 <h2 class="ficha-a__title oculEH">Comentarios del preparto</h2>
-                <div class="ficha-a__antecedentes">
-                    <div class="lista-interactiva__select">                    
-                        <textarea name="comentPreparto" rows="15" cols="90" id="cpreparto" data="elementos"></textarea>
-                    </div>         
+                <div class="ficha-a__antecedentes">                        
+                    <form class="info-personal"> 
+                        <div class="lista-interactiva__select">                    
+                            <textarea name="comentPreparto" rows="8" cols="100"></textarea>
+                        </div>
+                    </form>
                 </div>
                             
                 <h2 class="ficha-a__title oculEH">Expulsivo y alumbramiento</h2>
@@ -357,7 +351,7 @@
                         </div> 
 
                         <div class="ficha-a__medDrogas__form__item">
-                            <label class="lista-interactiva__title">Revisión instrum</label>
+                            <label class="lista-interactiva__title">Revisión instrumento</label>
                             <div class="ficha-a__medDrogas__form__item__input">
                                 <label>Si</label>
                                 <input type="radio" name="pcorres" id="sirevins" data="elementos"> 
@@ -466,10 +460,12 @@
 
                         
                 <h2 class="ficha-a__title oculEH">Comentarios del expulsivo, anestesia y recuperación</h2>
-                <div class="ficha-a__antecedentes oculED">
-                    <div class="lista-interactiva__select">                    
-                        <textarea name="comentPreparto" rows="15" cols="90" id="cexpanre" data="elementos"></textarea>
-                    </div>
+                <div class="ficha-a__antecedentes">                        
+                    <form class="info-personal"> 
+                        <div class="lista-interactiva__select">                    
+                            <textarea name="comentPreparto" rows="8" cols="100"></textarea>
+                        </div>
+                    </form>
                 </div>
             
 
@@ -487,14 +483,12 @@
                         <button class="btn btn-azul btn-añadir-a-lista">+</button>
                         <ul class="lista-interactiva__lista"></ul>
                     </div> 
-                </div>      
-
-                
-                <div class="ficha-a__seccion-btn-global">
-                    <div class="btn-ingresar-datos">Ingresar Datos</div>
                 </div>
             </div>
-            </div>
+        </div>
+        <div class="ficha-a__seccion-btn-global">
+            <div class="btn-ingresar-datos">Ingresar Datos</div>
+        </div>
         </v-card>
     </v-app>
 </template>    

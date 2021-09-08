@@ -5,36 +5,29 @@
         
         <div class="info-personal">
             <h2 class="info-personal__title">Identificación del recién nacido</h2>
-            <form class="ficha-a__antecedentes__form">
-                            
-                <!--Rut de la madre-->               
+            <form class="ficha-a__antecedentes__form">                 
+
                 <span class="info-personal__form__item">
-                    <label for="rut-madre">Rut de la Madre</label>
-                    <input type="text" name="rut-madre" id="rut">                    
+                    <label for="pNombre">Rut de la Madre</label>
+                    <input type="text" name="pNombre" id="pNombre">
                 </span>
-                <!--Generación de número-->
                 <span class="info-personal__form__item">
-                    <label for="rut-madre">Generar N°</label>
-                    <div class="ficha-a__medDrogas__form__item__input">                   
-                        <input type="number" id="" name="generarN">
-                    </div>
-                </span>                 
+                    <label for="aPaterno">Generar N°</label>
+                    <input type="number" name="aPaterno" id="aPaterno">
+                </span>            
                 
             </form>
             <!--Información del recien nacido-->
             <form class="info-personal__form">
-
-                <!--Apellido paterno del recien nacido-->
-               <span class="info-personal__form__item">
-                    <label for="aPaterno">Apellido Paterno del recién nacido</label>
-                    <input type="text" name="aPaterno" id="aPaterno">
-                </span>
-                <!--Apellido materno del recien nacido-->
+               
                 <span class="info-personal__form__item">
-                    <label for="aMaterno">Apellido Materno del recién nacido</label>
-                    <input type="text" name="aMaterno" id="aMaterno">
-                </span>            
-
+                    <label for="pNombre">Apellido Paterno del recién nacido</label>
+                    <input type="text" name="pNombre" id="pNombre">
+                </span>
+                <span class="info-personal__form__item">
+                    <label for="aPaterno">Apellido Materno del recién nacido</label>
+                    <input type="number" name="aPaterno" id="aPaterno">
+                </span>         
             </form>
         </div>    
     
@@ -69,8 +62,7 @@
             <h2 class="ficha-a__title">Evaluación del R.N.</h2>
             <div class="ficha-a__antecedentes">
 
-                <form class="ficha-a__antecedentes__form">                  
-                   
+                <form class="info-personal__form">
                     <div class="ficha-a__medDrogas__form__item"> 
                         <label class="lista-interactiva__title">Peso (grs.)</label>  
                         <div class="lista-interactiva__select">                        
@@ -95,8 +87,7 @@
                 </form>
 
 
-                <form class="ficha-a__antecedentes__form">                  
-                   
+                <form class="info-personal__form">  
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Sexo</label>
                         <div class="ficha-a__medDrogas__form__item__input">
@@ -112,7 +103,6 @@
                             <input type="radio" name="sexo" id="">
                         </div>
                     </div>
-
                     
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Apgar 1'</label>                       
@@ -162,7 +152,6 @@
                         </div> 
                     </div>
 
-
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Se transporta:</label>
                         <div class="ficha-a__medDrogas__form__item__input">
@@ -178,18 +167,14 @@
                             <label for="pensionado">con Vent. mecánica</label>
                             <input type="radio" name="reanimacion" id="">                             
                                                         
-                        </div>                        
+                        </div>                      
                     </div>
-
                 </form>
             </div>
 
-           
-
             <h2 class="ficha-a__title">Gases en sangre del R.N.</h2>
             <div class="ficha-a__antecedentes">
-
-                <form class="ficha-a__antecedentes__form"> 
+                <form class="info-personal__form"> 
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Gases en la sangre del R.N.</label>
                         <div class="ficha-a__medDrogas__form__item__input">
@@ -200,11 +185,7 @@
                             <label for="pensionado">No</label>
                             <input type="radio" name="sino" id="">
                         </div> 
-                    </div>                               
-                       
-                </form>
-
-                <form class="ficha-a__antecedentes__form">   
+                    </div>   
 
                     <div class="ficha-a__medDrogas__form__item">                        
                         <label class="lista-interactiva__title">Minutos posiparto</label>                       
@@ -218,8 +199,10 @@
                         <div class="ficha-a__medDrogas__form__item__input">                        
                             <input type="number" step="0.01" class="form-control" />
                         </div>
-                    </div> 
+                    </div>
+                </form>
 
+                <form class="ficha-a__antecedentes__form">                       
                     <div class="ficha-a__medDrogas__form__item">                        
                         <label class="lista-interactiva__title">pCO2</label>                       
                         <div class="ficha-a__medDrogas__form__item__input">                        
