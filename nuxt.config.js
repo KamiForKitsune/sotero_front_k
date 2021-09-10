@@ -38,36 +38,37 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // '@nuxtjs/axios',
-    // '@nuxtjs/auth-next'
+    '@nuxtjs/axios',
+    '@nuxtjs/auth',
   ],
-  // auth:{
-  //   redirect:{
-  //     login:'/login',
-  //     logout:'/login',
-  //     home: '/'
-  //   },
-  //   strategies: {
-  //     local: {
-  //       endpoints: {
-  //         login: { url: '/api/auth/login', method: 'post' },
-  //         logout: { url: '/api/auth/logout', method: 'post' },
-  //         user: { url: '/api/auth/user', method: 'get' }
-  //       }
-  //     },
-  //     tokeType: 'Bearer',
-  //     tokenRequired: true
-  //   },
-  //   resetOnError: true
-
-  // },
-  // router:{
-  //   middleware:['auth']
-  // },
-  axios:{
-    baseURL: 'http:/localhost:4000/api/',
+  auth: {
+    strategies: {
+      local: {
+        token: {
+          property: 'token',
+          global: true,
+          // required: true,
+          // type: 'Bearer'
+        },
+        user: {
+          property: 'user',
+          // autoFetch: true
+        },
+        endpoints: {
+          login: { url: 'login', method: 'post' },
+          logout: { url: 'logout', method: 'post' },
+          user: { url: 'user', method: 'get' }
+        }
+      }
+    }
   },
-
+  router:{
+    middleware:['auth']
+  },
+  axios:{
+    baseURL: 'http://localhost:4000/Router/',
+  },
+  dev: ( process.env.HOST = "0.0.0.0", process.env.PORT = 8080 ),
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
@@ -85,6 +86,9 @@ export default {
         }
       }
     }
+  },
+  env:{
+    baseUrl: 'http://localhost:4000/Router/' 
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
