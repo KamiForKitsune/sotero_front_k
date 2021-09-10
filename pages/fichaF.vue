@@ -189,52 +189,48 @@
 
                     <div class="ficha-a__medDrogas__form__item">                        
                         <label class="lista-interactiva__title">Minutos posiparto</label>                       
-                        <div class="ficha-a__medDrogas__form__item__input">                        
+                        <div class="lista-interactiva__select">                        
                             <input type="number" id="quantity" name="quantity" min="1" max="999">
                         </div>
                     </div>
 
                    <div class="ficha-a__medDrogas__form__item">                        
                         <label class="lista-interactiva__title">pH</label>                       
-                        <div class="ficha-a__medDrogas__form__item__input">                        
-                            <input type="number" step="0.01" class="form-control" />
-                        </div>
-                    </div>
-                </form>
-
-                <form class="ficha-a__antecedentes__form">                       
-                    <div class="ficha-a__medDrogas__form__item">                        
-                        <label class="lista-interactiva__title">pCO2</label>                       
-                        <div class="ficha-a__medDrogas__form__item__input">                        
-                            <input type="number" id="" name="pco2" min="0">
+                        <div class="lista-interactiva__select">                        
+                            <input type="number" step="0.01" class="form-control">
                         </div>
                     </div>                    
-
                 </form>
 
-                <form class="ficha-a__antecedentes__form">   
+                <form class="info-personal__form">                       
+                    <div class="ficha-a__medDrogas__form__item">                        
+                        <label class="lista-interactiva__title">pCO2</label>                       
+                        <div class="lista-interactiva__select">                        
+                            <input type="number" id="" name="pco2" min="0">
+                        </div>
+                    </div> 
 
                     <div class="ficha-a__medDrogas__form__item">                        
                         <label class="lista-interactiva__title">Vaso (cordón)</label>                       
-                        <div class="ficha-a__medDrogas__form__item__input">                        
+                        <div class="lista-interactiva__select">                        
                             <select name="drogasUsadasTParto">
                                 <option value="ambu">Arteria cordón</option>
                                 <option value="tubo">Vena cordón</option>    
                                 <option value="oxigeno">RN inmediato</option>                                  
                             </select> 
                         </div>
-                    </div>
+                    </div>   
 
                     <div class="ficha-a__medDrogas__form__item">                        
                         <label class="lista-interactiva__title">pO2</label>                       
-                        <div class="ficha-a__medDrogas__form__item__input">                        
+                        <div class="lista-interactiva__select">                        
                             <input type="number" id="" name="pco2">
                         </div>
                     </div> 
 
                     <div class="ficha-a__medDrogas__form__item">                        
                         <label class="lista-interactiva__title">Base Excess</label>                       
-                        <div class="ficha-a__medDrogas__form__item__input">                        
+                        <div class="flista-interactiva__select">                        
                             <input type="number" step="0.01" class="form-control" />
                         </div>
                     </div> 
@@ -245,10 +241,13 @@
                      
             <h2 class="ficha-a__title">Observaciones NEO</h2>               
             <div class="ficha-a__antecedentes">
-                
-                <div class="lista-interactiva__select">                    
-                    <textarea name="comentPreparto" rows="15" cols="90"></textarea>
-                </div>
+                                     
+                <form class="info-personal"> 
+                    <div class="lista-interactiva__select">                    
+                        <textarea name="comentPreparto" rows="8" cols="100"></textarea>
+                    </div>
+                </form>
+          
                 <div class="lista-interactiva__select">
                     <form class="ficha-a__antecedentes__form">
                         <span class="info-personal__form__item">
@@ -294,7 +293,7 @@
             <h2 class="ficha-a__title">Antecedente del parto</h2>
             <div class="ficha-a__antecedentes">            
                 
-                <form class="ficha-a__antecedentes__form"> 
+                <form class="info-personal__form"> 
                     <div class="ficha-a__medDrogas__form__item">                         
                         <label class="lista-interactiva__title">Vía del parto</label> 
                         <div class="lista-interactiva__select">                        
@@ -329,7 +328,7 @@
                     </div>              
                 </form>
 
-                <form class="ficha-a__antecedentes__form" id="encasomorti">
+                <form class="info-personal__form" id="encasomorti">
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">En caso de mortinato</label>                        
                         <div class="lista-interactiva__select">                        
@@ -364,7 +363,7 @@
             <h2 class="ficha-a__title">Turno obstetrico</h2>
             <div class="ficha-a__antecedentes">
 
-                <form class="ficha-a__antecedentes__form"> 
+                <form class="info-personal__form"> 
                     <div class="ficha-a__medDrogas__form__item">                        
                         <label class="lista-interactiva__title">Turno</label>                       
                         <div class="lista-interactiva__select">                        
@@ -385,7 +384,10 @@
                         <label class="lista-interactiva__title">Inicio procedimiento</label>                       
                         <div class="lista-interactiva__select">                        
                             <input type="time" name="hora" id="hora">
-                        </div>
+                        </div>                        
+                    </div>
+
+                    <div class="ficha-a__medDrogas__form__item">                        
                         <label class="lista-interactiva__title">Fin procedimiento</label>                       
                         <div class="lista-interactiva__select">                        
                             <input type="time" name="hora" id="hora">
@@ -449,12 +451,14 @@
 
             <h2 class="ficha-a__title">Protocolo operatorio de intervención</h2>
             <div class="ficha-a__antecedentes">
-                <form class="ficha-a__antecedentes__form"> 
+                <form class="info-personal"> 
                     <div class="lista-interactiva__select">                    
-                        <textarea name="comentPreparto" rows="15" cols="90"></textarea>
+                        <textarea name="comentPreparto" rows="8" cols="100"></textarea>
                     </div>
                 </form>
             </div>  
+
+            
         </div> 
     </div>
     

@@ -208,7 +208,6 @@
                     <div class="lista-interactiva">
 
                         <label class="lista-interactiva__title">Evolución parto prematuro</label>
-
                         <div class="lista-interactiva__select">
                             <div class="ficha-a__antecedentes-obstetricos__form__item__input D" id="evoNoCorr">
                                 <label for="No corresponde parto prematuro">No corresponde</label>

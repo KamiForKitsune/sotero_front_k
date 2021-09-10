@@ -43,7 +43,12 @@
                     </span>
 
                     <span class="info-personal__form__item">
-                        <label for="aPaterno">Nombre de la madre</label>
+                        <label for="aPaterno">Apellido paterno de la madre</label>
+                        <input type="text" name="aPaterno" id="aPaterno">
+                    </span>
+
+                    <span class="info-personal__form__item">
+                        <label for="aPaterno">Apellido materno de la madre</label>
                         <input type="text" name="aPaterno" id="aPaterno">
                     </span>
                 </form>
@@ -184,10 +189,9 @@
                     </div>
 
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Rut recien nacido</label>
-                        <div class="ficha-a__medDrogas__form__item__input">
-                            <label for="sala">Si</label>
-                            <input type="radio" name="sino" id=""> 
+                        <label class="lista-interactiva__title">Fecha de nacimiento</label>
+                        <div class="ficha-a__antecedentes-embarazo-actual__form__item__input--date">                           
+                            <input type="date" name="sino" id=""> 
                         </div>   
                     </div> 
                    
@@ -220,15 +224,16 @@
                         </span>
                         
                         <span class="info-personal__form__item">   
-                        <label for="fechingre">Indice de riesgo</label>                     
-                        <div class="lista-interactiva__select">                        
-                            <select name="drogasUsadasTParto">
-                                <option value="alto">Alto</option>
-                                <option value="medio">Medio</option>    
-                                <option value="bajo">Bajo</option>  
-                            </select>
-                        </div>
+                            <label for="fechingre">Indice de riesgo</label>                     
+                            <div class="lista-interactiva__select">                        
+                                <select name="drogasUsadasTParto">
+                                    <option value="alto">Alto</option>
+                                    <option value="medio">Medio</option>    
+                                    <option value="bajo">Bajo</option>  
+                                </select>
+                            </div>
                         </span>
+
                     </form>                    
                 </div>
             </div>
@@ -309,99 +314,91 @@
                 </div>                
             </div>
 
-            <h2 class="ficha-a__title oculEH">Otros examenes:</h2>
-            <div class="ficha-a__antecedentes">
-                <div class="lista-interactiva__select">                    
-                    <textarea name="comentPreparto" rows="15" cols="90" id="cpreparto" data="elementos"></textarea>
-                </div>         
-            </div>
-
-        </v-card>
-
-        <v-card>
             <div class="ficha-a">
                 <h2 class="ficha-a__title">Examenes</h2>
-                <div class="info-personal">
 
                 <form class="info-personal__form">
                     
-                    <span class="info-personal__form__item">
-                        <label for="fechingre">No se efectuaron exámenes</label>
-                        <input type="checkbox" name="fechingre" id="fechingre">
-                    </span>
-                    <span class="info-personal__form__item">
-                        <label for="fechingre">Fondo de ojo</label>
-                        <div class="lista-interactiva__select">                        
-                            <select name="drogasUsadasTParto">
-                                <option value="Normal">Alto</option>
-                                <option value="Anormal">Medio</option>    
-                                <option value="No realizado">Bajo</option>  
-                            </select>
-                        </div>
-                    </span>
-                    <span class="info-personal__form__item">
-                        <label for="fechingre">E.E.G.</label>
-                        <div class="lista-interactiva__select">                        
-                            <select name="drogasUsadasTParto">
-                                <option value="Normal">Alto</option>
-                                <option value="Anormal">Medio</option>    
-                                <option value="No realizado">Bajo</option>  
-                            </select>
-                        </div>
-                    </span>
-                     <span class="info-personal__form__item">
-                        <label for="fechingre">Examen neurológico</label>
-                        <div class="lista-interactiva__select">                        
-                            <select name="drogasUsadasTParto">
-                                <option value="Normal">Alto</option>
-                                <option value="Anormal">Medio</option>    
-                                <option value="No realizado">Bajo</option>  
-                            </select>
-                        </div>
-                    </span>
-                     <span class="info-personal__form__item">
-                        <label for="fechingre">Ecocardiografía</label>
-                        <div class="lista-interactiva__select">                        
-                            <select name="drogasUsadasTParto">
-                                <option value="Normal">Alto</option>
-                                <option value="Anormal">Medio</option>    
-                                <option value="No realizado">Bajo</option>  
-                            </select>
-                        </div>
-                    </span>
-                     <span class="info-personal__form__item">
-                        <label for="fechingre">Neurosonografía</label>
-                        <div class="lista-interactiva__select">                        
-                            <select name="drogasUsadasTParto">
-                                <option value="Normal">Alto</option>
-                                <option value="Anormal">Medio</option>    
-                                <option value="No realizado">Bajo</option>  
-                            </select>
-                        </div>
-                    </span>
-                     <span class="info-personal__form__item">
-                        <label for="fechingre">Hemocultivos</label>
-                        <div class="lista-interactiva__select">                        
-                            <select name="drogasUsadasTParto">
-                                <option value="Normal">Alto</option>
-                                <option value="Anormal">Medio</option>    
-                                <option value="No realizado">Bajo</option>  
-                            </select>
-                        </div>
-                    </span>
-                    <span class="info-personal__form__item">
-                        <label for="fechingre">Otros cultivos</label>
-                        <div class="lista-interactiva__select">                        
-                            <select name="drogasUsadasTParto">
-                                <option value="Normal">Alto</option>
-                                <option value="Anormal">Medio</option>    
-                                <option value="No realizado">Bajo</option>  
-                            </select>
-                        </div>
-                    </span>
+                    <div class="ficha-a__medDrogas__form__item">
+                    <span class="ficha-a__medDrogas__form__item__input">
+                    	<label for="rut-madre">No se efectuaron examenes</label>
+                    	<input type="checkbox" name="rut-madre" id="rut">
+                	</span>                    
 
-                </form>  
+                    <span class="ficha-a__medDrogas__form__item__input">
+                    	<label for="rut-madre">Fondo de ojo</label>    
+                        <select name="drogasUsadasTParto">
+                            <option value="alto">Normal</option>
+                            <option value="medio">Anormal</option>    
+                            <option value="bajo">No realizado</option>  
+                        </select>                        
+                	</span>          	
+            	
+                    <span class="ficha-a__medDrogas__form__item__input">
+                    	<label for="rut-madre">E.E.G</label>    
+                        <select name="drogasUsadasTParto">
+                            <option value="alto">Normal</option>
+                            <option value="medio">Anormal</option>    
+                            <option value="bajo">No realizado</option>  
+                        </select>                        
+                	</span>
+
+                    <span class="ficha-a__medDrogas__form__item__input">
+                    	<label for="rut-madre">Examen neurológico</label>    
+                        <select name="drogasUsadasTParto">
+                            <option value="alto">Normal</option>
+                            <option value="medio">Anormal</option>    
+                            <option value="bajo">No realizado</option>  
+                        </select>                        
+                	</span>
+
+                    <span class="ficha-a__medDrogas__form__item__input">
+                    	<label for="rut-madre">Ecocardiograma</label>    
+                        <select name="drogasUsadasTParto">
+                            <option value="alto">Normal</option>
+                            <option value="medio">Anormal</option>    
+                            <option value="bajo">No realizado</option>  
+                        </select>                        
+                	</span>
+
+                    <span class="ficha-a__medDrogas__form__item__input">
+                    	<label for="rut-madre">Neurosonografía</label>    
+                        <select name="drogasUsadasTParto">
+                            <option value="alto">Normal</option>
+                            <option value="medio">Anormal</option>    
+                            <option value="bajo">No realizado</option>  
+                        </select>                        
+                	</span>
+
+                    <span class="ficha-a__medDrogas__form__item__input">
+                    	<label for="rut-madre">Hemocultivos</label>    
+                        <select name="drogasUsadasTParto">
+                            <option value="alto">Normal</option>
+                            <option value="medio">Anormal</option>    
+                            <option value="bajo">No realizado</option>  
+                        </select>                        
+                	</span>
+
+                    <span class="ficha-a__medDrogas__form__item__input">
+                    	<label for="rut-madre">Otros cultivos</label>    
+                        <select name="drogasUsadasTParto">
+                            <option value="alto">Normal</option>
+                            <option value="medio">Anormal</option>    
+                            <option value="bajo">No realizado</option>  
+                        </select>                        
+                	</span>            
                 </div>
+
+                <div class="ficha-a__medDrogas__form__item">
+                    <form class="info-personal"> 
+                        <label for="rut-madre">Otros examenes:</label> 
+                        <div class="lista-interactiva__select">                    
+                            <textarea name="comentPreparto" rows="10" cols="60"></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                </form>                  
             </div>
         </v-card>
 
@@ -477,6 +474,10 @@
                         </div>
                     </form>
                 </div>
+
+
+
+                
             </div>                    
         </v-card>
 
