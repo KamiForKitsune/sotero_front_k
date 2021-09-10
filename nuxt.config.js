@@ -42,6 +42,7 @@ export default {
     '@nuxtjs/auth',
   ],
   auth: {
+    // Comentario :3
     strategies: {
       local: {
         token: {
