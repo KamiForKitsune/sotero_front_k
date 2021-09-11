@@ -1258,7 +1258,10 @@ textarea{
     padding: 10px 10px 10px 10px;
 }
 
-
+.date{
+    width:100px;  
+    height: 5px;  
+}
 
 </style>
 
