@@ -604,6 +604,7 @@
 </template>
 
 <style>
+  @import '../assets/estilos.css';
 </style>
 
 <script>

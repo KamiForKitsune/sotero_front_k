@@ -120,7 +120,7 @@
                                 <option value="+">+</option>
                             </select> 
                         </div>             
-                        <label class="lista-interactiva__title">Fecha</label>
+                        <label class="lista-interactiva__title">Fecha examen</label>
                         <div class="lista-interactiva__select"> 
                             <input type="date" name="Fecha1" id="Fecha1"> 
                         </div>           
@@ -134,7 +134,7 @@
                                 <option value="+">+</option>
                             </select> 
                         </div>
-                        <label class="lista-interactiva__title">Fecha</label>
+                        <label class="lista-interactiva__title">Fecha examen</label>
                         <div class="lista-interactiva__select"> 
                             <input type="date" name="Fecha1" id="Fecha1"> 
                         </div>
@@ -145,11 +145,11 @@
                 <form class="ficha-a__antecedentes__form">          
 
                      <div class="ficha-a__medDrogas__form__item">
-                     	<label class="lista-interactiva__title">Hcto.</label>
+                     	<label class="lista-interactiva__title">Hematocrito</label>
                         <div class="lista-interactiva__select"> 
                             <input type="number" name="Hcto." id="Hcto"> 
                         </div>
-                        <label class="lista-interactiva__title">Fecha</label>
+                        <label class="lista-interactiva__title">Fecha examen</label>
                         <div class="lista-interactiva__select"> 
                             <input type="date" name="Fecha1" id="Fecha1"> 
                         </div>                        
@@ -160,7 +160,7 @@
                         <div class="lista-interactiva__select"> 
                             <input type="number" name="Pulso" id="Pulso"> 
                         </div>
-                        <label class="lista-interactiva__title">Temp. ax.</label>
+                        <label class="lista-interactiva__title">Temperatura axilar</label>
                         <div class="lista-interactiva__select"> 
                             <input type="number" name="Pulso" id="Pulso"> 
                         </div>
@@ -219,7 +219,7 @@
                     </div>
                
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Genitales exter.</label>
+                        <label class="lista-interactiva__title">Genitales externos</label>
                         <div class="lista-interactiva__select">
                             <select id="patoFam">
                                 <option value="-">Normal</option>
@@ -255,54 +255,44 @@
 
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Trabajo de parto</label>
-                        <div class="ficha-a__medDrogas__form__item__input" id="Si">
-                            <label for="embarazoPrevNormales">Si</label>
-                            <input type="radio" name="trabajop" id="">
-                        </div>
-                        <div class="ficha-a__medDrogas__form__item__input" id="No">
-                            <label for="embarazoPrevNormales">No</label>
-                            <input type="radio" name="trabajop" id="">
-                        </div>
-                        <div class="ficha-a__medDrogas__form__item__input" id="Dudoso">
-                            <label for="embarazoPrevNormales">Dudoso</label>
-                            <input type="radio" name="trabajop" id="">
-                        </div>
+                        <div class="lista-interactiva__select"> 
+                            <select id="patoFam">
+                                <option value="-">Si</option>
+                                <option value="+">No</option>
+                                <option value="+">Dudoso</option>
+                            </select> 
+                        </div>                       
                     </div>
 
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Movimientos fetales</label>
-                        <div class="ficha-a__medDrogas__form__item__input" id="Si">
-                            <label for="embarazoPrevNormales">Normales</label>
-                            <input type="radio" name="embarazoPrevNormales" id="">
-                        </div>
-                        <div class="ficha-a__medDrogas__form__item__input" id="No">
-                            <label for="embarazoPrevNormales">Disminuidos</label>
-                            <input type="radio" name="embarazoPrevNormales" id="">
-                        </div>
-                        <div class="ficha-a__medDrogas__form__item__input" id="Dudoso">
-                            <label for="embarazoPrevNormales">No aplicable</label>
-                            <input type="radio" name="embarazoPrevNormales" id="">
-                        </div>
+                        <div class="lista-interactiva__select"> 
+                            <select id="patoFam">
+                                <option value="-">Normales</option>
+                                <option value="+">Disminuidos</option>
+                                <option value="+">No Aplicable</option>
+                            </select> 
+                        </div>                       
                     </div>
                 </form>
                 
                 <form class="info-personal__form">
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Altura uter.(cms)</label>
+                        <label class="lista-interactiva__title">Altura uterina (cms)</label>
                         <div class="lista-interactiva__select">
                             <input type="number" name="Pulso" id="Pulso">
                         </div>
                     </div>
 
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Contr. en 10min.</label>
+                        <label class="lista-interactiva__title">Contracciones en 10 min.</label>
                         <div class="lista-interactiva__select">
                             <input type="number" name="Pulso" id="Pulso">
                         </div>
                     </div>
                             
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Hrs. trab. parto</label>
+                        <label class="lista-interactiva__title">Hrs. trabajo parto</label>
                         <div class="lista-interactiva__select">
                             <input type="number" name="Pulso" id="Pulso">
                         </div>
@@ -311,7 +301,7 @@
 
                 <form class="ficha-a__antecedentes__form">
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Esti. clinica peso fetal (grs)</label>
+                        <label class="lista-interactiva__title">Estimación clinica peso fetal (grs)</label>
                         <div class="lista-interactiva__select">
                             <input type="number" name="Pulso" id="Pulso">
                         </div>
@@ -338,7 +328,7 @@
                             </select> 
                         </div>
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
-                            <label for="inicio-semanas">Dilatación cerv. (cms.)</label>
+                            <label for="inicio-semanas">Dilatación cervical (cms.)</label>
                             <input type="number" id="" name="inicio-semanas">
                         </div>
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
@@ -473,7 +463,7 @@
                     </div>  
 
                     <div class="ficha-a__medDrogas__form__item">
-                     	<label class="lista-interactiva__title">Aspecto L. Amn. R.P.O.</label>
+                     	<label class="lista-interactiva__title">Aspecto líquido Amniótico R.P.O.</label>
                         <div class="ficha-a__medDrogas__form__item__input">
                             <label for="rMedCronico">Ausente</label>
                             <input type="checkbox" name="rMedCronico" id="">
@@ -521,7 +511,7 @@
 
                 <form class="ficha-a__antecedentes__form">
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">pH vahinal</label>
+                        <label class="lista-interactiva__title">pH vaginal</label>
                          <div class="lista-interactiva__select"> 
                             <input type="number" name="number" id="number"> 
                         </div>                    
@@ -623,7 +613,7 @@
                         <div class="lista-interactiva__select">
                             <input type="number" name="embarazoPrevNormales" id="">
                         </div>                
-                        <label class="lista-interactiva__title">PBF</label>
+                        <label class="lista-interactiva__title">Perfil Biofísico</label>
                         <div class="lista-interactiva__select">
                             <input type="number" name="embarazoPrevNormales" id=""><p>/8</p>
                         </div>                          
@@ -686,8 +676,7 @@
                                 <option value="Pesionado">Pensionado</option>
                                 <option value="Otro">Otro</option>
                             </select> 
-                            <button class="btn btn-azul btn-añadir-a-lista">+</button> 
-                            <ul class="lista-interactiva__lista"></ul> 
+                           
                         </div>
                    
                 </form>
@@ -702,7 +691,172 @@
   </v-app>
 </template>
 
-
+<style>
+  @import '../assets/estilos.css';
+</style>
 
 <script>
+import axios from 'axios'
+export default {
+    data(){
+        return{
+            // La ip para llamar a la api
+            address: process.env.baseUrl,
+
+            //nombre del establecimiento (combobox)
+            nomEstablecimiento:'',
+            //rut de la paciente
+            rutPaciente:'',
+            //edad se debe generar un metodo para realizar el calculo y visualizarlo            
+            //fecha de ingreso (revisar ya que presenta tanto la fecha de ingreso como la hora)
+            fIngreso:'',
+            hIngreso:'',
+            //nombre de paciente
+            nombrePaciente:'',            
+            //realizar select juntando apellido de la paciente
+            apellidoPaterno:'',
+            apellidoMaterno:'',
+            //motivo de ingreso Paciente
+            motivoIngreso:'',            
+            //patologia de Paciente (sin patologia)
+            sinPatologia: true,
+            //nombre de la Patologias
+            nombrePatologia:'',            
+            //sistolica
+            sistolica:0,
+            //diastolica
+            diastolica:0,
+            //pulso
+            pulso:0,
+            //resultado vih
+            vih:'',
+            //fecha examen VIH
+            fechaVih:'',
+            //resultado VDRL
+            vdrl:'',
+            //fecha ecamen vdrl
+            fechaVdrl:'',
+            //hematocrito
+            hematocrito:0,
+            //fecha examen hematocrito
+            fechaHcto:'',
+            //peso
+            peso:0,
+            //temperatura axilar 
+            tempAxilar:'',
+            //examen cuello y cabeza 
+            cabezaCuello:'',
+            //examen cardiopulmunar
+            cardiopulmunar:'',
+            //examen abdomen
+            abdomen:'',
+            //examen extreminades
+            extremidades:'',
+            //examen genitales externos
+            genitalExterno:'',
+            //examen mamas
+            mamas:'',
+            //descripcion examenes
+            descripExamen:'',
+            //trabajo de parto
+            trabajoParto:'',
+            //movimientos fetales
+            movFetales:'',
+            //Altura uterina
+            alturaUter:0,
+            //contracciones
+            contracciones:0,
+            //horas de trabajo de parto
+            trabParto:0,
+            //estimación clinica peso fetal
+            estPesoFetal:0,
+            //tono uterino
+            tonoUterino:'',
+            //examen servical (realizado)
+            examNoRealizado:true,
+            //tipo Examen Servical 
+            tipoExamServical:'',
+            //dilatacion cervical 
+            dilatCervical:0,
+            //Espinas
+            espinas:0,
+            //borrado en porcentaje
+            borrado:0,
+            //presentacion
+            presentacion:'',
+            //latidos cardiofetales
+            latCardiofetal:'',
+            //presentacion gem b
+            presentacionB:'',
+            //latidos cardiofetales gem b
+            latCardiofetalB:'',
+            //proteinuria ingreso
+            proteinIngreso:'', 
+            //membranas
+            membrabas:'',
+            //rpm dias
+            rpmDias:0,
+            //rpm horas
+            rpmHoras:0,
+            //no precisable
+            noPrecisable:true,
+            //perdida vaginal sin flujor
+            sinFlujo:true,
+            //perdida Vaginal
+            perdidaVaginal:[],
+            //liquido amniotico ausente
+            liqAmnAusente:true,
+            //liquido ambiotico r.p.o
+            liquidoAmniotico:[],
+            //tipo de leucorrea
+            tipoLeucorrea:'',
+            //cristalización
+            cristalizacion:'',
+            //ph vaginal
+            phVaginal:'',
+            //kho vaginal
+            khoVaginal:'',
+            //presentacion ecogafia
+            presentacionEco:'',
+            //liquido amniotico eco
+            liqAnmioticoECO:'', 
+            //placenta
+            placenta:'',
+            //indice liquido amniotico 
+            indiceLiqAmn:0,
+            //canal en centimetros
+            canal:0,
+            //funnel si o no
+            funnelNo:true,
+            //tamaño funnel
+            funnel:0,
+            //estado peso fetal
+            estadoPFetal:'',
+            //perfil biofisico
+            pbf:'',
+            //edad Gestacional
+            semanas:0,
+            dias:0,
+            edadDudosa:true,
+            //diagnostico al ingreso
+            diagIngreso:[],
+            //indicaciones y Comentarios
+            comentarios:'',
+            //destino ingreso
+            destinoIngreso:'',
+        }
+    },
+    methods: {
+        TakeComunas: async function(){
+
+            const listRegion = await axios.get(this.address+'/ObtenerRegion',
+                {
+                    headers: { "authorization": this.$auth.$storage['_state']['_token.local'] }
+                })
+
+            console.log(listRegion)
+        }
+
+    }
+}
 </script>
