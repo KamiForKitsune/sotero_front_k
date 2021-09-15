@@ -476,13 +476,61 @@
                 </div>
 
 
+            <v-card>          
+                <div class="ficha-a">
+                    <h2 class="ficha-a__title">Egreso</h2>
+                    <form class="info-personal__form">                
+                         <div class="ficha-a__medDrogas__form__item">
+                            <span class="ficha-a__medDrogas__form__item__input">
+                                <label for="rut-madre">Fecha de egreso o traslado</label>
+                                <input type="date" name="rut-madre" id="rut" class="date">
+                            </span>                    
 
+                            <span class="ficha-a__medDrogas__form__item__input">
+                                <label for="rut-madre">Egresa desde:</label>    
+                                <select name="drogasUsadasTParto">
+                                    <option value="alto">Área hospitalización</option>
+                                    <option value="medio">Puerperio</option> 
+                                    <option value="medio">Hospitalización puerperio</option>   
+                                    <option value="bajo">Área de observación</option>  
+                                </select>                        
+                            </span> 
+                        </div>
+
+                        <div class="ficha-a__medDrogas__form__item"> 
+                            <label class="lista-interactiva__title">Condición de egreso:</label>
+                            <select id="patoFam">                                
+                                <option value="">Sano</option>
+                                <option value="">Enfermo</option>
+                                <option value="">Con secuelas</option>
+                                <option value="">En estudio</option>                                
+                            </select>                            
+                        </div>
+
+                        <div class="ficha-a__medDrogas__form__item"> 
+                            <label class="lista-interactiva__title">Destino:</label>
+                            <select id="patoFam">                                
+                                <option value="">Casa</option>
+                                <option value="">Colocac./C. nacional</option>
+                                <option value="">Traslado a Padre Hurtado</option>  
+                                <option value="">Traslado a otro hospital</option>                               
+                            </select>                            
+                        </div>
+
+
+                    </form>
+                </div>
+            </v-card>
                 
             </div>                    
         </v-card>
 
     </v-app>
 </template>
+
+<style>
+  @import '../assets/estilos.css';
+</style>
 
 <script>
 </script>

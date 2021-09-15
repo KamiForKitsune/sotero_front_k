@@ -549,3 +549,6 @@
     </v-app>
 </template>
 
+<style>
+  @import '../assets/estilos.css';
+</style>

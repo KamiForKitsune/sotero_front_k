@@ -11,7 +11,7 @@
                    
                     <label class="lista-interactiva__title">Derivada desde</label>                        
                     <div class="lista-interactiva__select">
-                        <select id="patoFam">
+                        <!--<select id="patoFam" v-model="derivada">
                             <option value="Paro">Paro</option>
                             <option value="CRS">CRS</option>
                             <option value="Consultorio">Consultorio</option>
@@ -20,10 +20,10 @@
                             <option value="Poli Adolecencia">Poli Adolecencia</option>
                             <option value="Cons. Espontanea">Cons. Espontanea</option>
                         </select>
-                        <button class="btn btn-azul btn-añadir-a-lista">+</button>
-                            
-                        <ul class="lista-interactiva__lista">                           
-                        </ul>
+                        <button class="btn btn-azul btn-añadir-a-lista">+</button>  
+                        <ul class="lista-interactiva__lista">                                                  
+                        </ul>-->
+                        <v-combobox label="" v-model="derivada"></v-combobox>
                     </div>  
                     
                 </div>
@@ -31,33 +31,33 @@
                 <div class="ficha-a__medDrogas__form__item">
                         
                     <span class="ficha-a__medDrogas__form__item__input">
-                    	<label for="rut-madre">Rut de la Madre</label>
-                    	<input type="text" name="rut-madre" id="rut">
+                    	<label for="rut-madre">Rut de la Madre</label>                    	
+                        <v-text-field label="" v-model="rutPaciente" hide-details type="text" class="text"></v-text-field>
                 	</span>
 
                 	<span class="ficha-a__medDrogas__form__item__input">
-                    	<label for="rut-madre">Edad</label>
-                    	<input type="number" name="rut-madre" id="rut">
+                    	<label for="rut-madre">Edad</label>                    	
+                        <v-text-field label="" v-model="edadPaciente" hide-details type="number" class="text"></v-text-field>
                 	</span>
 
                 	<span class="ficha-a__medDrogas__form__item__input">
-                    	<label for="rut-madre">Fecha de ingreso</label>
-                    	<input type="date" name="rut-madre" id="rut">
+                    	<label for="rut-madre">Fecha de ingreso</label>                    	
+                        <v-text-field label="" v-model="fIngreso" hide-details type="date" class="text"></v-text-field>
                 	</span>
 
                 	<span class="ficha-a__medDrogas__form__item__input">
-                    	<label for="rut-madre">Hora ingreso</label>
-                    	<input type="time" name="rut-madre" id="rut">
+                    	<label for="rut-madre">Hora ingreso</label>                    	
+                        <v-text-field label="" v-model="hIngreso" hide-details type="time" class="text"></v-text-field>
                 	</span>
 
                 	<span class="ficha-a__medDrogas__form__item__input">
                     	<label for="rut-madre">Nombres</label>
-                    	<input type="text" name="rut-madre" id="rut">
+                        <v-text-field label="" v-model="nombreP" hide-details type="text" class="text"></v-text-field>
                 	</span>
 
                 	<span class="ficha-a__medDrogas__form__item__input">
-                    	<label for="rut-madre">Apellidos</label>
-                    	<input type="text" name="rut-madre" id="rut">
+                    	<label for="rut-madre">Apellidos</label>                    	
+                        <v-text-field label="" v-model="apellidoP" hide-details type="text" class="text"></v-text-field>
                 	</span>
             	</div>
             </form>
@@ -67,7 +67,7 @@
             <div class="ficha-a__antecedentes">                        
                 <form class="info-personal"> 
                     <div class="lista-interactiva__select">                    
-                        <textarea name="comentPreparto" rows="8" cols="100"></textarea>
+                        <textarea name="comentPreparto" rows="8" cols="100" v-model="motivoIngreso"></textarea>
                     </div>
                 </form>
             </div>  
@@ -80,10 +80,10 @@
                      	<label class="lista-interactiva__title">Patologia</label>
                         <div class="ficha-a__medDrogas__form__item__input">
                             <label for="rMedCronico">Sin patología</label>
-                            <input type="checkbox" name="rMedCronico" id="">
+                            <input type="checkbox" name="rMedCronico" id="" v-model="sinPatologia">
                         </div>
                         <div class="lista-interactiva__select"> 
-                            <select id="patoFam">                                
+                            <select id="patoFam" v-model="nombrePatologia">                                
                                 <option value="Pat. mamaria">Pat. mamaria</option>
                                 <option value="Caries">Caries</option>
                                 <option value="Gingivitis">Gingivitis</option>                                
@@ -97,15 +97,15 @@
                      	<label class="lista-interactiva__title">Presión arterial</label>
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
                             <label for="inicio-semanas">Sistólica</label>
-                            <input type="number" id="" name="inicio-semanas">
+                            <input type="number" id="" name="inicio-semanas" v-model="sistolica">
                         </div>
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
                             <label for="inicio-semanas">Diastólica</label>
-                            <input type="number" id="" name="inicio-semanas">
+                            <input type="number" id="" name="inicio-semanas" v-model="diastolica">
                         </div>
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
                             <label for="inicio-semanas">Pulso</label>
-                            <input type="number" id="" name="inicio-semanas">
+                            <input type="number" id="" name="inicio-semanas" v-model="pulso">
                         </div>
                     </div>                    
                 </form>     
@@ -115,28 +115,28 @@
                     <div class="ficha-a__medDrogas__form__item">
                      	<label class="lista-interactiva__title">VIH</label>
                         <div class="lista-interactiva__select"> 
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="vih">
                                 <option value="-">-</option>
                                 <option value="+">+</option>
                             </select> 
                         </div>             
-                        <label class="lista-interactiva__title">Fecha</label>
+                        <label class="lista-interactiva__title">Fecha examen</label>
                         <div class="lista-interactiva__select"> 
-                            <input type="date" name="Fecha1" id="Fecha1"> 
+                            <input type="date" name="Fecha1" id="Fecha1" v-model="fechaVih"> 
                         </div>           
                     </div>
 
                     <div class="ficha-a__medDrogas__form__item">
                      	<label class="lista-interactiva__title">VDRL</label>
                         <div class="lista-interactiva__select"> 
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="vdrl">
                                 <option value="-">-</option>
                                 <option value="+">+</option>
                             </select> 
                         </div>
-                        <label class="lista-interactiva__title">Fecha</label>
+                        <label class="lista-interactiva__title">Fecha examen</label>
                         <div class="lista-interactiva__select"> 
-                            <input type="date" name="Fecha1" id="Fecha1"> 
+                            <input type="date" name="Fecha1" id="Fecha1" v-model="fechaVdrl"> 
                         </div>
                     </div>                   
                     
@@ -145,24 +145,24 @@
                 <form class="ficha-a__antecedentes__form">          
 
                      <div class="ficha-a__medDrogas__form__item">
-                     	<label class="lista-interactiva__title">Hcto.</label>
+                     	<label class="lista-interactiva__title">Hematocrito</label>
                         <div class="lista-interactiva__select"> 
-                            <input type="number" name="Hcto." id="Hcto"> 
+                            <input type="number" name="Hcto." id="Hcto" v-model="hematocrito"> 
                         </div>
-                        <label class="lista-interactiva__title">Fecha</label>
+                        <label class="lista-interactiva__title">Fecha examen</label>
                         <div class="lista-interactiva__select"> 
-                            <input type="date" name="Fecha1" id="Fecha1"> 
+                            <input type="date" name="Fecha1" id="Fecha1" v-model="fechaHcto"> 
                         </div>                        
                     </div> 
 
                     <div class="ficha-a__medDrogas__form__item">
                      	<label class="lista-interactiva__title">Peso actual</label>
                         <div class="lista-interactiva__select"> 
-                            <input type="number" name="Pulso" id="Pulso"> 
+                            <input type="number" name="Pulso" id="Pulso" v-model="peso"> 
                         </div>
-                        <label class="lista-interactiva__title">Temp. ax.</label>
+                        <label class="lista-interactiva__title">Temperatura axilar</label>
                         <div class="lista-interactiva__select"> 
-                            <input type="number" name="Pulso" id="Pulso"> 
+                            <input type="number" name="Pulso" id="Pulso" v-model="tempAxilar"> 
                         </div>
                     </div>                   
                 </form>
@@ -175,7 +175,7 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Cabeza y cuello</label>
                         <div class="lista-interactiva__select">                         
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="cabezaCuello">
                                 <option value="-">Normal</option>
                                 <option value="+">Anormal</option>
                                 <option value="+">No Realiz.</option>
@@ -186,7 +186,7 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Cardiopulmunar</label>
                         <div class="lista-interactiva__select">                                
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="cardiopulmunar">
                                 <option value="-">Normal</option>
                                 <option value="+">Anormal</option>
                                 <option value="+">No Realiz.</option>
@@ -197,7 +197,7 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Abdomen</label>
                         <div class="lista-interactiva__select">                                 
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="abdomen">
                                 <option value="-">Normal</option>
                                 <option value="+">Anormal</option>
                                 <option value="+">No Realiz.</option>
@@ -210,7 +210,7 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Extremidades</label>
                         <div class="lista-interactiva__select">                                
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="extremidades">
                                 <option value="-">Normal</option>
                                 <option value="+">Anormal</option>
                                 <option value="+">No Realiz.</option>
@@ -219,9 +219,9 @@
                     </div>
                
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Genitales exter.</label>
+                        <label class="lista-interactiva__title">Genitales externos</label>
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="genitalExterno">
                                 <option value="-">Normal</option>
                                 <option value="+">Anormal</option>
                                 <option value="+">No Realiz.</option>
@@ -232,7 +232,7 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Mamas</label>
                         <div class="lista-interactiva__select"> 
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="mamas">
                                 <option value="-">Normal</option>
                                 <option value="+">Anormal</option>
                                 <option value="+">No Realiz.</option>
@@ -243,7 +243,7 @@
                                       
                 <form class="info-personal"> 
                     <div class="lista-interactiva__select">                    
-                        <textarea name="comentPreparto" rows="8" cols="100"></textarea>
+                        <textarea name="comentPreparto" rows="8" cols="100" v-model="descripExamen"></textarea>
                     </div>
                 </form>                
 
@@ -255,69 +255,59 @@
 
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Trabajo de parto</label>
-                        <div class="ficha-a__medDrogas__form__item__input" id="Si">
-                            <label for="embarazoPrevNormales">Si</label>
-                            <input type="radio" name="trabajop" id="">
-                        </div>
-                        <div class="ficha-a__medDrogas__form__item__input" id="No">
-                            <label for="embarazoPrevNormales">No</label>
-                            <input type="radio" name="trabajop" id="">
-                        </div>
-                        <div class="ficha-a__medDrogas__form__item__input" id="Dudoso">
-                            <label for="embarazoPrevNormales">Dudoso</label>
-                            <input type="radio" name="trabajop" id="">
-                        </div>
+                        <div class="lista-interactiva__select"> 
+                            <select id="patoFam" v-model="trabajoParto">
+                                <option value="-">Si</option>
+                                <option value="+">No</option>
+                                <option value="+">Dudoso</option>
+                            </select> 
+                        </div>                       
                     </div>
 
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Movimientos fetales</label>
-                        <div class="ficha-a__medDrogas__form__item__input" id="Si">
-                            <label for="embarazoPrevNormales">Normales</label>
-                            <input type="radio" name="embarazoPrevNormales" id="">
-                        </div>
-                        <div class="ficha-a__medDrogas__form__item__input" id="No">
-                            <label for="embarazoPrevNormales">Disminuidos</label>
-                            <input type="radio" name="embarazoPrevNormales" id="">
-                        </div>
-                        <div class="ficha-a__medDrogas__form__item__input" id="Dudoso">
-                            <label for="embarazoPrevNormales">No aplicable</label>
-                            <input type="radio" name="embarazoPrevNormales" id="">
-                        </div>
+                        <div class="lista-interactiva__select"> 
+                            <select id="patoFam" v-model="movFetal">
+                                <option value="-">Normales</option>
+                                <option value="+">Disminuidos</option>
+                                <option value="+">No Aplicable</option>
+                            </select> 
+                        </div>                       
                     </div>
                 </form>
                 
                 <form class="info-personal__form">
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Altura uter.(cms)</label>
+                        <label class="lista-interactiva__title">Altura uterina (cms)</label>
                         <div class="lista-interactiva__select">
-                            <input type="number" name="Pulso" id="Pulso">
+                            <input type="number" name="Pulso" id="Pulso" v-model="alturaUter">
                         </div>
                     </div>
 
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Contr. en 10min.</label>
+                        <label class="lista-interactiva__title">Contracciones en 10 min.</label>
                         <div class="lista-interactiva__select">
-                            <input type="number" name="Pulso" id="Pulso">
+                            <input type="number" name="Pulso" id="Pulso" v-model="contraccion">
                         </div>
                     </div>
                             
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Hrs. trab. parto</label>
+                        <label class="lista-interactiva__title">Hrs. trabajo parto</label>
                         <div class="lista-interactiva__select">
-                            <input type="number" name="Pulso" id="Pulso">
+                            <input type="number" name="Pulso" id="Pulso" v-model="trabParto">
                         </div>
                     </div>
                 </form>
 
                 <form class="ficha-a__antecedentes__form">
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Esti. clinica peso fetal (grs)</label>
+                        <label class="lista-interactiva__title">Estimación clinica peso fetal (grs)</label>
                         <div class="lista-interactiva__select">
-                            <input type="number" name="Pulso" id="Pulso">
+                            <input type="number" name="Pulso" id="Pulso" v-model="estPesoFetal">
                         </div>
                         <label class="lista-interactiva__title">Tono uterino</label>
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="tonoUterino">
                                 <option value="-">Normal</option>
                                 <option value="+">Aumentado</option>
                                 <option value="+">No registrado</option>
@@ -329,25 +319,25 @@
                         <label class="lista-interactiva__title">Exámen servical</label>
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
                             <label for="inicio-semanas">No realizado</label>
-                            <input type="checkbox" id="" name="inicio-semanas">
+                            <input type="checkbox" id="" name="inicio-semanas" v-model="examNoRealizado">
                         </div>
                         <div class="lista-interactiva__select visible" data-tooltip="Si lo requiere, escriba en examen físico">
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="tipoExamServical">
                                 <option value="+">Espéculo</option>
                                 <option value="+">Dígital</option>
                             </select> 
                         </div>
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
-                            <label for="inicio-semanas">Dilatación cerv. (cms.)</label>
-                            <input type="number" id="" name="inicio-semanas">
+                            <label for="inicio-semanas">Dilatación cervical (cms.)</label>
+                            <input type="number" id="" name="inicio-semanas" v-model="dilatCervical">
                         </div>
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
                             <label for="inicio-semanas">Espinas</label>
-                            <input type="number" id="" name="inicio-semanas">
+                            <input type="number" id="" name="inicio-semanas" v-model="espinas">
                         </div>
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
                             <label for="inicio-semanas">Borrado (%)</label>
-                            <input type="number" id="" name="inicio-semanas">
+                            <input type="number" id="" name="inicio-semanas" v-model="borrado">
                         </div>
                     </div>                   
                 </form>
@@ -356,7 +346,7 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Presentación</label>
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="presentacion">
                                 <option value="Cefálica">Cefálica</option>
                                 <option value="Podálica">Podálica</option>
                                 <option value="Transversa">Transversa</option>
@@ -368,7 +358,7 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Latidos cardiofetales</label>
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="latCerdiofetal">
                                 <option value="Normal">Normal</option>
                                 <option value="Taquicardía">Taquicardía</option>
                                 <option value="Bradicardía">Bradicardia</option>
@@ -384,7 +374,7 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Presentación Gem. B</label>
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="presentacionB">
                                 <option value="Cefálica">Cefálica</option>
                                 <option value="Podálica">Podálica</option>
                                 <option value="Transversa">Transversa</option>
@@ -396,7 +386,7 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Latidos cardiofetales Gem. B</label>
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="latCardiofetalB">
                                 <option value="Normal">Normal</option>
                                 <option value="Taquicardía">Taquicardía</option>
                                 <option value="Bradicardía">Bradicardia</option>
@@ -412,7 +402,7 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Proteinuria ingreso</label>
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="proteinIngreso">
                                 <option value="negativoIndicios">Negativo/Indic.</option>
                                 <option value="mas">+</option>    
                                 <option value="dosMas">++</option>  
@@ -426,7 +416,7 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Membranas</label>
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="membranas">
                                 <option value="Intactas">Intactas</option>
                                 <option value="Prominentes">Prominentes</option>    
                                 <option value="Dudosa">Dudosa</option>  
@@ -436,15 +426,15 @@
                         <label class="lista-interactiva__title">RPM</label>
                         <div class="ficha-a__medDrogas__form__item__input" id="Si">
                             <label for="embarazoPrevNormales">RPM (días)</label>
-                            <input type="number" name="embarazoPrevNormales" id="">
+                            <input type="number" name="embarazoPrevNormales" id="" v-model="rpmDias">
                         </div>
                         <div class="ficha-a__medDrogas__form__item__input" id="No">
                             <label for="embarazoPrevNormales">RPM (horas)</label>
-                            <input type="number" name="embarazoPrevNormales" id="">
+                            <input type="number" name="embarazoPrevNormales" id="" v-model="rpmHoras">
                         </div>
                         <div class="ficha-a__medDrogas__form__item__input" id="Dudoso">
                             <label for="embarazoPrevNormales">No precisable</label>
-                            <input type="checkbox" name="embarazoPrevNormales" id="">
+                            <input type="checkbox" name="embarazoPrevNormales" id="" v-model="noPrecisable">
                         </div>
                     </div>
                 </form>
@@ -454,10 +444,10 @@
                      	<label class="lista-interactiva__title">Pérdida vaginal de:</label>
                         <div class="ficha-a__medDrogas__form__item__input">
                             <label for="rMedCronico">Sin flujo</label>
-                            <input type="checkbox" name="rMedCronico" id="">
+                            <input type="checkbox" name="rMedCronico" id="" v-model="sinFlujo">
                         </div>
                         <div class="lista-interactiva__select"> 
-                            <select id="patoFam">                                
+                            <select id="patoFam" v-model="perdidaVaginal">                                
                                 <option value="Líquido Amniótico">Líquido Amniótico</option>
                                 <option value="Tapón mucoso">Tapón mucoso</option>    
                                 <option value="Leucorrea">Leucorrea</option>  
@@ -473,13 +463,13 @@
                     </div>  
 
                     <div class="ficha-a__medDrogas__form__item">
-                     	<label class="lista-interactiva__title">Aspecto L. Amn. R.P.O.</label>
+                     	<label class="lista-interactiva__title">Aspecto líquido Amniótico R.P.O.</label>
                         <div class="ficha-a__medDrogas__form__item__input">
                             <label for="rMedCronico">Ausente</label>
-                            <input type="checkbox" name="rMedCronico" id="">
+                            <input type="checkbox" name="rMedCronico" id="" v-model="liqAmnAusente">
                         </div>
                         <div class="lista-interactiva__select"> 
-                            <select id="patoFam">                                
+                            <select id="patoFam" v-model="liquidoAmniotico">                                
                                 <option value="Líquido Amniótico">Claro</option>
                                 <option value="Tapón mucoso">Meconio fluído</option>    
                                 <option value="Meconio espeso">Meconio espeso</option>  
@@ -499,7 +489,7 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Tipo de leucorrea</label>
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="tipoLeucorrea">
                                 <option value="">Vaginosis bacteriana</option>
                                 <option value="">Tricornoniasis</option>
                                 <option value="">Micosis vaginal</option>
@@ -510,7 +500,7 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Cristalización</label>
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="cristalizacion">
                                 <option value="">Negativa</option>
                                 <option value="">Positiva</option>
                                 <option value="">No realizada</option>                               
@@ -521,16 +511,16 @@
 
                 <form class="ficha-a__antecedentes__form">
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">pH vahinal</label>
+                        <label class="lista-interactiva__title">pH vaginal</label>
                          <div class="lista-interactiva__select"> 
-                            <input type="number" name="number" id="number"> 
+                            <input type="number" name="number" id="number" v-model="phVaginal"> 
                         </div>                    
                     </div>
 
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">KOH vaginal</label>
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="khoVaginal">
                                 <option value="">Negativa</option>
                                 <option value="">Positiva</option>
                                 <option value="">No realizado</option>                               
@@ -546,7 +536,7 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Presentación:</label>
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="presentacionEco">
                                 <option value="Cefalica">Cefálica</option>
                                 <option value="Podalica">Podálica</option>    
                                 <option value="Tranversa">Transversa</option>  
@@ -565,7 +555,7 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Líquido Amniótico</label>
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="liqAnmioticoEco">
                                 <option value="Normal">Normal</option>
                                 <option value="P.H.A">P.H.A (>25)</option>    
                                 <option value="Disminución (2-5)">Disminunción (2-5)</option>  
@@ -578,7 +568,7 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Placenta</label>
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="placenta">
                                 <option value="Normoins.">Normoins.</option>
                                 <option value="Prv. marginal">Prv. marginal</option>    
                                 <option value="Prv. Total">Prv. Total</option>  
@@ -593,14 +583,14 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Indice Líquido Amniotico (cms.)</label>
                         <div class="lista-interactiva__select">
-                            <input type="number" name="embarazoPrevNormales" id="">
+                            <input type="number" name="embarazoPrevNormales" id="" v-model="indiceLiqAmn">
                         </div>                    
                     </div>
 
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Canal (mm.)</label>
                         <div class="lista-interactiva__select">
-                            <input type="number" name="embarazoPrevNormales" id="">
+                            <input type="number" name="embarazoPrevNormales" id="" v-model="canal">
                         </div>                    
                     </div>                    
 
@@ -608,11 +598,11 @@
                         <label class="lista-interactiva__title">Funnel</label>
                         <div class="ficha-a__medDrogas__form__item__input" id="Si">
                             <label for="embarazoPrevNormales">No</label>
-                            <input type="radio" name="embarazoPrevNormales" id="">
+                            <input type="radio" name="embarazoPrevNormales" id="" v-model="funnelNo">
                         </div>
                         <div class="ficha-a__medDrogas__form__item__input" id="No">
                             <label for="embarazoPrevNormales">Tamaño</label>
-                            <input type="number" name="embarazoPrevNormales" id="" step="0.01">
+                            <input type="number" name="embarazoPrevNormales" id="" step="0.01" v-model="funnel">
                         </div>                        
                     </div>
                 </form>
@@ -621,11 +611,11 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Estado de Peso fetal (grs.)</label>
                         <div class="lista-interactiva__select">
-                            <input type="number" name="embarazoPrevNormales" id="">
+                            <input type="number" name="embarazoPrevNormales" id="" v-model="estadoPFetal">
                         </div>                
-                        <label class="lista-interactiva__title">PBF</label>
+                        <label class="lista-interactiva__title">Perfil Biofísico</label>
                         <div class="lista-interactiva__select">
-                            <input type="number" name="embarazoPrevNormales" id=""><p>/8</p>
+                            <input type="number" name="embarazoPrevNormales" id="" v-model="pbf"><p>/8</p>
                         </div>                          
                     </div>   
                 </form>                  
@@ -637,15 +627,15 @@
                 <form class="info-personal__form">          
                     <div class="lista-interactiva__select">                    
                         <p>Semanas</p>
-                        <input type="number" name="embarazoPrevNormales" id="">
+                        <input type="number" name="embarazoPrevNormales" id="" v-model="semanas">
                     </div>
                     <div class="lista-interactiva__select"> 
                         <p>Días</p>
-                        <input type="number" name="embarazoPrevNormales" id="">
+                        <input type="number" name="embarazoPrevNormales" id="" v-model="dias">
                     </div>
                     <div class="lista-interactiva__select"> 
                         <p>Edad Gestacional dudosa</p>
-                        <input type="checkbox" name="embarazoPrevNormales" id="">
+                        <input type="checkbox" name="embarazoPrevNormales" id="" v-model="edadDudosa"
                     </div>
                 </form>
             </div>
@@ -654,7 +644,7 @@
             <div class="info-personales">            
                 <form class="info-personal__form">
                     <div class="lista-interactiva__select"> 
-                        <select id="patoFam">                                
+                        <select id="patoFam" v-model="diasIngreso">                                
                             <option value="Líquido Amniótico">Diagnosticos</option>
                             <option value="Líquido Amniótico">Diagnosticos</option>                    
                         </select> 
@@ -668,7 +658,7 @@
             <div class="ficha-a__antecedentes">                        
                 <form class="info-personal"> 
                     <div class="lista-interactiva__select">                    
-                        <textarea name="comentPreparto" rows="8" cols="100"></textarea>
+                        <textarea name="comentPreparto" rows="8" cols="100" v-model="comentarios"></textarea>
                     </div>
                 </form>
             </div>  
@@ -678,7 +668,7 @@
                 <form class="ficha-a__antecedentes__form"> 
                     
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
+                            <select id="patoFam" v-model="destinoIngreso">
                                 <option value="Embarazo Patológico">Embarazo Patológico</option>
                                 <option value="Preparto/Parto">Preparto/Parto</option>    
                                 <option value="Aislamiento">Aislamiento</option>  
@@ -686,8 +676,7 @@
                                 <option value="Pesionado">Pensionado</option>
                                 <option value="Otro">Otro</option>
                             </select> 
-                            <button class="btn btn-azul btn-añadir-a-lista">+</button> 
-                            <ul class="lista-interactiva__lista"></ul> 
+                           
                         </div>
                    
                 </form>
@@ -702,7 +691,168 @@
   </v-app>
 </template>
 
-
-
 <script>
+import axios from 'axios'
+export default {
+    data(){
+        return{
+            // La ip para llamar a la api
+            address: process.env.baseUrl,
+
+            //nombre del establecimiento (combobox)
+            derivada:'',
+            //rut de la paciente
+            rutPaciente:'',
+            //edad se debe generar un metodo para realizar el calculo y visualizarlo            
+            edadPaciente:'',
+            //fecha de ingreso (revisar ya que presenta tanto la fecha de ingreso como la hora)
+            fIngreso:'',
+            hIngreso:'',
+            //nombre de paciente
+            nombreP:'',            
+            //apellido de la paciente
+            apellidoP:'',
+            //motivo de ingreso Paciente
+            motivoIngreso:'',            
+            //patologia de Paciente (sin patologia)
+            sinPatologia: true,
+            //nombre de la Patologias
+            nombrePatologia:'',            
+            //sistolica
+            sistolica:0,
+            //diastolica
+            diastolica:0,
+            //pulso
+            pulso:0,
+            //resultado vih
+            vih:'',
+            //fecha examen VIH
+            fechaVih:'',
+            //resultado VDRL
+            vdrl:'',
+            //fecha ecamen vdrl
+            fechaVdrl:'',
+            //hematocrito
+            hematocrito:0,
+            //fecha examen hematocrito
+            fechaHcto:'',
+            //peso
+            peso:0,
+            //temperatura axilar 
+            tempAxilar:'',
+            //examen cuello y cabeza 
+            cabezaCuello:'',
+            //examen cardiopulmunar
+            cardiopulmunar:'',
+            //examen abdomen
+            abdomen:'',
+            //examen extreminades
+            extremidades:'',
+            //examen genitales externos
+            genitalExterno:'',
+            //examen mamas
+            mamas:'',
+            //descripcion examenes
+            descripExamen:'',
+            //trabajo de parto
+            trabajoParto:'',
+            //movimientos fetales
+            movFetales:'',
+            //Altura uterina
+            alturaUter:0,
+            //contracciones
+            contraccion:0,
+            //horas de trabajo de parto
+            trabParto:0,
+            //estimación clinica peso fetal
+            estPesoFetal:0,
+            //tono uterino
+            tonoUterino:'',
+            //examen servical (realizado)
+            examNoRealizado:true,
+            //tipo Examen Servical 
+            tipoExamServical:'',
+            //dilatacion cervical 
+            dilatCervical:0,
+            //Espinas
+            espinas:0,
+            //borrado en porcentaje
+            borrado:0,
+            //presentacion
+            presentacion:'',
+            //latidos cardiofetales
+            latCardiofetal:'',
+            //presentacion gem b
+            presentacionB:'',
+            //latidos cardiofetales gem b
+            latCardiofetalB:'',
+            //proteinuria ingreso
+            proteinIngreso:'', 
+            //membranas
+            membrabas:'',
+            //rpm dias
+            rpmDias:0,
+            //rpm horas
+            rpmHoras:0,
+            //no precisable
+            noPrecisable:true,
+            //perdida vaginal sin flujor
+            sinFlujo:true,
+            //perdida Vaginal
+            perdidaVaginal:[],
+            //liquido amniotico ausente
+            liqAmnAusente:true,
+            //liquido ambiotico r.p.o
+            liquidoAmniotico:[],
+            //tipo de leucorrea
+            tipoLeucorrea:'',
+            //cristalización
+            cristalizacion:'',
+            //ph vaginal
+            phVaginal:'',
+            //kho vaginal
+            khoVaginal:'',
+            //presentacion ecogafia
+            presentacionEco:'',
+            //liquido amniotico eco
+            liqAnmioticoECO:'', 
+            //placenta
+            placenta:'',
+            //indice liquido amniotico 
+            indiceLiqAmn:0,
+            //canal en centimetros
+            canal:0,
+            //funnel si o no
+            funnelNo:true,
+            //tamaño funnel
+            funnel:0,
+            //estado peso fetal
+            estadoPFetal:'',
+            //perfil biofisico
+            pbf:'',
+            //edad Gestacional
+            semanas:0,
+            dias:0,
+            edadDudosa:true,
+            //diagnostico al ingreso
+            diasIngreso:[],
+            //indicaciones y Comentarios
+            comentarios:'',
+            //destino ingreso
+            destinoIngreso:'',
+        }
+    },
+    methods: {
+        TakeComunas: async function(){
+
+            const listRegion = await axios.get(this.address+'/ObtenerRegion',
+                {
+                    headers: { "authorization": this.$auth.$storage['_state']['_token.local'] }
+                })
+
+            console.log(listRegion)
+        }
+
+    }
+}
 </script>
