@@ -608,4 +608,39 @@
 </style>
 
 <script>
+import axios from 'axios'
+export default {
+    data(){
+        return{
+            // La ip para llamar a la api
+            address: process.env.baseUrl,
+
+            //rut de la paciente
+            rutPaciente:'',
+            //fecha Procedimientos
+            fechaProcedim:'',
+            //hora de procedimiento
+            horaProcedim:'',
+            //nombres paciente
+            nombrePaciente:'',
+            //apellido paterno de rutPaciente
+            apellidoP:'',
+            //apellido materno de rutPaciente
+            apellidoM:'',
+            //grmr
+        }
+    },
+    methods: {
+        TakeComunas: async function(){
+
+            const listRegion = await axios.get(this.address+'/ObtenerRegion',
+                {
+                    headers: { "authorization": this.$auth.$storage['_state']['_token.local'] }
+                })
+
+            console.log(listRegion)
+        }
+
+    }
+}
 </script>
