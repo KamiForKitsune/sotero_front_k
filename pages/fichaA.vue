@@ -10,61 +10,81 @@
                 <!--  FechaIngresoRutDeLaMadreFechaDeIngresoDeLaMadre-->
                 <span class="info-personal__form__item">
                     <label for="fechingre">Fecha Ingreso</label>
-                    <input type="date" name="fechingre" id="fechingre">
+                    <input type="date" name="fechingre" v-model="fechingre">
+                    
                 </span>
                 <span class="info-personal__form__item">
                     <label for="rut-madre">Rut de la Madre</label>
-                    <input type="text" name="rut-madre" id="rut">
+                    <input type="text" name="rut-madre" v-model="rut">
                 </span>
                 <span class="info-personal__form__item">
                     <label for="fnacmadre">Fecha de nac. madre</label>
-                    <input type="date" name="fnacmadre" id="fnacmadre">
+                    <input type="date" name="fnacmadre" v-model="fnacmadre">
                 </span>
 
                 <!--PrimerNombreApellidoPaternoMaterno-->
 
                 <span class="info-personal__form__item">
                     <label for="pNombre">Primer nombre</label>
-                    <input type="text" name="pNombre" id="pNombre">
+                    <input type="text" name="pNombre" v-model="pNombre">
                 </span>
                 <span class="info-personal__form__item">
                     <label for="aPaterno">Apellido Paterno</label>
-                    <input type="text" name="aPaterno" id="aPaterno">
+                    <input type="text" name="aPaterno" v-model="aPaterno">
                 </span>
                 <span class="info-personal__form__item">
                     <label for="aMaterno">Apellido Materno</label>
-                    <input type="text" name="aMaterno" id="aMaterno">
+                    <input type="text" name="aMaterno" v-model="aMaterno">
                 </span>
 
                 <!-- DomicilioNumeroDeptoOCasa-->
 
                 <span class="info-personal__form__item">
                     <label for="direccion">Dirección</label>
-                    <input type="text" name="direccion" id="direccion">
+                    <input type="text" name="direccion" v-model="direccion">
                 </span>
                 <span class="info-personal__form__item">
                     <label for="numeroDomicilio">Número</label>
-                    <input type="number" name="numeroDomicilio" id="numeroDomicilio">
+                    <input type="number" name="numeroDomicilio" v-model="numeroDomicilio">
                 </span>
                 <span class="info-personal__form__item">
                     <label for="numDeptoCasa">Número depto o casa</label>
-                    <input type="text" name="numDeptoCasa" id="numDeptoCasa">
+                    <input type="text" name="numDeptoCasa" v-model="numDeptoCasa">
                 </span>
 
                 <!-- Poblacion/BarrioComunaTelefono  -->
 
                 <span class="info-personal__form__item">
                     <label for="poblacion">Poblacion o Barrio</label>
-                    <input type="text" name="poblacion" id="poblacion">
+                    <input type="text" name="poblacion" v-model="poblacion">
                 </span>
+                <!-- region -->
+                <span class="info-personal__form__item">
+                    <label for="Region">Region</label>
+                    <v-combobox
+                    v-model="regionSelected"
+                    :items="region"
+                    item-text="nombre"
+                    item-value="_id"
+                ></v-combobox>
+                    <!--Para autocompletar-->
+                </span>
+                <!-- comuna -->
+
                 <span class="info-personal__form__item">
                     <label for="Comuna">Comuna</label>
-                    <input type="text" name="comuna" id="comuna">
+                    <v-combobox
+                    v-model="comunaSelected"
+                    :items="comuna"
+                    v-if="regionSelected"
+                    item-text="nombre"
+                    item-value="_id"
+                    ></v-combobox>
                     <!--Para autocompletar-->
                 </span>
                 <span class="info-personal__form__item">
                     <label for="telefono">Telefono de contacto</label>
-                    <input type="text" name="telefono" id="telefono">
+                    <input type="text" name="telefono" v-model="telefono">
                 </span>
             </form>
         </div>
@@ -79,104 +99,71 @@
             <div class="ficha-a__antecedentes">
                 <form class="ficha-a__antecedentes__form">
                     <!--Prevision-->
+                    
                     <span class="ficha-a__antecedentes__form__item">
-                        <label for="prevision">Prevision</label>
-                        <select name="prevision">
-                            <option value="Sin Prevision">Sin Prevision</option>
-                            <option value="Fonasa A">Fonasa A</option>
-                            <option value="Fonasa B">Fonasa B</option>
-                            <option value="Fonasa C">Fonasa C</option>
-                            <option value="Fonasa D">Fonasa D</option>
-                            <option value="Isapre">Isapre</option>
-                        </select>
+                        <label for="estudios">Prevision</label>
+                        <v-combobox
+                        v-model="previsionSelected"
+                        :items="prevision"
+                        ></v-combobox>
                     </span>
+
 
                     <!--Estudios-->
                     <span class="ficha-a__antecedentes__form__item">
                         <label for="estudios">Estudios</label>
-                        <select name="estudios">
-                            <option value="Sin Educacion">Sin Educacion</option>
-                            <option value="Basica">Basica</option>
-                            <option value="Media">Media</option>
-                            <option value="Tecnica">Tecnica</option>
-                            <option value="Universitaria">Universitaria</option>
-                        </select>
+                        <v-combobox
+                        v-model="estudiosSelected"
+                        :items="estudios"
+                        ></v-combobox>
                     </span>
 
                     <!--Estado Civil-->
                     <span class="ficha-a__antecedentes__form__item">
                         <label for="estado-civil">Estado Civil</label>
-                        <select name="estado-civil">
-                            <option value="Casada">Casada</option>
-                            <option value="Convivente">Convivente</option>
-                            <option value="Soltera">Soltera</option>
-                            <option value="Otro">Otro</option>
-                        </select>
+                        <v-combobox
+                        v-model="estadoCivilSelected"
+                        :items="estado_civil"
+                        ></v-combobox>
                     </span>
 
                     <!--Actividad principal-->
                     <span class="ficha-a__antecedentes__form__item">
                         <label for="ocupacion">Ocupacion</label>
-                        <select name="ocupacion">
-                            <option value="Dueña de casa">Dueña de casa</option>
-                            <option value="Estudiante">Estudiante</option>
-                            <option value="Trabajo Esporadico">Trabajo Esporadico</option>
-                            <option value="Trabajo Media Jornada">Trabajo Media Jornada</option>
-                            <option value="Trabajo Jornada Completa">Trabajo Jornada Completa</option>
-                            <option value="Otro">Otro</option>
-                        </select>
+                        <v-combobox
+                        v-model="ocupacionSelected"
+                        :items="ocupacion"
+                        ></v-combobox>
                     </span>
 
                     <!--Grupo sanguineo de la madre-->
                     <div class="ficha-a__antecedentes__form__item">
                         <label for="grpSangre">Grupo Sanguineo Madre</label>
-                        <select id="grpSangre">
-                            <option value="A+">A+</option>
-                            <option value="A-">A-</option>
-                            <option value="A- no sensibilizada">A- no sens.</option>
-                            <option value="A- sensibilizada">A- sens.</option>
-                            <option value="B+">B+</option>
-                            <option value="B-">B-</option>
-                            <option value="B- no sensibilizada">B- no sens.</option>
-                            <option value="B- sensibilizada">B- sens.</option>
-                            <option value="O+">O+</option>
-                            <option value="O-">O-</option>
-                            <option value="O- no sensibilizada">O-no sens.</option>
-                            <option value="O- sensibilizada">O- sens. </option>
-                            <option value="AB+">AB+</option>
-                            <option value="AB-">AB-</option>
-                            <option value="AB- no sensibilizada">AB- no sens.</option>
-                            <option value="AB- sensibilizada">AB- sens.</option>
-                            <option value="?">Desconoce</option>
-                        </select>
+                        <v-combobox
+                        v-model="grpSangreSelected"
+                        :items="grpSangre"
+                        ></v-combobox>
                     </div>
 
                     <!--Grupo sanguineo Conyuge-->
                     <div class="ficha-a__antecedentes__form__item">
                         <label for="grpSangreConyu">Grupo Sanguineo Conyuge</label>
-                        <select id="grpSangreConyu">
-                            <option value="A+">A+</option>
-                            <option value="A-">A-</option>
-                            <option value="B+">B+</option>
-                            <option value="B-">B-</option>
-                            <option value="O+">O+</option>
-                            <option value="O-">O-</option>
-                            <option value="AB+">AB+</option>
-                            <option value="AB-">AB-</option>
-                            <option value="?">Desconoce</option>
-                        </select>
+                        <v-combobox
+                        v-model="grpSangreConyuSelected"
+                        :items="grpSangre"
+                        ></v-combobox>
                     </div>
 
                     <!--Peso-->
                     <div class="ficha-a__antecedentes__form__item">
                         <label for="peso">Peso</label>
-                        <input type="number" name="peso" placeholder="kg">
+                        <input type="number" name="peso" placeholder="kg" v-model="peso" >
                     </div>
 
                     <!--Estatura-->
                     <div class="ficha-a__antecedentes__form__item">
                         <label for="estatura">Estatura</label>
-                        <input type="number" name="estatura" placeholder="cm">
+                        <input type="number" name="estatura" placeholder="cm" v-model="estatura">
                     </div>
                 </form>
             </div>
@@ -188,18 +175,12 @@
                     <div class="lista-interactiva">
                         <label class="lista-interactiva__title">Patologia Familiar</label>
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
-                                <option value="Ninguna">Ninguna</option>
-                                <option value="Diabetes">Diabetes</option>
-                                <option value="TBC Pulmonar">TBC Pulmonar</option>
-                                <option value="Hipertensión Arterial">Hipertensión Arterial</option>
-                                <option value="Alergias">Alergias</option>
-                                <option value="Asma">Asma</option>
-                                <option value="Epilepsia">Epilepsia</option>
-                                <option value="Enfermedades Tiroiodes">Enfermedades Tiroiodes</option>
-                                <option value="Enfermedades Cardiacas">Enfermedades Cardiacas</option>
-                                <option value="Enfermedades Renal">Enfermedades Renal</option>
-                            </select>
+                            <!-- aca hay que filtrar la patlogia por el tipo de patologia que es KEVIN -->
+                            <v-combobox
+                            v-model="patologiaFarmiliarSelected"
+                            :items="patologia"
+                            multiple
+                            ></v-combobox>
                             <button class="btn btn-azul btn-añadir-a-lista">+</button>
                         </div>
                         <ul class="lista-interactiva__lista">
@@ -211,18 +192,11 @@
                     <div class="lista-interactiva">
                         <label class="lista-interactiva__title">Patologia Medica</label>
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
-                                <option value="Ninguna">Ninguna</option>
-                                <option value="Diabetes">Diabetes</option>
-                                <option value="TBC Pulmonar">TBC Pulmonar</option>
-                                <option value="Hipertensión Arterial">Hipertensión Arterial</option>
-                                <option value="Alergias">Alergias</option>
-                                <option value="Asma">Asma</option>
-                                <option value="Epilepsia">Epilepsia</option>
-                                <option value="Enfermedades Tiroiodes">Enfermedades Tiroiodes</option>
-                                <option value="Enfermedades Cardiacas">Enfermedades Cardiacas</option>
-                                <option value="Enfermedades Renal">Enfermedades Renal</option>
-                            </select>
+                            <v-combobox
+                            v-model="patologiaMedicaSelected"
+                            :items="patologia"
+                            multiple
+                            ></v-combobox>
                             <button class="btn btn-azul btn-añadir-a-lista">+</button>
                         </div>
                         <ul class="lista-interactiva__lista">
@@ -234,16 +208,11 @@
                     <div class="lista-interactiva">
                         <label class="lista-interactiva__title">Patologia Quirurgica</label>
                         <div class="lista-interactiva__select">
-                            <select id="patoFam">
-                                <option value="Ninguna">Ninguna</option>
-                                <option value="Cono">Cono</option>
-                                <option value="Miomas">Miomas</option>
-                                <option value="Infertibilidad">Infertibilidad</option>
-                                <option value="Litiasis renal">Litiasis renal</option>
-                                <option value="Asma">Asma</option>
-                                <option value="Colelitiasis">Colelitiasis</option>
-                                <option value="Apendicectomia">Apendicectomia</option>
-                            </select>
+                            <v-combobox
+                                v-model="patologiaQuirurjicaSelected"
+                                :items="patologia"
+                                multiple
+                            ></v-combobox>
                             <button class="btn btn-azul btn-añadir-a-lista">+</button>
                         </div>
                         <ul class="lista-interactiva__lista">
@@ -342,6 +311,7 @@
             </div>
 
             <!--Antecedentes Obstetricos-->
+            <!-- PENSAR EN ESTA SECCION -->
             <div class="ficha-a__antecedentes-obstetricos">
                 <span class="ficha-a__antecedentes-obstetricos__title">Antecedentes Obstétricos</span>
 
@@ -544,7 +514,7 @@
                 </form>
 
             </div>
-
+            <!-- FIN PENSAR EN ESTA SECCION -->
             <!--Antecedentes Embarazo Actual-->
             <div class="ficha-a__antecedentes-embarazo-actual">
                 <span class="ficha-a__antecedentes-embarazo-actual__title">Antecedentes Embarazo Actual</span>
@@ -556,22 +526,22 @@
 
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
                             <label for="inicio-semanas">Inicio &#40;sem.&#41;</label>
-                            <input type="number" id="" name="inicio-semanas">
+                            <input type="number" id="" name="inicio-semanas" v-model="inicio_semanas">
                         </div>
 
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
                             <label for="nro-controles">N° controles</label>
-                            <input type="number" id="" name="nro-controles">
+                            <input type="number" id="" name="nro-controles" v-model="nro_controles">
                         </div>
 
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
                             <label for="peso-normal">Peso normal &#40;Kgs.&#41;</label>
-                            <input type="number" id="" name="peso-normal">
+                            <input type="number" id="" name="peso-normal" v-model="peso_normal">
                         </div>
 
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
                             <label for="talla">Talla &#40;cms&#41;</label>
-                            <input type="number" id="" name="talla">
+                            <input type="number" id="" name="talla" v-model="talla">
                         </div>
                     </div>
 
@@ -581,12 +551,12 @@
 
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input--date">
                             <label for="fur">Fecha última regla</label>
-                            <input type="date" id="" name="fur">
+                            <input type="date" id="" name="fur" v-model="fur">
                         </div>
 
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
                             <label for="fur-no-confiable">F.U.R no confiable o no segura</label>
-                            <input type="checkbox" id="" name="fur-no-confiable" value="fur no confiable">
+                            <input type="checkbox" id="" name="fur-no-confiable" value="fur no confiable" v-model="fur_no_confiable">
                         </div>
 
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item--primera-ecografia">
@@ -594,18 +564,18 @@
                                 Ecografía</span>
                             <div class="ficha-a__antecedentes-embarazo-actual__form__item__input--date">
                                 <label for="fur">Fecha</label>
-                                <input type="date" id="" name="fur">
+                                <input type="date" id="" name="fur" v-model="fechaEcoFur">
                             </div>
 
                             <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
                                 <label for="edad-gestacional">Edad Gestacional</label>
-                                <input type="number" id="" name="edad-gestacional">
+                                <input type="number" id="" name="edad-gestacional" v-model="edad_gestacional">
                             </div>
                         </div>
 
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input--date">
                             <label for="fur">F.U.R Operacional</label>
-                            <input type="date" id="" name="fur">
+                            <input type="date" id="" name="fur" v-model="furConfiable">
                         </div>
                     </div>
                 </form>
@@ -616,12 +586,196 @@
         <div class="ficha-a__seccion-btn-global">
             <div class="btn-ingresar-datos">Ingresar Datos</div>
         </div>
-      
-        <v-btn elevation="2" @click="TakeComunas">Pulsame</v-btn>
+            <v-btn
+        elevation="2"
+        @click="ObtenerTodosLosDatos"
+        > Pulsame</v-btn>
       </v-card>
       
      </v-app>
 </template>
+
+<script>
+import axios from 'axios'
+export default {
+    data(){
+        return{
+            // La ip para llamar a la api
+            address: process.env.baseUrl,
+            fechingre: '',
+            rut:'',
+            fnacmadre:'',
+            pNombre:'',
+            aPaterno:'',
+            aMaterno:'',
+            direccion:'',
+            numeroDomicilio:0,
+            numDeptoCasa:'',
+            poblacion:'',
+            // revisar comuna
+            // 
+            region:[],
+            // 
+            comuna:[],
+            telefono:'',
+            // revisarPrevision
+            prevision:[],
+            // revisar estudios
+            estudios:[],
+            // Cambiar estado civil _
+            estado_civil:[],
+            // Revisar ocupacion
+            ocupacion:'',
+            // revisar grupo de sangre
+            grpSangre:[],
+            // revisar 
+            grpSangreConyu:'',
+            peso: 0 ,
+            estatura: 0 ,
+            // Revisar patologia familiar, patologia medica y patologia Quirurjica EN CASO QUE AL BUSCAR UN PACIENTE SE MUESTRE TODO EL LISTADO DE PATOLOGIAS QUE TIENE EL PACIENTE
+            patoFam: '',
+            // patologias
+            patologia: [],
+            // tipo patologias,
+            tPatologia:[],
+            // Revisar medicamento cronico
+            rMedCronico:'',
+            // revisaar cigarrillo
+            cantCigarrillos:'',
+            cantAlcohol:'',
+            // revisar drogas
+            drogas:[],
+            // revisar anticonceptivo
+            anticonceptivo:[],
+            // anticonceptivo otro ????
+            // Verificar lo de embarazos previos, como lo tomamos y como los generamos
+            // Verificar esto, obtencion y  filtro
+            rnMayorPeso:'',
+            // verificar obtencion y calculo de esto
+            cesareasPrevias:'',
+            // Todos los antecedentes obtetricos se necesitan tomaar y filtrar de cierta manera, es necesario conocer si obtenemos los datos y los transformamos o solo los obtenemos ya transformados
+            //  cambiar inicio-semanas por _
+            inicio_semanas:'',
+            // hay alguna manera de obtener los controles?
+            nro_controles: 0,
+            // peso normal de que?
+            peso_normal:0,
+            talla:0,
+            fur:'',
+            fur_no_confiable: false,
+            // cambiar edad-gestacional por _
+            edad_gestacional:'',
+            previsionSelected: '',
+            estudiosSelected: '',
+            estadoCivilSelected:'',
+            ocupacionSelected:'',
+            grpSangreSelected: '',
+            grpSangreConyuSelected: '',
+            regionSelected: '',
+            comunaSelected: '',
+            patologiaFarmiliarSelected:[],
+            patologiaQuirurjicaSelected:[],
+            patologiaMedicaSelected:[],
+            furConfiable:'',
+            fechaEcoFur:'',
+
+
+
+
+
+
+
+
+
+
+
+        }
+    },
+    created(){
+        //  Al abrirse la ficha A, se deberia obtener:
+        // Region, Prevision, Estudios, Estaado Civil, Ocupacion, grupo sanguineo(for both cbox),patologias (familiar, medica y quirurgica)
+        // Drogas, Anticoncepcion
+
+    },
+    watch:{
+        regionSelected: async function(){
+            if(this.regionSelected){
+
+            const getData = await axios.get(this.address+'/ObtenerComunas',{id_reg:this.regionSelected},
+            {
+                headers: { "authorization": this.$auth.$storage['_state']['_token.local'] }
+            })
+            }
+            this.comuna=getData.data
+
+        }
+
+    },
+    methods: {
+        TakeComunas:async function(){
+            alert("Cristina le gusta la palabra nose y emm", this.rut)
+            console.log('Cristina puede que le gusten las peras',this.fechingre)
+        },
+        ObtenerDatosPaciente: async function(){
+            // Aca tenemos que tomar datos del paciente
+            // Tomar los datos prevision, estudios, estado civil, ocupación, Grupos sanguineos de los familiares
+            // Embarazos previos, embarazo ectopico , embarazo gemelar, cesareas previas y cuales
+            // Causa de embarazos ectopicos
+            alert("Aun no estoy listo")
+        },
+
+        insertaFichaA: async function(){
+            const grabarFichaA = await axios.post(this.address+'/ObtenerTodo',{fichaA:fichaFData},
+                {
+                    headers: { "authorization": this.$auth.$storage['_state']['_token.local'] }
+                })
+            alert("Aun no no no estoy listo")
+
+        },
+        ObtenerTodosLosDatos: async function(){
+                const getData = await axios.get(this.address+'/ObtenerDataFichaA',
+                {
+                    headers: { "authorization": this.$auth.$storage['_state']['_token.local'] }
+                })
+                console.log(getData)
+
+                this.region = getData.data[0]
+                this.prevision = getData.data[1]
+                this.estudios = getData.data[2]
+                this.estado_civil = getData.data[3]
+                this.ocupacion = getData.data[4]
+                this.grpSangre= getData.data[5]
+                this.patologia = getData.data[6]
+                this.tPatologia = getData.data[7]
+                this.drogas = getData.data[8]
+                this.anticonceptivo = getData.data[9]
+                // this.region = getData.data[0].nombre
+                // this.prevision = getData.data[1].nombre
+                // this.estudios = getData.data[2].nomEstudio
+                // this.estado_civil = getData.data[3].nombre
+                // this.ocupacion = getData.data[4].nomActividad
+                // this.grpSangre= getData.data[5].nombre
+                // this.patologia = getData.data[6].nombre
+                // this.tPatologia = getData.data[7].nombre
+                // this.drogas = getData.data[8].nom_droga
+                // this.anticonceptivo = getData.data[9].nombre
+                console.log(this.region[0].nombre)
+
+
+
+
+
+        } 
+
+    }
+}
+</script>
+
+
+
+
+
+
 
 <style>
   @import '../assets/estilos.css';

@@ -11,7 +11,7 @@
                   {{ platformName }}
                 </h3>
                 <v-flex>
-                  <v-img :alt="platformName" class="ml-3" contain height="48px" position="center right" src="https://www.mobygames.com/images/i/12/25/1435075.png"></v-img>
+                  <v-img :alt="platformName" class="ml-3" contain height="48px" position="center right" src="..\banner1.jpg"></v-img>
                 </v-flex>
               </v-layout>
             </v-card-title>
@@ -53,7 +53,7 @@
               |
               <a href="#">Terms of Service</a>
             </p>
-            <p class="caption my-3">Powered by <a href="#">StaffCircle</a></p>
+            <p class="caption my-3">Powered by <a href="#">VeryMelon</a></p>
           </v-layout>
         </v-flex>
       </v-layout>
@@ -89,9 +89,8 @@ export default {
           this.$auth.loginWith('local',{
             data: this.userInfo
           })
-
           } catch (error) {
-            alert("No se que hacer",error)
+            console.log('Ha ocurrido un error: ',error);
           }
     }
   }
