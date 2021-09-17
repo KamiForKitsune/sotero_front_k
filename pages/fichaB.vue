@@ -3,15 +3,12 @@
   <v-card>
     <div class="content">
         <!-- Formulario info personal-->
-        <div class="info-personal">
+         <div class="info-personal">
             <h2 class="info-personal__title">Ingreso e identificación</h2>
-            <form class="info-personal__form">                
-                <div class="ficha-a__medDrogas__form__item">
-
-                   
-                    <label class="lista-interactiva__title">Derivada desde</label>                        
-                    <div class="lista-interactiva__select">
-                        <!--<select id="patoFam" v-model="derivada">
+            <form class="info-personal__form">
+                <!--  FechaIngresoRutDeLaMadreFechaDeIngresoDeLaMadre-->
+                <span class="info-personal__form__item">
+                    <!--<select id="patoFam" v-model="derivada">
                             <option value="Paro">Paro</option>
                             <option value="CRS">CRS</option>
                             <option value="Consultorio">Consultorio</option>
@@ -23,43 +20,39 @@
                         <button class="btn btn-azul btn-añadir-a-lista">+</button>  
                         <ul class="lista-interactiva__lista">                                                  
                         </ul>-->
-                        <v-combobox label="" v-model="derivada"></v-combobox>
-                    </div>  
-                    
-                </div>
+                    <label for="rut-madre">Derivada desde</label>
+                    <v-combobox label="" v-model="derivada" hide-details class="text-n"></v-combobox>
+                </span>
+      
+                <span class="info-personal__form__item">
+                    <label for="rut-madre">Rut de la Madre</label>                    	
+                    <v-text-field label="" v-model="rutPaciente" hide-details type="text" class="text-n"></v-text-field>
+                </span>
 
-                <div class="ficha-a__medDrogas__form__item">
-                        
-                    <span class="ficha-a__medDrogas__form__item__input">
-                    	<label for="rut-madre">Rut de la Madre</label>                    	
-                        <v-text-field label="" v-model="rutPaciente" hide-details type="text" class="text"></v-text-field>
-                	</span>
+                <span class="info-personal__form__item">
+                    <label for="rut-madre">Edad</label>                    	
+                    <v-text-field label="" v-model="edadPaciente" hide-details type="number" class="text-n"></v-text-field>
+                </span>    
+                             	
+                <span class="ficha-a__medDrogas__form__item__text">
+                    <label for="rut-madre">Fecha de ingreso</label>                    	
+                    <v-text-field label="" v-model="fIngreso" hide-details type="date" class="text-n"></v-text-field>
+                </span>
 
-                	<span class="ficha-a__medDrogas__form__item__input">
-                    	<label for="rut-madre">Edad</label>                    	
-                        <v-text-field label="" v-model="edadPaciente" hide-details type="number" class="text"></v-text-field>
-                	</span>
+                <span class="ficha-a__medDrogas__form__item__text">
+                    <label for="rut-madre">Hora ingreso</label>                    	
+                    <v-text-field label="" v-model="hIngreso" hide-details type="time" class="text-n"></v-text-field>
+                </span>
 
-                	<span class="ficha-a__medDrogas__form__item__input">
-                    	<label for="rut-madre">Fecha de ingreso</label>                    	
-                        <v-text-field label="" v-model="fIngreso" hide-details type="date" class="text"></v-text-field>
-                	</span>
+                <span class="ficha-a__medDrogas__form__item__text">
+                    <label for="rut-madre">Nombres</label>
+                    <v-text-field label="" v-model="nombreP" hide-details type="text" class="text-n"></v-text-field>
+                </span>
 
-                	<span class="ficha-a__medDrogas__form__item__input">
-                    	<label for="rut-madre">Hora ingreso</label>                    	
-                        <v-text-field label="" v-model="hIngreso" hide-details type="time" class="text"></v-text-field>
-                	</span>
-
-                	<span class="ficha-a__medDrogas__form__item__input">
-                    	<label for="rut-madre">Nombres</label>
-                        <v-text-field label="" v-model="nombreP" hide-details type="text" class="text"></v-text-field>
-                	</span>
-
-                	<span class="ficha-a__medDrogas__form__item__input">
-                    	<label for="rut-madre">Apellidos</label>                    	
-                        <v-text-field label="" v-model="apellidoP" hide-details type="text" class="text"></v-text-field>
-                	</span>
-            	</div>
+                <span class="ficha-a__medDrogas__form__item__text">
+                    <label for="rut-madre">Apellidos</label>                    	
+                    <v-text-field label="" v-model="apellidoP" hide-details type="text" class="text-n"></v-text-field>
+                </span>            	
             </form>
         </div>
         <div class="ficha-a">
@@ -67,7 +60,7 @@
             <div class="ficha-a__antecedentes">                        
                 <form class="info-personal"> 
                     <div class="lista-interactiva__select">                    
-                        <textarea name="comentPreparto" rows="8" cols="100" v-model="motivoIngreso"></textarea>
+                        <v-textarea name="comentPreparto" rows="8" rows-height="8" v-model="motivoIngreso" class="area"></v-textarea>
                     </div>
                 </form>
             </div>  
@@ -75,94 +68,92 @@
             <h2 class="ficha-a__title">Control parental y signos vitales al ingreso</h2>
             <div class="ficha-a__antecedentes">   
                 
-                <form class="ficha-a__antecedentes__form">
+                <form class="info-personal__form">
                    <div class="ficha-a__medDrogas__form__item">
                      	<label class="lista-interactiva__title">Patologia</label>
                         <div class="ficha-a__medDrogas__form__item__input">
-                            <label for="rMedCronico">Sin patología</label>
-                            <input type="checkbox" name="rMedCronico" id="" v-model="sinPatologia">
+                            <label for="rMedCronico">Sin patología</label>                            
+                            <v-checkbox hide-details v-model="sinPatologia" class="check"></v-checkbox>
                         </div>
                         <div class="lista-interactiva__select"> 
-                            <select id="patoFam" v-model="nombrePatologia">                                
+                            <!--<select id="patoFam" >                                
                                 <option value="Pat. mamaria">Pat. mamaria</option>
                                 <option value="Caries">Caries</option>
                                 <option value="Gingivitis">Gingivitis</option>                                
                             </select> 
                             <button class="btn btn-azul btn-añadir-a-lista">+</button> 
-                            <ul class="lista-interactiva__lista"></ul> 
+                            <ul class="lista-interactiva__lista"></ul> -->
+                            <v-combobox v-model="nombrePatologia" hide-details multiple="true" class="text"></v-combobox>
                         </div>
                     </div>  
 
                     <div class="ficha-a__medDrogas__form__item">
                      	<label class="lista-interactiva__title">Presión arterial</label>
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
-                            <label for="inicio-semanas">Sistólica</label>
-                            <input type="number" id="" name="inicio-semanas" v-model="sistolica">
+                            <label for="inicio-semanas">Sistólica</label>                            
+                            <v-text-field label="" v-model="sistolica" hide-details type="number" class="text"></v-text-field>
                         </div>
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
-                            <label for="inicio-semanas">Diastólica</label>
-                            <input type="number" id="" name="inicio-semanas" v-model="diastolica">
+                            <label for="inicio-semanas">Diastólica</label>                            
+                            <v-text-field label="" v-model="diastolica" hide-details type="number" class="text"></v-text-field>
                         </div>
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
-                            <label for="inicio-semanas">Pulso</label>
-                            <input type="number" id="" name="inicio-semanas" v-model="pulso">
+                            <label for="inicio-semanas">Pulso</label>                           
+                            <v-text-field label="" v-model="pulso" hide-details type="number" class="text"></v-text-field>
                         </div>
-                    </div>                    
-                </form>     
-
-                <form class="ficha-a__antecedentes__form">
+                    </div>     
 
                     <div class="ficha-a__medDrogas__form__item">
                      	<label class="lista-interactiva__title">VIH</label>
                         <div class="lista-interactiva__select"> 
-                            <select id="patoFam" v-model="vih">
+                            <!--<select id="patoFam">
                                 <option value="-">-</option>
                                 <option value="+">+</option>
-                            </select> 
+                            </select> -->
+                            <v-combobox v-model="vih" hide-details class="text"></v-combobox>
                         </div>             
                         <label class="lista-interactiva__title">Fecha examen</label>
-                        <div class="lista-interactiva__select"> 
-                            <input type="date" name="Fecha1" id="Fecha1" v-model="fechaVih"> 
+                        <div class="lista-interactiva__select">                             
+                            <v-text-field label="" v-model="fechaVih" hide-details type="date" class="text"></v-text-field>
                         </div>           
-                    </div>
+                    </div>               
+                </form>     
 
+                <form class="info-personal__form">  
                     <div class="ficha-a__medDrogas__form__item">
                      	<label class="lista-interactiva__title">VDRL</label>
                         <div class="lista-interactiva__select"> 
-                            <select id="patoFam" v-model="vdrl">
+                            <!--<select id="patoFam">
                                 <option value="-">-</option>
                                 <option value="+">+</option>
-                            </select> 
+                            </select> -->
+                            <v-combobox v-model="vdrl" hide-details class="text"></v-combobox>
                         </div>
                         <label class="lista-interactiva__title">Fecha examen</label>
-                        <div class="lista-interactiva__select"> 
-                            <input type="date" name="Fecha1" id="Fecha1" v-model="fechaVdrl"> 
+                        <div class="lista-interactiva__select">                             
+                            <v-text-field label="" v-model="fechaVdrl" hide-details type="date" class="text"></v-text-field>
                         </div>
-                    </div>                   
-                    
-                </form>	                
+                    </div> 
 
-                <form class="ficha-a__antecedentes__form">          
-
-                     <div class="ficha-a__medDrogas__form__item">
+                    <div class="ficha-a__medDrogas__form__item">
                      	<label class="lista-interactiva__title">Hematocrito</label>
-                        <div class="lista-interactiva__select"> 
-                            <input type="number" name="Hcto." id="Hcto" v-model="hematocrito"> 
+                        <div class="lista-interactiva__select">                            
+                            <v-text-field label="" v-model="hematocrito" hide-details type="number" class="text"></v-text-field> 
                         </div>
                         <label class="lista-interactiva__title">Fecha examen</label>
-                        <div class="lista-interactiva__select"> 
-                            <input type="date" name="Fecha1" id="Fecha1" v-model="fechaHcto"> 
+                        <div class="lista-interactiva__select">                            
+                            <v-text-field label="" v-model="fechaHcto" hide-details type="date" class="text"></v-text-field> 
                         </div>                        
                     </div> 
 
                     <div class="ficha-a__medDrogas__form__item">
                      	<label class="lista-interactiva__title">Peso actual</label>
-                        <div class="lista-interactiva__select"> 
-                            <input type="number" name="Pulso" id="Pulso" v-model="peso"> 
+                        <div class="lista-interactiva__select">
+                            <v-text-field label="" v-model="peso" hide-details type="number" class="text"></v-text-field> 
                         </div>
                         <label class="lista-interactiva__title">Temperatura axilar</label>
-                        <div class="lista-interactiva__select"> 
-                            <input type="number" name="Pulso" id="Pulso" v-model="tempAxilar"> 
+                        <div class="lista-interactiva__select">                             
+                            <v-text-field label="" v-model="tempAxilar" hide-details type="number" class="text"></v-text-field>
                         </div>
                     </div>                   
                 </form>
@@ -175,33 +166,36 @@
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Cabeza y cuello</label>
                         <div class="lista-interactiva__select">                         
-                            <select id="patoFam" v-model="cabezaCuello">
+                            <!--<select id="patoFam" >
                                 <option value="-">Normal</option>
                                 <option value="+">Anormal</option>
                                 <option value="+">No Realiz.</option>
-                            </select> 
+                            </select> -->
+                            <v-combobox v-model="cabezaCuello" hide-details class="text"></v-combobox>
                         </div>
                     </div>
 
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Cardiopulmunar</label>
                         <div class="lista-interactiva__select">                                
-                            <select id="patoFam" v-model="cardiopulmunar">
+                            <!--<select id="patoFam" >
                                 <option value="-">Normal</option>
                                 <option value="+">Anormal</option>
                                 <option value="+">No Realiz.</option>
-                            </select> 
+                            </select>--> 
+                            <v-combobox v-model="cardiopulmunar" hide-details class="text"></v-combobox>
                         </div>
                     </div>                    
                
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Abdomen</label>
                         <div class="lista-interactiva__select">                                 
-                            <select id="patoFam" v-model="abdomen">
+                            <!--select id="patoFam" >
                                 <option value="-">Normal</option>
                                 <option value="+">Anormal</option>
                                 <option value="+">No Realiz.</option>
-                            </select> 
+                            </select>-->
+                            <v-combobox v-model="abdomen" hide-details class="text"></v-combobox>
                         </div>
                     </div>            
                  </form>
@@ -243,7 +237,7 @@
                                       
                 <form class="info-personal"> 
                     <div class="lista-interactiva__select">                    
-                        <textarea name="comentPreparto" rows="8" cols="100" v-model="descripExamen"></textarea>
+                        <textarea name="comentPreparto" rows="8" cols="100" v-model="descripExamen"></textarea>                        
                     </div>
                 </form>                
 
@@ -598,7 +592,7 @@
                         <label class="lista-interactiva__title">Funnel</label>
                         <div class="ficha-a__medDrogas__form__item__input" id="Si">
                             <label for="embarazoPrevNormales">No</label>
-                            <input type="radio" name="embarazoPrevNormales" id="" v-model="funnelNo">
+                            <input type="checkbox" name="embarazoPrevNormales" id="" v-model="funnelNo">
                         </div>
                         <div class="ficha-a__medDrogas__form__item__input" id="No">
                             <label for="embarazoPrevNormales">Tamaño</label>

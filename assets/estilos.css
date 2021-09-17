@@ -79,7 +79,8 @@ html {
 }
 
 .ficha-a__antecedentes {
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
+   
     border-bottom: solid 2px rgba(0, 0, 0, 0.08);
 }
 
@@ -640,4 +641,25 @@ textarea{
 
 .text{
     margin-top:-20px;
+}
+
+.check{
+    margin-top:-5px;
+}
+
+.text-n{
+    width:300px;
+    margin-top:-5px;    
+}
+
+.ficha-a__medDrogas__form__item__text {
+    display: block;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+.area{
+    width:1005px;
+    margin: 2rem 2rem 2rem 2rem;    
 }
