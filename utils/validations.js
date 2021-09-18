@@ -9,7 +9,7 @@ let minLength = (propertyType,minLength) =>{
 
 }
 let maxLength = (propertyType,maxLength) =>{
-    return v => V && v.length <= minlength || '$(propertyType) debe tener menos de $(minlength)'
+    return v => V && v.length <= maxLength || '$(propertyType) debe tener menos de $(maxLength)'
 
 }
 export default {
