@@ -1,10 +1,11 @@
 <template>
   <v-app>
-  <v-card>
+  <pacienteDatos></pacienteDatos>
+  <v-card>    
     <div class="content">
-        <!-- Formulario info personal-->
-         <div class="info-personal">
-            <h2 class="info-personal__title">Ingreso e identificación</h2>
+        <!-- Formulario info personal-->        
+        <div class="info-personal">
+            <h2 class="info-personal__title">Ingreso y motivo de ingreso</h2>
             <form class="info-personal__form">
                 <!--  FechaIngresoRutDeLaMadreFechaDeIngresoDeLaMadre-->
                 <span class="info-personal__form__item">
@@ -23,17 +24,7 @@
                     <label for="rut-madre">Derivada desde</label>
                     <v-combobox label="" v-model="derivada" hide-details class="text-n"></v-combobox>
                 </span>
-      
-                <span class="info-personal__form__item">
-                    <label for="rut-madre">Rut de la Madre</label>                    	
-                    <v-text-field label="" v-model="rutPaciente" hide-details type="text" class="text-n"></v-text-field>
-                </span>
-
-                <span class="info-personal__form__item">
-                    <label for="rut-madre">Edad</label>                    	
-                    <v-text-field label="" v-model="edadPaciente" hide-details type="number" class="text-n"></v-text-field>
-                </span>    
-                             	
+                                   	
                 <span class="ficha-a__medDrogas__form__item__text">
                     <label for="rut-madre">Fecha de ingreso</label>                    	
                     <v-text-field label="" v-model="fIngreso" hide-details type="date" class="text-n"></v-text-field>
@@ -42,29 +33,19 @@
                 <span class="ficha-a__medDrogas__form__item__text">
                     <label for="rut-madre">Hora ingreso</label>                    	
                     <v-text-field label="" v-model="hIngreso" hide-details type="time" class="text-n"></v-text-field>
-                </span>
+                </span>      
 
-                <span class="ficha-a__medDrogas__form__item__text">
-                    <label for="rut-madre">Nombres</label>
-                    <v-text-field label="" v-model="nombreP" hide-details type="text" class="text-n"></v-text-field>
-                </span>
+            </form>
 
-                <span class="ficha-a__medDrogas__form__item__text">
-                    <label for="rut-madre">Apellidos</label>                    	
-                    <v-text-field label="" v-model="apellidoP" hide-details type="text" class="text-n"></v-text-field>
-                </span>            	
+            <form class="info-personal"> 
+                <div class="lista-interactiva__select"> 
+                    <label for="rut-madre" class="area-t">Motivo de ingreso</label>                   
+                    <v-textarea name="comentPreparto" rows="8" rows-height="8" v-model="motivoIngreso" class="area"></v-textarea>
+                </div>
             </form>
         </div>
-        <div class="ficha-a">
-            <h2 class="ficha-a__title">Motivo del ingreso</h2>
-            <div class="ficha-a__antecedentes">                        
-                <form class="info-personal"> 
-                    <div class="lista-interactiva__select">                    
-                        <v-textarea name="comentPreparto" rows="8" rows-height="8" v-model="motivoIngreso" class="area"></v-textarea>
-                    </div>
-                </form>
-            </div>  
-            
+
+        <div class="ficha-a">                       
             <h2 class="ficha-a__title">Control parental y signos vitales al ingreso</h2>
             <div class="ficha-a__antecedentes">   
                 
@@ -680,13 +661,14 @@
     </div>
     <div class="ficha-a__seccion-btn-global">
         <div class="btn-ingresar-datos">Ingresar Datos</div>
-    </div>
+    </div>    
     </v-card>
   </v-app>
 </template>
 
 <script>
 import axios from 'axios'
+import pacienteDatos from '../components/PacienteDatos'
 export default {
     data(){
         return{

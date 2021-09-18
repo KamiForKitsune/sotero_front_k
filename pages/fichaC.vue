@@ -1,18 +1,14 @@
 <template>
     <v-app>
+        <pacienteDatos></pacienteDatos> 
         <v-card>
-            <div class="content">
+        <div class="content">
         <!-- Formulario info personal-->
         <div class="info-personal">
-            <h2 class="info-personal__title">Datos Personales</h2>
+            <h2 class="info-personal__title">Datos procedimiento</h2>
             <form class="info-personal__form">
-                <!--  FechaIngresoRutDeLaMadreFechaDeIngresoDeLaMadre-->
-                
-                <span class="info-personal__form__item">
-                    <label for="rut-madre">Rut de la Madre</label>
-                    <input type="text" name="rut-madre" id="rut">
-                </span>
-
+                <!--  FechaIngresoRutDeLaMadreFechaDeIngresoDeLaMadre-->                
+               
                 <span class="info-personal__form__item">
                     <label for="fechingre">Fecha del procedimiento</label>
                     <input type="date" name="fechingre" id="fechingre">
@@ -21,22 +17,7 @@
                 <span class="info-personal__form__item">
                     <label for="fnacmadre">Hora de procedimiento</label>
                     <input type="time" name="fnacmadre" id="fnacmadre">
-                </span>
-
-                <!--PrimerNombreApellidoPaternoMaterno-->
-
-                <span class="info-personal__form__item">
-                    <label for="pNombre">Nombres</label>
-                    <input type="text" name="pNombre" id="pNombre">
-                </span>
-                <span class="info-personal__form__item">
-                    <label for="aPaterno">Apellido Paterno</label>
-                    <input type="text" name="aPaterno" id="aPaterno">
-                </span>
-                <span class="info-personal__form__item">
-                    <label for="aMaterno">Apellido Materno</label>
-                    <input type="text" name="aMaterno" id="aMaterno">
-                </span>
+                </span>                
             </form>
         </div>
 

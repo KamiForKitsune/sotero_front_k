@@ -1,23 +1,12 @@
 <template>
-    <v-app>       
+    <v-app> 
+        <pacienteDatos></pacienteDatos>     
         <v-card>
             <div class="content">        
         
         <div class="info-personal">
             <h2 class="info-personal__title">Identificación del recién nacido</h2>
-            <form class="ficha-a__antecedentes__form">                 
-
-                <span class="info-personal__form__item">
-                    <label for="pNombre">Rut de la Madre</label>
-                    <input type="text" name="pNombre" id="pNombre">
-                </span>
-                <span class="info-personal__form__item">
-                    <label for="aPaterno">Generar N°</label>
-                    <input type="number" name="aPaterno" id="aPaterno">
-                </span>            
-                
-            </form>
-            <!--Información del recien nacido-->
+           
             <form class="info-personal__form">
                
                 <span class="info-personal__form__item">

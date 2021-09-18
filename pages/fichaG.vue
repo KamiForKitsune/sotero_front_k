@@ -1,10 +1,11 @@
 <template>
     <v-app>
+    <pacienteDatos></pacienteDatos>
         <v-card>
             <div class="content">        
             <!-- FormularioG-->
                 <div class="info-personal">
-                <h2 class="info-personal__title">Datos Personales</h2>
+                <h2 class="info-personal__title">Datos Recien nacido</h2>
                 <form class="info-personal__form">
                     
                     <span class="info-personal__form__item">
@@ -20,37 +21,7 @@
                     <span class="info-personal__form__item">
                         <label for="pensionado">Ingreso trasladado</label>
                         <input type="radio" name="reanimacion" id="">
-                    </span>
-
-                    <span class="info-personal__form__item">
-                        <label for="pNombre">Generar N°</label>
-                        <input type="number" name="pNombre" id="pNombre">
-                    </span>
-
-                    <span class="info-personal__form__item">
-                        <label for="aPaterno">Rut de la madre</label>
-                        <input type="text" name="aPaterno" id="aPaterno">
-                    </span>
-
-                    <span class="info-personal__form__item">
-                        <label for="aMaterno">Edad de la madre</label>
-                        <input type="number" name="aMaterno" id="aMaterno">
-                    </span>
-
-                    <span class="info-personal__form__item">
-                        <label for="pNombre">Nombre de la madre</label>
-                        <input type="text" name="pNombre" id="pNombre">
-                    </span>
-
-                    <span class="info-personal__form__item">
-                        <label for="aPaterno">Apellido paterno de la madre</label>
-                        <input type="text" name="aPaterno" id="aPaterno">
-                    </span>
-
-                    <span class="info-personal__form__item">
-                        <label for="aPaterno">Apellido materno de la madre</label>
-                        <input type="text" name="aPaterno" id="aPaterno">
-                    </span>
+                    </span>                  
                 </form>
                 </div>                
             </div>

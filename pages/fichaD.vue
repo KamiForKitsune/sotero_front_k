@@ -1,81 +1,11 @@
 <template>
     <v-app>
-        <v-card>
-        <div class="content">
-        <!-- Formulario info personal-->
-        <div class="info-personal">
-            <h2 class="info-personal__title">Datos Personales</h2>
-
-            <form class="info-personal__form">
-
-                <!--  FechaIngresoRutDeLaMadreFechaDeIngresoDeLaMadre-->
-                <span class="info-personal__form__item">
-                    <label for="fechingre">Fecha Ingreso</label>
-                    <input type="date" name="fechingre" id="fechingre">
-                </span>
-                <span class="info-personal__form__item">
-                    <label for="rut-madre">Rut de la Madre</label>
-                    <input type="text" name="rut-madre" id="rut">
-                </span>
-                <span class="info-personal__form__item">
-                    <label for="fnacmadre">Fecha de nac. madre</label>
-                    <input type="date" name="fnacmadre" id="fnacmadre">
-                </span>
-
-                <!--PrimerNombreApellidoPaternoMaterno-->
-
-                <span class="info-personal__form__item">
-                    <label for="pNombre">Primer nombre</label>
-                    <input type="text" name="pNombre" id="pNombre">
-                </span>
-                <span class="info-personal__form__item">
-                    <label for="aPaterno">Apellido Paterno</label>
-                    <input type="text" name="aPaterno" id="aPaterno">
-                </span>
-                <span class="info-personal__form__item">
-                    <label for="aMaterno">Apellido Materno</label>
-                    <input type="text" name="aMaterno" id="aMaterno">
-                </span>
-
-                <!-- DomicilioNumeroDeptoOCasa-->
-
-                <span class="info-personal__form__item">
-                    <label for="direccion">Direccion</label>
-                    <input type="text" name="direccion" id="direccion">
-                </span>
-                <span class="info-personal__form__item">
-                    <label for="numeroDomicilio">Numero</label>
-                    <input type="number" name="numeroDomicilio" id="numeroDomicilio">
-                </span>
-                <span class="info-personal__form__item">
-                    <label for="numDeptoCasa">Numero depto o casa</label>
-                    <input type="text" name="numDeptoCasa" id="numDeptoCasa">
-                </span>
-
-                <!-- Poblacion/BarrioComunaTelefono  -->
-
-                <span class="info-personal__form__item">
-                    <label for="poblacion">Poblacion o Barrio</label>
-                    <input type="text" name="poblacion" id="poblacion">
-                </span>
-                <span class="info-personal__form__item">
-                    <label for="Comuna">Comuna</label>
-                    <input type="text" name="comuna" id="comuna">
-                    <!--Para autocompletar-->
-                </span>
-                <span class="info-personal__form__item">
-                    <label for="telefono">Telefono de contacto</label>
-                    <input type="text" name="telefono" id="telefono">
-                </span>
-            </form>
-        </div>
-
+        <pacienteDatos></pacienteDatos>
+        <v-card>        
+        <div class="content">          
         <!-- Ficha D -->
-        <div class="ficha-a D">
-            
-            <h2 class="ficha-a__title">Ficha D</h2>
-
-            <!-- Ingreso -->
+        <div class="ficha-a D">            
+            <h2 class="ficha-a__title">Ficha D</h2>            <!-- Ingreso -->
             <div class="ficha-a__antecedentes">
 
                 <form class="ficha-a__antecedentes__form D">

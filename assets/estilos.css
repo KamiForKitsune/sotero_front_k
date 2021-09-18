@@ -649,7 +649,7 @@ textarea{
 
 .text-n{
     width:300px;
-    margin-top:-5px;    
+    margin-top:-10px;    
 }
 
 .ficha-a__medDrogas__form__item__text {
@@ -661,5 +661,6 @@ textarea{
 
 .area{
     width:1005px;
-    margin: 2rem 2rem 2rem 2rem;    
+    margin: 2rem 2rem 2rem 2rem;   
+    margin-top:-10px;  
 }

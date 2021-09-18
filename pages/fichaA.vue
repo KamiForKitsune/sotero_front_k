@@ -105,6 +105,8 @@
                         <v-combobox
                         v-model="previsionSelected"
                         :items="prevision"
+                        item-text="nombre"
+                        item-value="_id"
                         ></v-combobox>
                     </span>
 
@@ -115,6 +117,8 @@
                         <v-combobox
                         v-model="estudiosSelected"
                         :items="estudios"
+                        item-text="nomEstudio"
+                        item-value="_id"
                         ></v-combobox>
                     </span>
 
@@ -124,6 +128,8 @@
                         <v-combobox
                         v-model="estadoCivilSelected"
                         :items="estado_civil"
+                        item-text="nombre"
+                        item-value="_id"                        
                         ></v-combobox>
                     </span>
 
@@ -133,6 +139,8 @@
                         <v-combobox
                         v-model="ocupacionSelected"
                         :items="ocupacion"
+                        item-text="nomActividad"
+                        item-value="_id"
                         ></v-combobox>
                     </span>
 
@@ -142,6 +150,8 @@
                         <v-combobox
                         v-model="grpSangreSelected"
                         :items="grpSangre"
+                        item-text="nombre"
+                        item-value="_id"                        
                         ></v-combobox>
                     </div>
 
@@ -151,6 +161,8 @@
                         <v-combobox
                         v-model="grpSangreConyuSelected"
                         :items="grpSangre"
+                        item-text="nombre"
+                        item-value="_id"
                         ></v-combobox>
                     </div>
 
@@ -180,6 +192,8 @@
                             v-model="patologiaFarmiliarSelected"
                             :items="patologia"
                             multiple
+                            item-text="nombre"
+                            item-value="_id"                            
                             ></v-combobox>
                             <button class="btn btn-azul btn-añadir-a-lista">+</button>
                         </div>
@@ -196,6 +210,8 @@
                             v-model="patologiaMedicaSelected"
                             :items="patologia"
                             multiple
+                            item-text="nombre"
+                            item-value="_id"
                             ></v-combobox>
                             <button class="btn btn-azul btn-añadir-a-lista">+</button>
                         </div>
@@ -212,6 +228,8 @@
                                 v-model="patologiaQuirurjicaSelected"
                                 :items="patologia"
                                 multiple
+                                item-text="nombre"
+                                item-value="_id"                                
                             ></v-combobox>
                             <button class="btn btn-azul btn-añadir-a-lista">+</button>
                         </div>
@@ -289,14 +307,14 @@
                     <div class="lista-interactiva">
                         <label class="lista-interactiva__title">Drogas</label>
                         <div class="lista-interactiva__select">
-                            <select id="drogas">
-                                <option value="Ninguna">Ninguna</option>
-                                <option value="Cocaina">Cocaína</option>
-                                <option value="Marihuana">Marihuana</option>
-                                <option value="Pasta Base">Pasta Base</option>
-                                <option value="Anfetamina">Anfetamina</option>
-                                <option value="Benzodiazepinas">Benzodiazepinas</option>
-                            </select>
+
+                                <v-combobox
+                                    v-model="drogasSelected"
+                                    :items="drogas"
+                                    multiple
+                                    item-text="nom_droga"
+                                    item-value="_id"                                
+                                ></v-combobox>
                             <button class="btn btn-azul btn-añadir-a-lista">+</button>
                         </div>
                         <ul class="lista-interactiva__lista">
@@ -590,6 +608,10 @@
         elevation="2"
         @click="ObtenerTodosLosDatos"
         > Pulsame</v-btn>
+                    <v-btn
+        elevation="2"
+        @click="ShowToken"
+        > No me pulses</v-btn>
       </v-card>
       
      </v-app>
@@ -625,7 +647,7 @@ export default {
             // Cambiar estado civil _
             estado_civil:[],
             // Revisar ocupacion
-            ocupacion:'',
+            ocupacion:[],
             // revisar grupo de sangre
             grpSangre:[],
             // revisar 
@@ -676,6 +698,7 @@ export default {
             patologiaFarmiliarSelected:[],
             patologiaQuirurjicaSelected:[],
             patologiaMedicaSelected:[],
+            drogasSelected:[],
             furConfiable:'',
             fechaEcoFur:'',
 
@@ -700,14 +723,17 @@ export default {
     watch:{
         regionSelected: async function(){
             if(this.regionSelected){
+                console.log('Se movio la region ')
+                console.log('regione',this.regionSelected)
+                const getData = await axios.post(this.address+'/ObtenerComunas',{id_reg:this.regionSelected._id},
+                {
+                    headers: { "authorization": this.$auth.$storage['_state']['_token.local'] }
+                })
+                console.log(getData)
+             this.comuna=getData.data
 
-            const getData = await axios.get(this.address+'/ObtenerComunas',{id_reg:this.regionSelected},
-            {
-                headers: { "authorization": this.$auth.$storage['_state']['_token.local'] }
-            })
             }
-            this.comuna=getData.data
-
+            
         }
 
     },
@@ -715,6 +741,11 @@ export default {
         TakeComunas:async function(){
             alert("Cristina le gusta la palabra nose y emm", this.rut)
             console.log('Cristina puede que le gusten las peras',this.fechingre)
+        },
+        ShowToken: async function(){
+            console.log("Este sera un token")
+            console.log(this.$auth.$storage._state['_token.local'])
+
         },
         ObtenerDatosPaciente: async function(){
             // Aca tenemos que tomar datos del paciente
@@ -727,7 +758,7 @@ export default {
         insertaFichaA: async function(){
             const grabarFichaA = await axios.post(this.address+'/ObtenerTodo',{fichaA:fichaFData},
                 {
-                    headers: { "authorization": this.$auth.$storage['_state']['_token.local'] }
+                    headers: { "authorization":this.$auth.$storage._state['_token.local']}
                 })
             alert("Aun no no no estoy listo")
 

@@ -1,6 +1,7 @@
-<template>
-    <v-app>       
-        <v-card>
+<template>    
+    <v-app>    
+        <pacienteDatos></pacienteDatos>   
+        <v-card>        
         <div class="content">        
         <!-- FormularioE-->
             <div class="info-personal">
@@ -9,7 +10,7 @@
                 <form class="info-personal__form">            
                 
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Paciente correspondiente a:</label>                        
+                        <label class="lista-interactiva__title">Paciente corresponde a:</label>                        
                         <div class="lista-interactiva__select"> 
                             <select name="lugarparto" id="lugarparto">
                                 <option value="Sótero del Río">Sala</option>
@@ -27,13 +28,9 @@
                                 <option value="Domicilio">Domicilio</option>                             
                                 <option value="Clínica privada">Clínica privada</option>                                                                
                             </select>                        
-                            <button class="btn btn-azul btn-añadir-a-lista">+</button>
-                            <ul class="lista-interactiva__lista"></ul>
-                        </div>
+                        </div>    
                     </div>
-                </form>
 
-                <form class="info-personal__form">
                     <div class="ficha-a__medDrogas__form__item">
                         <label class="lista-interactiva__title">Ingresa desde:</label>
                         <div class="lista-interactiva__select"> 
@@ -43,41 +40,8 @@
                                 <option value="Padre Hurtado">Aislamiento</option>          
                             </select>                           
                         </div>
-                    </div>        
-
-                    <div class="ficha-a__medDrogas__form__item">
-                        
-                    <span class="ficha-a__medDrogas__form__item__input">
-                    	<label for="rut-madre">Fecha Proceso</label>
-                    	<input type="date" name="rut-madre" id="rut">
-                	</span>
-
-                	<span class="ficha-a__medDrogas__form__item__input">
-                    	<label for="rut-madre">Rut de la madre</label>
-                    	<input type="text" name="rut-madre" id="rut">
-                	</span>
-
-                	<span class="ficha-a__medDrogas__form__item__input">
-                    	<label for="rut-madre">Primer nombre</label>
-                    	<input type="text" name="rut-madre" id="rut">
-                	</span>
-
-                	<span class="ficha-a__medDrogas__form__item__input">
-                    	<label for="rut-madre">Segundo nombre</label>
-                    	<input type="text" name="rut-madre" id="rut">
-                	</span>
-
-                	<span class="ficha-a__medDrogas__form__item__input">
-                    	<label for="rut-madre">Apellido paterno</label>
-                    	<input type="text" name="rut-madre" id="rut">
-                	</span>
-
-                	<span class="ficha-a__medDrogas__form__item__input">
-                    	<label for="rut-madre">Apellido Materno</label>
-                    	<input type="text" name="rut-madre" id="rut">
-                	</span>
-            	    </div>                    
-                </form>
+                    </div>   
+                </form>             
 
             </div>  
 
