@@ -64,7 +64,7 @@
                             </select> 
                             <button class="btn btn-azul btn-añadir-a-lista">+</button> 
                             <ul class="lista-interactiva__lista"></ul> -->
-                            <v-combobox v-model="nombrePatologia" hide-details multiple="true" class="text"></v-combobox>
+                            <v-combobox v-model="nombrePatologia" :items="patologia" item-text="nombre" item-value="_id" hide-details multiple="true" class="text"></v-combobox>
                         </div>
                     </div>  
 
@@ -291,13 +291,13 @@
                     </div>                	
              
                     <div class="ficha-a__medDrogas__form__item">
-                        <label class="lista-interactiva__title">Exámen servical</label>
+                        <label class="lista-interactiva__title">Exámen cervical</label>
                         <div class="ficha-a__antecedentes-embarazo-actual__form__item__input">
                             <label for="inicio-semanas">No realizado</label>
                             <input type="checkbox" id="" name="inicio-semanas" v-model="examNoRealizado">
                         </div>
                         <div class="lista-interactiva__select visible" data-tooltip="Si lo requiere, escriba en examen físico">
-                            <select id="patoFam" v-model="tipoExamServical">
+                            <select id="patoFam" v-model="tipoExamCervical">
                                 <option value="+">Espéculo</option>
                                 <option value="+">Dígital</option>
                             </select> 
@@ -365,7 +365,7 @@
                                 <option value="Normal">Normal</option>
                                 <option value="Taquicardía">Taquicardía</option>
                                 <option value="Bradicardía">Bradicardia</option>
-                                <option value="Desaceler.">Desaceler.</option>
+                                <option value="Desaceler.">Desaceleración</option>
                                 <option value="Ausentes">Ausentes</option>
                                 <option value="No registrados">No registrados</option>
                             </select> 
@@ -662,6 +662,7 @@
     <div class="ficha-a__seccion-btn-global">
         <div class="btn-ingresar-datos">Ingresar Datos</div>
     </div>    
+    <v-btn elevation="1" @click="ObtenerTodosLosDatos">pulse</v-btn>
     </v-card>
   </v-app>
 </template>
@@ -693,7 +694,8 @@ export default {
             //patologia de Paciente (sin patologia)
             sinPatologia: true,
             //nombre de la Patologias
-            nombrePatologia:'',            
+            nombrePatologia:'',
+            patologia:[],            
             //sistolica
             sistolica:0,
             //diastolica
@@ -747,7 +749,7 @@ export default {
             //examen servical (realizado)
             examNoRealizado:true,
             //tipo Examen Servical 
-            tipoExamServical:'',
+            tipoExamCervical:'',
             //dilatacion cervical 
             dilatCervical:0,
             //Espinas
@@ -819,15 +821,17 @@ export default {
         }
     },
     methods: {
-        TakeComunas: async function(){
 
-            const listRegion = await axios.get(this.address+'/ObtenerRegion',
+            ObtenerTodosLosDatos: async function(){
+                const getData = await axios.get(this.address+'/ObtenerDataFichaB',
                 {
                     headers: { "authorization": this.$auth.$storage['_state']['_token.local'] }
                 })
-
-            console.log(listRegion)
-        }
+                console.log(getData)
+                this.patologia = getData.data[0]                
+                console.log(this.patologia)
+            
+            }
 
     }
 }
