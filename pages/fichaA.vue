@@ -250,18 +250,12 @@
                             <label for="rMedCronico">No</label>
                             <input type="radio" name="rMedCronico" id="">
                         </div>
-                        <div class="ficha-a__medDrogas__form__item__input">
-                            <label class="contRadioButtn">Si, Durante el 1er Trimestre</label>
-                            <input type="radio" name="rMedCronico" id="">
-                        </div>
-                        <div class="ficha-a__medDrogas__form__item__input">
-                            <label class="contRadioButtn">Si, Después del 1er Trimestre </label>
-                            <input type="radio" name="rMedCronico" id="">
-                        </div>
-                        <div class="ficha-a__medDrogas__form__item__input">
-                            <label class="contRadioButtn">No sabe </label>
-                            <input type="radio" name="rMedCronico" id="">
-                        </div>
+                        <v-combobox
+                            v-model="medicamentoCronicoSelected"
+                            :items="medicamento"
+                            item-text="nombre"
+                            item-value="_id"                        
+                        ></v-combobox>
                         <div class="ficha-a__medDrogas__form__item__input">
                             <label for="">Otro</label>
                             <input type="text" name="" id="Mejorar">
@@ -339,198 +333,33 @@
                         <span class="ficha-a__antecedentes-obstetricos__form__item__title">Anticoncepción</span>
 
                         <div class="ficha-a__antecedentes-obstetricos__form__item__input">
-                            <label for="natural">Natural</label>
-                            <input type="radio" value="natural" id="" name="anticonceptivo">
-                        </div>
-
-                        <div class="ficha-a__antecedentes-obstetricos__form__item__input">
-                            <label for="DIU">D.I.U</label>
-                            <input type="radio" value="DIU" id="" name="anticonceptivo">
-                        </div>
-
-                        <div class="ficha-a__antecedentes-obstetricos__form__item__input">
-                            <label for="oral">Oral</label>
-                            <input type="radio" value="oral" id="" name="anticonceptivo">
-                        </div>
-
-                        <div class="ficha-a__antecedentes-obstetricos__form__item__input">
                             <label for="no">No</label>
                             <input type="radio" value="no" id="" name="anticonceptivo">
                         </div>
+                         <v-combobox
+                            v-model="anticonceptivoSelected"
+                            :items="anticonceptivo"
+                            multiple
+                            item-text="nombre"
+                            item-value="_id"                                
+                        ></v-combobox>
 
-                        <div class="ficha-a__antecedentes-obstetricos__form__item__input">
-                            <label for="anticonceptivoOtro">Otro</label>
-                            <input type="text" id="" name="anticonceptivoOtro">
-                        </div>
                     </div>
                     <!-- Embarazos Previos -->
-                    <div class="ficha-a__antecedentes-obstetricos__form__item">
+
+                    <!-- Embarazo Ectopico -->
+
+                </form>
+                                    <div class="ficha-a__antecedentes-obstetricos__form__item">
                         <span class="ficha-a__antecedentes-obstetricos__form__item__title">Embarazos Previos</span>
 
-                        <div class="ficha-a__antecedentes-obstetricos__form__item__input">
-                            <label for="embarazoPrevNormales">Normales</label>
-                            <input type="radio" value="normales" id="">
-                        </div>
-
-                        <div class="ficha-a__antecedentes-obstetricos__form__item__input">
-                            <label for="embarazoPrevMalaHist">Mala historia obstetrica</label>
-                            <input type="checkbox" value="mala historia obstetrica" id="">
-                        </div>
-
-                        <div class="ficha-a__antecedentes-obstetricos__form__item__input">
-                            <label for="embarazoPrevPreeclampsia">Preeclampsia</label>
-                            <input type="checkbox" value="preeclampsia" id="">
-                        </div>
-
-                        <div class="ficha-a__antecedentes-obstetricos__form__item__input">
-                            <label for="embarazoPrevDiabetesGestacional">Diabetes Gestacional</label>
-                            <input type="checkbox" value="diabetes gestacional" id="">
-                        </div>
-
-                        <div class="ficha-a__antecedentes-obstetricos__form__item__input">
-                            <label for="embarazoPrevRNMalFormSNC">RN con malform. SNC</label>
-                            <input type="checkbox" value="rn con malform. snc" id="">
-                        </div>
-
-                        <div class="ficha-a__antecedentes-obstetricos__form__item__input">
-                            <label for="embarazoPrevRNMalFormCard">RN con malform. cardiaca</label>
-                            <input type="checkbox" value="rn con malform. cardiaca" id="">
-                        </div>
-
-                        <div class="ficha-a__antecedentes-obstetricos__form__item__input">
-                            <label for="embarazoPrevRNDown">RN Down</label>
-                            <input type="checkbox" value="rn down" id="">
-                        </div>
-
-                        <div class="ficha-a__antecedentes-obstetricos__form__item__input">
-                            <label for="embarazoPrevRNOtraMalForm">RN con otra malformación</label>
-                            <input type="checkbox" value="rn con otra malformacion" id="">
-                        </div>
-
-                        <div class="ficha-a__antecedentes-obstetricos__form__item__input">
-                            <label for="embarazoPrevOtra">Otra</label>
-                            <input type="text" name="embarazoPrevOtra" id="">
-                        </div>
-
+                            <v-data-table
+                                :headers="headers"
+                                :items="desserts"
+                                :items-per-page="5"
+                                class="elevation-3"
+                            ></v-data-table>
                     </div>
-                    <!-- Embarazo Ectopico -->
-                    <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico"
-                        id="embarazo-ectopico">
-                        <span class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__title">Embarazo
-                            Ectópico</span>
-
-                        <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__seccion-input">
-                            <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__input">
-                                <label for="embarazoPrevNormales">AE</label>
-                                <input type="checkbox" name="embarazoPrevNormales" id="">
-                            </div>
-
-                            <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__input">
-                                <label for="embarazoPrevNormales">AE</label>
-                                <input type="checkbox" name="embarazoPrevNormales" id="">
-                            </div>
-
-                            <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__input">
-                                <label for="embarazoPrevNormales">AP</label>
-                                <input type="checkbox" name="embarazoPrevNormales" id="">
-                            </div>
-
-                            <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__input"
-                                id="ppr">
-                                <label for="embarazoPrevNormales">Ppr</label>
-                                <input type="checkbox" name="embarazoPrevNormales" id="">
-                            </div>
-
-                            <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__input"
-                                id="pter">
-                                <label for="embarazoPrevNormales">Pter</label>
-                                <input type="checkbox" name="embarazoPrevNormales" id="">
-                            </div>
-
-                            <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__input">
-                                <label for="embarazoPrevNormales">MNat</label>
-                                <input type="checkbox" name="embarazoPrevNormales" id="">
-                            </div>
-
-                            <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__input">
-                                <label for="embarazoPrevNormales">Mneo</label>
-                                <input type="checkbox" name="embarazoPrevNormales" id="">
-                            </div>
-
-                            <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__input">
-                                <label for="embarazoPrevNormales">Hv</label>
-                                <input type="checkbox" name="embarazoPrevNormales" id="">
-                            </div>
-
-                            <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico__input">
-                                <label for="embarazoPrevNormales">Embarazos Ectópicos</label>
-                                <input type="checkbox" name="embarazoPrevNormales" id="">
-                            </div>
-
-
-                        </div>
-
-                        <!--Seccion Opcional-->
-                        <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico--seccion-opcional">
-                            <div class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico--seccion-opcional__input"
-                                id="rn-mayor-peso">
-                                <label for="rnMayorPeso">RN de mayor peso</label>
-                                <input type="text" name="rnMayorPeso" id="" placeholder="grs.">
-                            </div>
-
-                            <div
-                                class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico--seccion-opcional__input">
-                                <label for="cesareasPrevias">Cesareas Previas</label>
-                                <input type="checkbox" name="cesareasPrevias" value="cesareas previas"
-                                    id="cesareas-previas">
-                            </div>
-
-                            <div
-                                class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico--seccion-opcional__input">
-                                <label for="embarazosGemelares">Embarazos Gemelares</label>
-                                <input type="checkbox" name="embarazosGemelares" value="embarazos gemelares"
-                                    id="embarazos-gemelares">
-                            </div>
-
-                            <div
-                                class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico--seccion-opcional__causa">
-                                <div
-                                    class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico--seccion-opcional__causa__title">
-                                    Causa</div>
-                                <div
-                                    class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico--seccion-opcional__causa__input">
-                                    <label for="trabajoParto">Trabajo de Parto</label>
-                                    <input type="checkbox" name="trabajoParto" value="trabajo parto">
-                                </div>
-
-                                <div
-                                    class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico--seccion-opcional__causa__input">
-                                    <label for="parto-menor-32-semanas">Parto &lt32 semanas</label>
-                                    <input type="checkbox" name="parto-menor-32-semanas" value="parto menor 32 semanas">
-                                </div>
-
-                                <div
-                                    class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico--seccion-opcional__causa__input">
-                                    <label for="distocia-presentacion">Distocia de presentación</label>
-                                    <input type="checkbox" name="distocia-presentacion" value="distocia presentacion">
-                                </div>
-
-                                <div
-                                    class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico--seccion-opcional__causa__input">
-                                    <label for="no-sabe">No sabe</label>
-                                    <input type="checkbox" name="no-sabe" value="no sabe">
-                                </div>
-
-                                <div
-                                    class="ficha-a__antecedentes-obstetricos__form__item--embarazo-ectopico--seccion-opcional__causa__input">
-                                    <label for="otra">Otra</label>
-                                    <input type="checkbox" name="otra" value="otra">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
             </div>
             <!-- FIN PENSAR EN ESTA SECCION -->
             <!--Antecedentes Embarazo Actual-->
@@ -685,6 +514,7 @@ export default {
             talla:0,
             fur:'',
             fur_no_confiable: false,
+            medicamento : [],
             // cambiar edad-gestacional por _
             edad_gestacional:'',
             previsionSelected: '',
@@ -701,6 +531,8 @@ export default {
             drogasSelected:[],
             furConfiable:'',
             fechaEcoFur:'',
+            medicamentoCronicoSelected: [],
+            anticonceptivoSelected:[],
 
 
 
@@ -780,6 +612,8 @@ export default {
                 this.tPatologia = getData.data[7]
                 this.drogas = getData.data[8]
                 this.anticonceptivo = getData.data[9]
+                this.medicamento = getData.data[10]
+                // (me falta el medicamento)
                 // this.region = getData.data[0].nombre
                 // this.prevision = getData.data[1].nombre
                 // this.estudios = getData.data[2].nomEstudio
@@ -790,7 +624,7 @@ export default {
                 // this.tPatologia = getData.data[7].nombre
                 // this.drogas = getData.data[8].nom_droga
                 // this.anticonceptivo = getData.data[9].nombre
-                console.log(this.region[0].nombre)
+                // console.log(this.region[0].nombre)
 
 
 
