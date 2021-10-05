@@ -13,10 +13,73 @@
                     <input type="date" name="fechingre" v-model="fechingre">
                     
                 </span>
-                <span class="info-personal__form__item">
+                <!-- <span class="info-personal__form__item">
                     <label for="rut-madre">Rut de la Madre</label>
                     <input type="text" name="rut-madre" v-model="rut">
-                </span>
+                   
+                </span> -->
+                <v-row>
+                    <v-col >
+                        <label>Rut de la madre </label>
+                        <v-text-field
+                        v-model="rut"
+
+                        clearable
+
+                        type="text"
+                        >
+                        <template v-slot:prepend>
+                            <!-- <v-tooltip
+                            bottom
+                            >
+                            <template v-slot:activator="{ on }">
+                                <v-icon v-on="on">
+                                mdi-help-circle-outline
+                                </v-icon>
+                            </template>
+                            I'm a tooltip
+                            </v-tooltip> -->
+                        </template>
+                        <template v-slot:append>
+                            <v-fade-transition leave-absolute>
+                            <v-progress-circular
+                                v-if="loading"
+                                size="24"
+                                color="info"
+                                indeterminate
+                            ></v-progress-circular>
+                            <!-- <img
+                                v-else
+                                width="24"
+                                height="24"
+                                src="https://cdn.vuetifyjs.com/images/logos/v-alt.svg"
+                                alt=""
+                            > -->
+                            </v-fade-transition>
+                        </template>
+                        <template v-slot:append-outer>
+                            <v-menu
+                            style="top: -12px"
+                            offset-y
+                            >
+                            <template v-slot:activator="{ on, attrs }">
+                                <v-btn
+                                v-bind="attrs"
+                                v-on="on"
+                                @click="ObtenerDatosPaciente"
+                                >
+                                <v-icon >
+                                    mdi-account-search-outline
+                                </v-icon>
+                                
+                                </v-btn>
+                            </template>
+                            
+                            </v-menu>
+                        </template>
+                        </v-text-field>
+                    </v-col>
+                 </v-row>
                 <span class="info-personal__form__item">
                     <label for="fnacmadre">Fecha de nac. madre</label>
                     <input type="date" name="fnacmadre" v-model="fnacmadre">
@@ -354,8 +417,8 @@
                         <span class="ficha-a__antecedentes-obstetricos__form__item__title">Embarazos Previos</span>
 
                             <v-data-table
-                                :headers="headers"
-                                :items="desserts"
+                                :headers="headersEmbarazo"
+                                :items="embarazos"
                                 :items-per-page="5"
                                 class="elevation-3"
                             ></v-data-table>
@@ -437,10 +500,10 @@
         elevation="2"
         @click="ObtenerTodosLosDatos"
         > Pulsame</v-btn>
-                    <v-btn
+                    <!-- <v-btn
         elevation="2"
-        @click="ShowToken"
-        > No me pulses</v-btn>
+        @click="ObtenerDatosPaciente"
+        > No me pulses</v-btn> -->
       </v-card>
       
      </v-app>
@@ -464,7 +527,6 @@ export default {
             numDeptoCasa:'',
             poblacion:'',
             // revisar comuna
-            // 
             region:[],
             // 
             comuna:[],
@@ -533,6 +595,15 @@ export default {
             fechaEcoFur:'',
             medicamentoCronicoSelected: [],
             anticonceptivoSelected:[],
+            embarazos:[],
+            headersEmbarazo:[
+                {text:'Tipo de Embarazos', value:'embarazo'},
+                {text:'Cantidad de embarazos', value:'cantEmbarazo'},
+                {text:'Gemelar', value:'gemelar'}
+                ],
+            paciente:{},
+                //                 {text:'',value:''},
+                // {}
 
 
 
@@ -580,11 +651,45 @@ export default {
 
         },
         ObtenerDatosPaciente: async function(){
-            // Aca tenemos que tomar datos del paciente
-            // Tomar los datos prevision, estudios, estado civil, ocupación, Grupos sanguineos de los familiares
-            // Embarazos previos, embarazo ectopico , embarazo gemelar, cesareas previas y cuales
-            // Causa de embarazos ectopicos
-            alert("Aun no estoy listo")
+            const paciente = await axios.post(this.address+'/ObtenerPacienteFichaA',
+            {rut:this.rut },
+            {
+                headers: { "authorization": this.$auth.$storage['_state']['_token.local'] }
+            })
+            console.log('Datos obtenidos del paciente')
+            // apellidoMaterno: "Apostolova"
+            // apellidoPaterno: "Aoumada"
+            // dVerificador: 1
+            // deptoCasa: null
+            // domicilio: "Los hornos"
+            // idActividad: "60ea5cc360c050fec7b9098b"
+            // idComuna: "60d1368616ad36ec460ed324"
+            // idEstadoCivil: "60ce9ae0fbd9f0b22c5eed2d"
+            // idEstudio: "60ea5c7060c050fec7b9098a"
+            // idGrupo: "60ce9d80fbd9f0b22c5eed33"
+            // idPrevision: "60cebc13fbd9f0b22c5eed5d"
+            // idProgenitor: "60ea5c1e60c050fec7b90988"
+            // nombre: "Marina"
+            // numeroDomicilo: "4443"
+            // rut: 201038871
+            // telefono: "85632174"
+            this.paciente = paciente.data[0]
+            console.log(this.paciente)
+            console.log("=============================================")
+            for (let i = 0; i < paciente.length; i++) {
+                console.log(this.paciente[0].rut)
+                console.log("Aca estamos rescatando a los pacientes")
+            }
+            this.embarazos= paciente.data[1]
+            // En el 0 Esta el
+            
+            console.log("Datos del embarazo")
+            console.log(this.embarazos)
+
+
+
+
+
         },
 
         insertaFichaA: async function(){
@@ -625,12 +730,7 @@ export default {
                 // this.drogas = getData.data[8].nom_droga
                 // this.anticonceptivo = getData.data[9].nombre
                 // console.log(this.region[0].nombre)
-
-
-
-
-
-        } 
+        },
 
     }
 }
